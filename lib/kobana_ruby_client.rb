@@ -1,10 +1,19 @@
-require "kobana_ruby_client/version"
-require "kobana_ruby_client/base"
-require "kobana_ruby_client/charge"
-require "share_api_gem"
-
+require "faraday"
+require "json"
+require "dotenv"
+Dotenv.load
 
 module KobanaRubyClient
-  class Error < StandardError; end
-  # Your code goes here...
+  autoload :Base, "kobana_ruby_client/base"
+  autoload :Version, "kobana_ruby_client/version"
+
+  module Resources
+    module Charge
+      autoload :Pix, "kobana_ruby_client/resources/charge/pix"
+    end
+  end
+
+  class << self
+    attr_accessor :api_key
+  end
 end
