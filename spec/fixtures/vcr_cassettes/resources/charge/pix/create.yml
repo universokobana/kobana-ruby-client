@@ -2,14 +2,14 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:5000/api/v2/charge/pix
+    uri: https://api-sandbox.kobana.com.br/v2/charge/pix
     body:
       encoding: UTF-8
       string: '{"amount":120.99,"payer":{"document_number":"779.467.060-81","name":"João
-        da Silva"},"pix_account_id":431,"expire_at":"2024-12-02T10:03:56-03:00","message":"string","additional_info":{"Chave":"Valor"}}'
+        da Silva"},"pix_account_id":112,"expire_at":"2024-12-02T10:03:56-03:00","message":"string","additional_info":{"Chave":"Valor"}}'
     headers:
       Authorization:
-      - Bearer <BOLETOSIMPLES_API_TOKEN>
+      - Bearer <KOBANA_API_TOKEN>
       Content-Type:
       - application/json
       User-Agent:
@@ -23,6 +23,14 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
       X-Frame-Options:
       - DENY
       X-Xss-Protection:
@@ -43,28 +51,31 @@ http_interactions:
       - unsafe-none
       Cross-Origin-Opener-Policy:
       - unsafe-none
-      Content-Type:
-      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4994'
       Etag:
-      - W/"f5cabde0ed0aecdd57b1db7faa0a578f"
+      - W/"ec0aaa63c37f2c0c546574eeee8afe65"
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Security-Policy-Report-Only:
-      - 'base-uri ''none''; default-src ''self'' https://localhost:5000 https://boletosimples.com.br
-        https://*.boletosimples.com.br https://kobana.com.br https://*.kobana.com.br;
-        font-src ''self'' data: https://localhost:5000 https://fonts.googleapis.com
-        https://fonts.gstatic.com https://themes.googleusercontent.com https://cdnjs.cloudflare.com
-        https://fonts.intercomcdn.com; img-src ''self'' data: https://localhost:5000
-        https://maps.googleapis.com https://boleto.test:5001 https://bole.to https://*.google-analytics.com
-        https://*.googletagmanager.com https://ssl.gstatic.com https://www.gstatic.com
-        https://*.g.doubleclick.net https://*.google.com https://*.google.com.br https://googleads.g.doubleclick.net
+      - 'base-uri ''none''; default-src ''self'' https://app-sandbox.kobana.com.br
+        https://boletosimples.com.br https://*.boletosimples.com.br https://kobana.com.br
+        https://*.kobana.com.br; font-src ''self'' data: https://app-sandbox.kobana.com.br
+        https://fonts.googleapis.com https://fonts.gstatic.com https://themes.googleusercontent.com
+        https://cdnjs.cloudflare.com https://fonts.intercomcdn.com; img-src ''self''
+        data: https://app-sandbox.kobana.com.br https://maps.googleapis.com https://boleto.test:5001
+        https://bole.to https://*.google-analytics.com https://*.googletagmanager.com
+        https://ssl.gstatic.com https://www.gstatic.com https://*.g.doubleclick.net
+        https://*.google.com https://*.google.com.br https://googleads.g.doubleclick.net
         https://www.facebook.com https://secure.gravatar.com https://albato.com https://zapier-images.imgix.net
-        https://boletosimples-development.s3.amazonaws.com https://kobana-development.s3.amazonaws.com
+        https://boletosimples-sandbox.s3.amazonaws.com https://kobana-sandbox.s3.amazonaws.com
         https://d3caatrp30sdc5.cloudfront.net; object-src ''none''; script-src ''self''
-        ''unsafe-inline'' ''strict-dynamic'' https://localhost:5000 https://cdn.zapier.com
+        ''unsafe-inline'' ''strict-dynamic'' https://app-sandbox.kobana.com.br https://cdn.zapier.com
         https://albato.com https://widget.pluga.co ''nonce-''; style-src ''self''
-        ''unsafe-inline'' https://localhost:5000 https://fonts.googleapis.com https://tagmanager.google.com
-        https://cdn.zapier.com https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
+        ''unsafe-inline'' https://app-sandbox.kobana.com.br https://fonts.googleapis.com
+        https://tagmanager.google.com https://cdn.zapier.com https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
         https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css;
         child-src ''self'' https://www.googleadservices.com https://docs.google.com
         https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.br
@@ -77,25 +88,32 @@ http_interactions:
         https://*.mixpanel.com https://*.mxpnl.com https://*.intercom.io wss://*.intercom.io
         https://albato.com https://zapier.com https://api.zapier.com; report-uri https://boletosimples.report-uri.com/r/d/csp/reportOnly'
       X-Request-Id:
-      - 6bab5d0a-dae1-4a7b-a07f-19f4cae813d4
+      - 4e384b88-42bb-481e-96f6-703a7831c860
       X-Runtime:
-      - '0.065196'
-      Server-Timing:
-      - sql.active_record;dur=21.36, instantiation.active_record;dur=0.37, safelist.rack_attack;dur=1.64,
-        rack.attack;dur=0.00, start_processing.action_controller;dur=0.06, cache_read.active_support;dur=0.01,
-        dehydration.identity_cache;dur=0.13, cache_write.active_support;dur=0.21,
-        cache_fetch.identity_cache;dur=2.49, unpermitted_parameters.action_controller;dur=0.05,
-        query.redis;dur=0.71, Command.saved;dur=2.63, Pix.saved;dur=15.65, render.active_model_serializers;dur=1.64,
-        process_action.action_controller;dur=35.62
+      - '0.043623'
+      Date:
+      - Mon, 30 Oct 2023 19:37:12 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Strict-Transport-Security:
+      - max-age=31556952; includeSubDomains; preload
       X-Rack-Cors:
       - miss; no-origin
       Vary:
       - Origin,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
+      Via:
+      - 1.1 vegur, 1.1 b6efbf009f233af7a7aa7da68e6e2848.cloudfront.net (CloudFront)
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - YySFaQCVFQbhPmpeWaGrhlyd34nTmLDmfwxVRxNy8VHhhplyFfdOeg==
     body:
       encoding: UTF-8
-      string: '{"status":201,"data":{"id":248,"txid":null,"status":"opened","registration_status":"pending","pix_account_id":431,"created_at":"2023-10-30T09:27:30-03:00","expire_at":"2024-12-02T10:03:56-03:00","canceled_at":null,"registered_at":null,"amount":120.99,"additional_info":{"Chave":"Valor"},"command_ids":[155],"message":"string","message_payer":null,"qrcode":{"emv":null,"png":null},"payer":{"document_number":"779.467.060-81","name":"João
-        da Silva"},"url":"http://dev.kdoc.to:5001/1/eFA0uLSWlrMH","formats":{"default":{"html":"http://dev.kdoc.to:5001/1/eFA0uLSWlrMH","png":"http://dev.kdoc.to:5001/1/eFA0uLSWlrMH.png","pdf":"http://dev.kdoc.to:5001/1/eFA0uLSWlrMH.pdf"},"qrcode":{"html":"http://dev.kdoc.to:5001/1/eFA0uLSWlrMH/qrcode","png":"http://dev.kdoc.to:5001/1/eFA0uLSWlrMH/qrcode.png","pdf":"http://dev.kdoc.to:5001/1/eFA0uLSWlrMH/qrcode.pdf"}},"paid_amount":null,"paid_at":null,"end_to_end_id":null,"beneficiary":{},"custom_data":null,"ignore_whatsapp":false}}'
-  recorded_at: Mon, 30 Oct 2023 12:27:30 GMT
+      string: '{"status":201,"data":{"id":3292,"txid":null,"status":"opened","registration_status":"pending","pix_account_id":112,"created_at":"2023-10-30T16:37:12-03:00","expire_at":"2024-12-02T10:03:56-03:00","canceled_at":null,"registered_at":null,"amount":120.99,"additional_info":{"Chave":"Valor"},"command_ids":[54662],"message":"string","message_payer":null,"qrcode":{"emv":null,"png":null},"payer":{"document_number":"779.467.060-81","name":"João
+        da Silva"},"url":"https://sandbox.kdoc.to/1/Gx709sNH0Zt8","formats":{"default":{"html":"https://sandbox.kdoc.to/1/Gx709sNH0Zt8","png":"https://sandbox.kdoc.to/1/Gx709sNH0Zt8.png","pdf":"https://sandbox.kdoc.to/1/Gx709sNH0Zt8.pdf"},"qrcode":{"html":"https://sandbox.kdoc.to/1/Gx709sNH0Zt8/qrcode","png":"https://sandbox.kdoc.to/1/Gx709sNH0Zt8/qrcode.png","pdf":"https://sandbox.kdoc.to/1/Gx709sNH0Zt8/qrcode.pdf"}},"paid_amount":null,"paid_at":null,"end_to_end_id":null,"beneficiary":{"name":"francielle","address":{"state":"PR","number":"78","street":"Rua
+        Iracema Gonsalves Carvalho","zip_code":"81490526","city_name":"Curitiba","complement":"","neighborhood":"Campo
+        de Santana"},"document_number":"24455535000115"},"custom_data":null,"ignore_whatsapp":false}}'
+  recorded_at: Mon, 30 Oct 2023 19:37:12 GMT
 recorded_with: VCR 6.2.0

@@ -3,8 +3,8 @@
 require "spec_helper"
 
 RSpec.describe KobanaRubyClient::Resources::Charge::Pix do
-  let!(:api_key) { ENV["BOLETOSIMPLES_API_TOKEN"] }
-  let!(:pix) { described_class.new(api_key) }
+  let!(:api_key) { ENV["KOBANA_API_TOKEN"] }
+  let!(:pix) { described_class.new(api_key, :charges, {}, :sandbox) }
   let(:charge_pix_attributes) { attributes_for(:charge_pix) }
 
   describe "methods" do

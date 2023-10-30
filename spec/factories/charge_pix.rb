@@ -9,7 +9,7 @@ FactoryBot.define do
         name: "João da Silva"
       }
     end
-    pix_account_id { 431 }
+    pix_account_id { 112 }
     expire_at { "2024-12-02T10:03:56-03:00" }
     message { "string" }
     additional_info { { "Chave" => "Valor" } }

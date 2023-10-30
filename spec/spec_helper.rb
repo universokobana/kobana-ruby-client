@@ -14,7 +14,7 @@ VCR.configure do |config|
     interaction.response.body.force_encoding("UTF-8")
   end
 
-  config.filter_sensitive_data("<BOLETOSIMPLES_API_TOKEN>") { ENV["BOLETOSIMPLES_API_TOKEN"] }
+  config.filter_sensitive_data("<KOBANA_API_TOKEN>") { ENV["KOBANA_API_TOKEN"] }
 end
 
 RSpec.configure do |config|

@@ -1,6 +1,8 @@
-## KobanaRubyClient - Ruby Client for Kobana Charges
 
-This Ruby gem provides an easy way to interact with the Kobana APP, especially when dealing with charges.
+
+## KobanaRubyClient - Ruby Client for Kobana Services
+
+This Ruby gem provides a convenient method to interact with the Kobana APP, simplifying operations with charges and bank billets.
 
 ### Prerequisites
 
@@ -15,7 +17,7 @@ Add this line to your application's Gemfile:
 gem 'kobana_ruby_client'
 ```
 
-And then execute:
+Then execute:
 
 ```bash
 $ bundle install
@@ -29,7 +31,7 @@ $ gem install kobana_ruby_client
 
 ### Configuration
 
-You need to set your API key. The easiest way is to create an initializer in your Rails project:
+Configure your API key by creating an initializer in your Rails project:
 
 `config/initializers/kobana_ruby_client.rb`
 
@@ -41,9 +43,11 @@ Replace `'YOUR_API_KEY_HERE'` with your actual API key.
 
 ### Usage
 
-Here's how you can use this gem to create, show, and index charges:
+To use this gem:
 
-#### Creating a Charge
+#### **Charges**
+
+##### Creating a Charge
 
 ```ruby
 charge_data = {
@@ -62,26 +66,48 @@ charge_data = {
 }
 
 api_key = KobanaRubyClient.api_key
-charge = KobanaRubyClient::Resources::Charge::Pix.new(api_key)
+charge = KobanaRubyClient::Resources::Charge::Pix.new(api_key, :charges, {}, :sandbox) # You can specify the environment as :development, :sandbox, or :production
 result = charge.create(charge_data)
 puts result
 ```
 
-#### Fetching a Charge
+##### Fetching a Charge
 
 ```ruby
 charge_id = 1  # Replace with your charge ID
 api_key = KobanaRubyClient.api_key
-charge = KobanaRubyClient::Resources::Charge::Pix.new(api_key)
+charge = KobanaRubyClient::Resources::Charge::Pix.new(api_key, :charges, {}, :sandbox)
 result = charge.find(charge_id)
 puts result
 ```
 
-#### Listing All Charges
+##### Listing All Charges
 
 ```ruby
 api_key = KobanaRubyClient.api_key
-charge = KobanaRubyClient::Resources::Charge::Pix.new(api_key)
+charge = KobanaRubyClient::Resources::Charge::Pix.new(api_key, :charges, {}, :sandbox)
 result = charge.index
+puts result
+```
+
+#### **Bank Billets**
+
+##### Creating a Bank Billeт
+
+```ruby
+bank_billet_data = { ... }
+
+api_key = KobanaRubyClient.api_key
+bank_billet = KobanaRubyClient::Resources::BankBillet::BankBillet.new(api_key, :bank_billets, {}, :sandbox)
+result = bank_billet.create(bank_billet_data)
+puts result
+```
+
+##### Listing All Bank Billets
+
+```ruby
+api_key = KobanaRubyClient.api_key
+bank_billet = KobanaRubyClient::Resources::BankBillet::BankBillet.new(api_key, :bank_billets, {}, :sandbox)
+result = bank_billet.index
 puts result
 ```

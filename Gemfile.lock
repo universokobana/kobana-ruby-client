@@ -3,9 +3,14 @@ PATH
   specs:
     kobana_ruby_client (0.1.0)
       dotenv
+      factory_bot (~> 6.2)
       faraday (~> 1.4)
       json (~> 2.5)
+      lefthook (~> 0.7)
       rack (~> 2.2)
+      rubocop
+      vcr (~> 6.0)
+      webmock (~> 3.13)
 
 GEM
   remote: https://rubygems.org/
@@ -110,14 +115,10 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  factory_bot (~> 6.2)
   kobana_ruby_client!
-  lefthook (~> 0.7)
   rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (~> 1.21)
-  vcr (~> 6.0)
-  webmock (~> 3.13)
 
 BUNDLED WITH
    2.4.21
