@@ -4,15 +4,22 @@ require "spec_helper"
 
 RSpec.describe KobanaRubyClient::Resources::BankBillet::BankBillet do
   let!(:api_key) { ENV["KOBANA_API_TOKEN"] }
-  let!(:bank_billet) { described_class.new(api_key, :bank_billets, {}, :sandbox) }
   let(:bank_billet_attributes) { attributes_for(:bank_billet) }
 
   describe "methods" do
     before do
+      KobanaRubyClient.configure do |config|
+        config.api_token = ENV["KOBANA_API_TOKEN"]
+        config.environment = :sandbox
+        config.service = :bank_billets
+      end
+
       VCR.use_cassette("resources/bank_billet/bank_billet/create_for_methods") do
         @created_bank_billet = bank_billet.create(bank_billet_attributes)
       end
     end
+
+    let!(:bank_billet) { described_class.new }
 
     describe "#create", vcr: { cassette_name: "resources/bank_billet/bank_billet/create" } do
       subject { bank_billet.create(bank_billet_attributes) }
@@ -30,6 +37,14 @@ RSpec.describe KobanaRubyClient::Resources::BankBillet::BankBillet do
         expect(subject["customer_person_name"]).to eq(bank_billet_attributes[:customer_person_name])
         expect(subject["customer_phone_number"]).to eq(bank_billet_attributes[:customer_phone_number])
         expect(subject["customer_state"]).to eq(bank_billet_attributes[:customer_state])
+      end
+    end
+
+    describe "#find", vcr: { cassette_name: "resources/bank_billet/bank_billet/find" } do
+      subject { bank_billet.find(@created_bank_billet["id"]) }
+
+      it "fetches the correct bank billet" do
+        expect(subject["id"]).to eq(@created_bank_billet["id"])
       end
     end
 

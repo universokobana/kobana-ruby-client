@@ -45,6 +45,16 @@ Replace `'YOUR_API_KEY_HERE'` with your actual API key.
 
 To use this gem:
 
+#### **Configuration**
+
+```ruby
+KobanaRubyClient.configure do |config|
+      config.api_token = 'YOUR_API_KEY'
+      config.environment = :sandbox # you can specify the environment as :development, :sandbox, or :production
+      config.service = :bank_billets #or :charges
+    end
+```
+
 #### **Charges**
 
 ##### Creating a Charge
@@ -65,8 +75,7 @@ charge_data = {
   'custom_data' => '{"order_id": "12345"}'
 }
 
-api_key = KobanaRubyClient.api_key
-charge = KobanaRubyClient::Resources::Charge::Pix.new(api_key, :charges, {}, :sandbox) # You can specify the environment as :development, :sandbox, or :production
+charge = KobanaRubyClient::Resources::Charge::Pix.new
 result = charge.create(charge_data)
 puts result
 ```
@@ -75,8 +84,7 @@ puts result
 
 ```ruby
 charge_id = 1  # Replace with your charge ID
-api_key = KobanaRubyClient.api_key
-charge = KobanaRubyClient::Resources::Charge::Pix.new(api_key, :charges, {}, :sandbox)
+charge = KobanaRubyClient::Resources::Charge::Pix.new
 result = charge.find(charge_id)
 puts result
 ```
@@ -84,9 +92,9 @@ puts result
 ##### Listing All Charges
 
 ```ruby
-api_key = KobanaRubyClient.api_key
-charge = KobanaRubyClient::Resources::Charge::Pix.new(api_key, :charges, {}, :sandbox)
-result = charge.index
+charge = KobanaRubyClient::Resources::Charge::Pix.new
+params = { status: ["opened", "overdue"], page: 2 }
+results = charge.index(params)
 puts result
 ```
 
@@ -97,17 +105,24 @@ puts result
 ```ruby
 bank_billet_data = { ... }
 
-api_key = KobanaRubyClient.api_key
-bank_billet = KobanaRubyClient::Resources::BankBillet::BankBillet.new(api_key, :bank_billets, {}, :sandbox)
+bank_billet = KobanaRubyClient::Resources::BankBillet::BankBillet.new
 result = bank_billet.create(bank_billet_data)
+puts result
+```
+
+##### Fetching a Bank Billeт
+
+```ruby
+bank_billet_id = 1  # Replace with your charge ID
+bank_billet = KobanaRubyClient::Resources::BankBillet::BankBillet.new
+result = bank_billet.find(bank_billet_id)
 puts result
 ```
 
 ##### Listing All Bank Billets
 
 ```ruby
-api_key = KobanaRubyClient.api_key
-bank_billet = KobanaRubyClient::Resources::BankBillet::BankBillet.new(api_key, :bank_billets, {}, :sandbox)
+bank_billet = KobanaRubyClient::Resources::BankBillet::BankBillet.new
 result = bank_billet.index
 puts result
 ```

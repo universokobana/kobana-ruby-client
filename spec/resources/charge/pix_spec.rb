@@ -4,15 +4,22 @@ require "spec_helper"
 
 RSpec.describe KobanaRubyClient::Resources::Charge::Pix do
   let!(:api_key) { ENV["KOBANA_API_TOKEN"] }
-  let!(:pix) { described_class.new(api_key, :charges, {}, :sandbox) }
   let(:charge_pix_attributes) { attributes_for(:charge_pix) }
 
   describe "methods" do
     before do
+      KobanaRubyClient.configure do |config|
+        config.api_token = ENV["KOBANA_API_TOKEN"]
+        config.environment = :sandbox
+        config.service = :charges
+      end
+
       VCR.use_cassette("resources/charge/pix/create_for_methods") do
         @created_pix = pix.create(charge_pix_attributes)
       end
     end
+
+    let!(:pix) { described_class.new }
 
     describe "#create", vcr: { cassette_name: "resources/charge/pix/create" } do
       subject { pix.create(charge_pix_attributes) }

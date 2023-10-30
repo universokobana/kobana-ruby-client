@@ -3,17 +3,13 @@
 module KobanaRubyClient
   module Resources
     module BankBillet
-      class BankBillet < KobanaRubyClient::Base
-        def index
-          url = "#{base_url}/bank_billets"
-          response = connection.get(url)
-          parse_response(response)
-        end
+      class BankBillet < Base
+        include ResourceOperations
 
-        def create(data)
-          url = "#{base_url}/bank_billets"
-          response = connection.post(url, data.to_json)
-          parse_response(response)
+        @resource_endpoint = "bank_billets"
+
+        class << self
+          attr_reader :resource_endpoint
         end
       end
     end

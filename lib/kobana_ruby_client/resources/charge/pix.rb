@@ -3,23 +3,13 @@
 module KobanaRubyClient
   module Resources
     module Charge
-      class Pix < KobanaRubyClient::Base
-        def index
-          url = "#{base_url}/charge/pix"
-          response = connection.get(url)
-          parse_response(response)
-        end
+      class Pix < Base
+        include ResourceOperations
 
-        def create(data)
-          url = "#{base_url}/charge/pix"
-          response = connection.post(url, data.to_json)
-          parse_response(response)
-        end
+        @resource_endpoint = "charge/pix"
 
-        def find(charge_id)
-          url = "#{base_url}/charge/pix/#{charge_id}"
-          response = connection.get(url)
-          parse_response(response)
+        class << self
+          attr_reader :resource_endpoint
         end
       end
     end

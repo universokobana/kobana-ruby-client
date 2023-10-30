@@ -20,10 +20,12 @@ module KobanaRubyClient
       }
     }.freeze
 
-    def initialize(api_key, service, custom_headers = {}, environment = :development)
-      @api_key = api_key
-      @base_url = BASE_URI[service][environment]
-      @custom_headers = custom_headers
+    def initialize
+      config = KobanaRubyClient.configuration
+
+      @api_key = config.api_token
+      @base_url = BASE_URI[config.service][config.environment]
+      @custom_headers = config.custom_headers
     end
 
     private
