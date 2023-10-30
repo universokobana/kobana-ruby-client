@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "faraday"
 require "json"
 
@@ -7,7 +9,7 @@ module KobanaRubyClient
 
     def initialize(api_key, custom_headers = {})
       @api_key = api_key
-      @base_url = ENV['BASE_URL'] || "http://localhost:5000/api/v2"
+      @base_url = ENV["BASE_URL"] || "http://localhost:5000/api/v2"
       @custom_headers = custom_headers
     end
 

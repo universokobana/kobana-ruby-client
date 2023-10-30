@@ -15,8 +15,8 @@ Gem::Specification.new do |spec|
   spec.files = Dir.chdir(__dir__) do
     `git ls-files -z`.split("\x0").reject do |f|
       (File.expand_path(f) == __FILE__) ||
-      f.start_with?(*%w[bin/ test/ spec/ features/ .git .circleci appveyor Gemfile]) ||
-      f.end_with?('.gem')
+        f.start_with?(*%w[bin/ test/ spec/ features/ .git .circleci appveyor Gemfile]) ||
+        f.end_with?(".gem")
     end
   end
 
@@ -30,6 +30,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rack", "~> 2.2"
 
   spec.add_development_dependency "factory_bot", "~> 6.2"
+  spec.add_development_dependency "lefthook", "~> 0.7"
+  spec.add_development_dependency "rubocop"
   spec.add_development_dependency "vcr", "~> 6.0"
   spec.add_development_dependency "webmock", "~> 3.13"
 

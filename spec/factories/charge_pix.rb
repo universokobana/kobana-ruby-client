@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :charge_pix, class: Hash do
     amount { 120.99 }
