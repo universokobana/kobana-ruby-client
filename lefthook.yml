@@ -1,0 +1,16 @@
+# EXAMPLE USAGE
+# Refer for explanation to following link:
+# https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
+#
+# pre-push:
+#   commands:
+#     gems-audit:
+#       tags: backend security
+#       run: bundle audit
+
+pre-commit:
+  parallel: true
+  commands:
+    rubocop:
+      glob: '**/*.rb'
+      run: bundle exec rubocop --force-exclusion --safe-auto-correct {staged_files} && git add {staged_files}

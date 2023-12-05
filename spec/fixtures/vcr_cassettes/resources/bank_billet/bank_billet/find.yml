@@ -1,0 +1,138 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api-sandbox.kobana.com.br/v1/bank_billets/613550
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <KOBANA_API_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v1.10.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Report-To:
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1698756051&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=x6MzYm852OVgjZWc43YMg1a30X%2BGSFBXBgC7Yvv%2F46A%3D"}]}'
+      Reporting-Endpoints:
+      - heroku-nel=https://nel.heroku.com/reports?ts=1698756051&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=x6MzYm852OVgjZWc43YMg1a30X%2BGSFBXBgC7Yvv%2F46A%3D
+      Nel:
+      - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Expect-Ct:
+      - max-age=0, report-uri="https://boletosimples.report-uri.com/r/d/ct/reportOnly"
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Cross-Origin-Embedder-Policy:
+      - unsafe-none
+      Cross-Origin-Opener-Policy:
+      - unsafe-none
+      Etag:
+      - W/"4268b16a4e669a2e6dfa53ee6ced4c9d"
+      Last-Modified:
+      - Mon, 30 Oct 2023 20:47:24 GMT
+      Location:
+      - https://api-sandbox.kobana.com.br/api/v1/bank_billets/613550
+      Cache-Control:
+      - public
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      Content-Security-Policy-Report-Only:
+      - 'base-uri ''none''; default-src ''self'' https://app-sandbox.kobana.com.br
+        https://boletosimples.com.br https://*.boletosimples.com.br https://kobana.com.br
+        https://*.kobana.com.br; font-src ''self'' data: https://app-sandbox.kobana.com.br
+        https://fonts.googleapis.com https://fonts.gstatic.com https://themes.googleusercontent.com
+        https://cdnjs.cloudflare.com https://fonts.intercomcdn.com; img-src ''self''
+        data: https://app-sandbox.kobana.com.br https://maps.googleapis.com https://boleto.test:5001
+        https://bole.to https://*.google-analytics.com https://*.googletagmanager.com
+        https://ssl.gstatic.com https://www.gstatic.com https://*.g.doubleclick.net
+        https://*.google.com https://*.google.com.br https://googleads.g.doubleclick.net
+        https://www.facebook.com https://secure.gravatar.com https://albato.com https://zapier-images.imgix.net
+        https://boletosimples-sandbox.s3.amazonaws.com https://kobana-sandbox.s3.amazonaws.com
+        https://d3caatrp30sdc5.cloudfront.net; object-src ''none''; script-src ''self''
+        ''unsafe-inline'' ''strict-dynamic'' https://app-sandbox.kobana.com.br https://cdn.zapier.com
+        https://albato.com https://widget.pluga.co ''nonce-''; style-src ''self''
+        ''unsafe-inline'' https://app-sandbox.kobana.com.br https://fonts.googleapis.com
+        https://tagmanager.google.com https://cdn.zapier.com https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
+        https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css;
+        child-src ''self'' https://www.googleadservices.com https://docs.google.com
+        https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.br
+        https://app.popupdomination.com https://bid.g.doubleclick.net https://widget.pluga.co
+        https://www.googletagmanager.com https://www.facebook.com https://www.youtube.com
+        https://www.recaptcha.net; connect-src ''self'' https://boletosimples.com.br
+        https://*.boletosimples.com.br https://kobana.com.br https://*.kobana.com.br
+        https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com
+        https://*.g.doubleclick.net https://*.google.com https://*.google.com.br https://*.amplitude.com
+        https://*.mixpanel.com https://*.mxpnl.com https://*.intercom.io wss://*.intercom.io
+        https://albato.com https://zapier.com https://api.zapier.com; report-uri https://boletosimples.report-uri.com/r/d/csp/reportOnly'
+      X-Request-Id:
+      - d72c8a20-881c-4269-a777-4e838b803d26
+      X-Runtime:
+      - '0.083425'
+      Date:
+      - Tue, 31 Oct 2023 12:40:51 GMT
+      X-Content-Digest:
+      - f4112e5837096ff2ed88c6032608e31a5e46d991
+      X-Rack-Cache:
+      - miss, store
+      Strict-Transport-Security:
+      - max-age=31556952; includeSubDomains; preload
+      X-Rack-Cors:
+      - miss; no-origin
+      Vary:
+      - Origin,Accept-Encoding
+      Via:
+      - 1.1 vegur, 1.1 d4b7883c7915f8b518d09e4d04990ecc.cloudfront.net (CloudFront)
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - MIA3-P7
+      X-Amz-Cf-Id:
+      - aYAM7uETEtAMBvNBl3W1Oapv_D8J-YDjr51rxCMypFri7Sjb08IFUQ==
+      Age:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"id":613550,"expire_at":"2024-01-02","paid_at":null,"description":"Despesas
+        do contrato 0012","status":"opened","registration_status":"confirmed","customer_person_name":"Joao
+        da Silva","customer_cnpj_cpf":"34.565.715/0001-03","customer_address":"Rua
+        quinhentos","customer_state":"RJ","customer_neighborhood":"Sao Francisco","customer_zipcode":"12312123","customer_address_number":"111","customer_address_complement":"Sala
+        4","customer_phone_number":"2112123434","customer_email":"cliente@example.com","customer_email_cc":null,"customer_ignore_email":null,"customer_ignore_sms":null,"customer_mobile_local_code":null,"customer_mobile_number":null,"customer_nickname":null,"customer_notes":null,"created_via_api":true,"customer_city_name":"Rio
+        de Janeiro","paid_amount":null,"amount":9.01,"url":"https://sandbox.bole.to/3/kvelmd","formats":{"default":"https://sandbox.bole.to/3/kvelmd","png":"https://sandbox.bole.to/3/kvelmd.png","pdf":"https://sandbox.bole.to/3/kvelmd.pdf","boleto_hibrido":"https://sandbox.bole.to/3/kvelmd/boleto_hibrido","boleto_pix":"https://sandbox.bole.to/3/kvelmd/boleto_pix","barcode":"https://sandbox.bole.to/3/kvelmd/barcode","envelope":"https://sandbox.bole.to/3/kvelmd/envelope","letter":"https://sandbox.bole.to/3/kvelmd/letter","line":"https://sandbox.bole.to/3/kvelmd/line","recibo":"https://sandbox.bole.to/3/kvelmd/recibo"},"meta":null,"fine_for_delay":null,"fine_type":0,"fine_percentage":null,"fine_value":null,"days_for_fine":null,"late_payment_interest":null,"interest_type":0,"interest_daily_value":null,"interest_daily_percentage":null,"interest_monthly_percentage":null,"days_for_interest":null,"discount_type":0,"discount_limit_date":null,"discount_value":null,"discount_percentage":null,"days_for_revoke":null,"notes":null,"payment_count":1,"bank_billet_account_id":5324,"beneficiary_name":"FRANCIELLE
+        DE ABREU DA SILVA","beneficiary_cnpj_cpf":"53.861.527/0001-77","beneficiary_address":"Rua
+        Iracema Gonsalves Carvalho, 110, 110, Campo de Santana, Curitiba, PR, 81490526","beneficiary_assignor_code":"00017/0000027","guarantor_name":null,"guarantor_cnpj_cpf":null,"payment_place":"Pagável
+        em qualquer banco até a data de vencimento.","instructions":null,"document_date":null,"document_type":"02","document_number":null,"acceptance":"N","processed_our_number":"00017/001/0000000015-5","processed_our_number_raw":"0001700100000000155","bank_contract_slug":"example-bank-bs-1","agency_number":"0777","agency_digit":"7","account_number":"0000777","account_digit":"7","extra1":null,"extra1_digit":null,"extra2":null,"extra2_digit":null,"line":"00090.00100
+        01000.000008 00000.001552 2 95830000000901","our_number":"000000015","customer_subscription_id":null,"installment_total":null,"installment_number":null,"installment_id":null,"carne_url":null,"bank_billet_layout_id":null,"created_at":"2023-10-30T17:47:24-03:00","updated_at":"2023-10-30T17:47:24-03:00","tags":[],"tag_list":null,"document_type_label":"DM","addons":null,"ignore_email":false,"ignore_sms":false,"ignore_whatsapp":false,"sue_code":null,"revoke_code":null,"first_instruction":null,"second_instruction":null,"guarantor_address_number":null,"guarantor_neighborhood":null,"guarantor_phone_number":null,"guarantor_city_name":null,"guarantor_state":null,"guarantor_zipcode":null,"guarantor_address":null,"guarantor_address_complement":null,"barcode":"00092958300000009010001001000000000000000155","registered_at":"2023-10-30T17:47:24-03:00","prevent_registration":false,"customer_id":747588,"control_number":null,"divergent_payment_type":null,"divergent_payment_value_type":null,"divergent_payment_maximum_value":null,"divergent_payment_minimum_value":null,"divergent_payment_maximum_percentage":null,"divergent_payment_minimum_percentage":null,"divergent_payment_limit":null,"days_for_discount":null,"days_for_second_discount":null,"second_discount_percentage":null,"second_discount_value":null,"days_for_third_discount":null,"third_discount_percentage":null,"third_discount_value":null,"days_for_sue":null,"days_for_negativation":null,"interest_percentage":null,"interest_value":null,"interest_days_type":0,"customer_contact_person":null,"custom_attachment_name":null,"split_payment":false,"dispatch_type":1,"charge_type":1,"custom_data":null,"issued_at":"2023-10-30T17:47:24-03:00","shorten_url":"https://sandbox.bole.to/3/kvelmd","pix_enabled":false,"pix_qrcode":null,"password_protected_mode":null,"revoked_at":null,"recipient_account":null,"pix_txid":null,"cancel_type":null,"cancellation_reason":null,"prevent_pix":false,"reduction_amount":null,"instructions_mode":1,"import_id":null,"reduction_type":null,"reduction_percentage":null,"bank_billet_discharges":[],"bank_billet_remittances":[],"bank_billet_payments":[],"bank_billet_registrations":[{"id":904,"bank_billet_id":613550,"bank_billet_account_id":5324,"created_at":"2023-10-30T17:47:24-03:00","error_message":null,"failed_at":null,"fails_count":0,"registered_at":"2023-10-30T17:47:24-03:00","status":"1","updated_at":"2023-10-30T17:47:24-03:00","retry_blocked":false}],"bank_billet_split_accounts":[],"pix":[]}'
+  recorded_at: Tue, 31 Oct 2023 12:40:51 GMT
+recorded_with: VCR 6.2.0
