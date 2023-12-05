@@ -1,0 +1,13 @@
+require:
+  - rubocop-performance
+  - "test_prof/rubocop"
+  - rubocop-rspec
+  - rubocop-rake
+  - rubocop-packaging
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 2.7
+
+RSpec/MultipleExpectations:
+  Enabled: false
