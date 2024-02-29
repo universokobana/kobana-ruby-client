@@ -7,7 +7,7 @@ PATH
       faraday (~> 1.4)
       json (~> 2.5)
       lefthook (~> 0.7)
-      rack (~> 2.2)
+      rack (>= 2.2, < 4.0)
       rubocop
       vcr (~> 6.0)
       webmock (~> 3.13)
@@ -68,7 +68,7 @@ GEM
       racc
     public_suffix (5.0.3)
     racc (1.7.1)
-    rack (2.2.8)
+    rack (3.0.9.1)
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.8.2)

@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "faraday", "~> 1.4"
   spec.add_dependency "json", "~> 2.5"
   spec.add_dependency "lefthook", "~> 0.7"
-  spec.add_dependency "rack", "~> 2.2"
+  spec.add_dependency "rack", ">= 2.2", "< 4.0"
   spec.add_dependency "rubocop"
   spec.add_dependency "vcr", "~> 6.0"
   spec.add_dependency "webmock", "~> 3.13"
