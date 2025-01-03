@@ -10,7 +10,6 @@ group :development do
   gem "rubocop"
   gem "rubocop-packaging"
   gem "rubocop-performance"
-  gem "rubocop-rspec"
 end
 
 group :test do
