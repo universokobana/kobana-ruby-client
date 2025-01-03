@@ -2,12 +2,12 @@
 
 require "spec_helper"
 
-RSpec.describe KobanaRubyClient::Resources::Charge::BankBillet do
+RSpec.describe Kobana::Resources::Charge::BankBillet do
   let!(:api_key) { ENV.fetch("KOBANA_API_TOKEN", nil) }
   let(:bank_billet_attributes) { attributes_for(:bank_billet).deep_symbolize_keys }
 
   before do
-    KobanaRubyClient.configure do |config|
+    Kobana.configure do |config|
       config.api_token = ENV.fetch("KOBANA_API_TOKEN", nil)
       config.environment = :sandbox
       config.api_version = :v1

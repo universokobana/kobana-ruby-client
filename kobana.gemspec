@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "lib/kobana_ruby_client/version"
+require_relative "lib/kobana/version"
 
 Gem::Specification.new do |spec|
   spec.name = "kobana"
-  spec.version = KobanaRubyClient::VERSION
+  spec.version = Kobana::VERSION
   spec.authors = ["Kivanio Barbosa"]
   spec.email   = ["kivanio@gmail.com"]
   spec.summary = "Kobana API Client"
