@@ -26,6 +26,7 @@ module KobanaRubyClient
       @api_key = config.api_token
       @base_url = BASE_URI[config.service][config.environment]
       @custom_headers = config.custom_headers
+      @debug = config.debug
     end
 
     private
@@ -43,6 +44,7 @@ module KobanaRubyClient
         faraday.request :url_encoded
         faraday.adapter Faraday.default_adapter
         faraday.headers = headers
+        faraday.response :logger if @debug
       end
     end
 
