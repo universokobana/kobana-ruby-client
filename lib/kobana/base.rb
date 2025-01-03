@@ -3,7 +3,7 @@
 require "faraday"
 require "json"
 
-module KobanaRubyClient
+module Kobana
   class Base
     attr_reader :base_url, :custom_headers
 
@@ -21,7 +21,7 @@ module KobanaRubyClient
     }.freeze
 
     def initialize
-      config = KobanaRubyClient.configuration
+      config = Kobana.configuration
 
       @api_key = config.api_token
       @base_url = BASE_URI[config.api_version][config.environment]

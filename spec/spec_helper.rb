@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "kobana_ruby_client"
+require "kobana"
 require "vcr"
 require "factory_bot"
 

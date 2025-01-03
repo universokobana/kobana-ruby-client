@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in kobana_ruby_client.gemspec
+# Specify your gem's dependencies in kobana.gemspec
 gemspec
 
 group :development do
