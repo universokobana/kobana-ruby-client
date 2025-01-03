@@ -25,14 +25,14 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "dotenv"
-  spec.add_dependency "factory_bot", "~> 6.2"
-  spec.add_dependency "faraday", "~> 1.4"
-  spec.add_dependency "json", "~> 2.5"
-  spec.add_dependency "lefthook", "~> 0.7"
-  spec.add_dependency "rack", "~> 2.2"
+  spec.add_dependency "factory_bot"
+  spec.add_dependency "faraday", ">= 1.4", "< 3.0"
+  spec.add_dependency "json"
+  spec.add_dependency "lefthook"
+  spec.add_dependency "rack"
   spec.add_dependency "rubocop"
-  spec.add_dependency "vcr", "~> 6.0"
-  spec.add_dependency "webmock", "~> 3.13"
+  spec.add_dependency "vcr"
+  spec.add_dependency "webmock"
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
