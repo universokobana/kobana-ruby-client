@@ -4,6 +4,9 @@
 
 This Ruby gem provides a convenient method to interact with the Kobana APP, simplifying operations with charges and bank billets.
 
+This is BETA and can change anytimes.
+Use with caution.
+
 ### Prerequisites
 
 - Ruby version >= 2.7.0
@@ -49,10 +52,10 @@ To use this gem:
 
 ```ruby
 KobanaRubyClient.configure do |config|
-      config.api_token = 'YOUR_API_KEY'
-      config.environment = :sandbox # you can specify the environment as :development, :sandbox, or :production
-      config.service = :bank_billets #or :charges
-    end
+  config.api_token = 'YOUR_API_KEY'
+  config.environment = :sandbox # you can specify the environment as :development, :sandbox, or :production
+  config.service = :bank_billets #or :charges
+end
 ```
 
 #### **Charges**
