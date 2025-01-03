@@ -14,7 +14,7 @@ RSpec.describe KobanaRubyClient::Resources::Charge::Pix do
     end
   end
 
-  let!(:pix) { described_class.new }
+  let(:pix) { described_class.new }
 
   context "do not exist" do
     describe "#create", vcr: { cassette_name: "resources/charge/pix/create" } do

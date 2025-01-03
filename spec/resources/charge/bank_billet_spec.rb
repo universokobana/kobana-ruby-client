@@ -14,7 +14,7 @@ RSpec.describe KobanaRubyClient::Resources::Charge::BankBillet do
     end
   end
 
-  let!(:bank_billet) { described_class.new }
+  let(:bank_billet) { described_class.new }
 
   context "do not exist" do
     describe "#create", vcr: { cassette_name: "resources/charge/bank_billet/create" } do

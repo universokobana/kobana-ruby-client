@@ -1,7 +1,6 @@
 require:
   - rubocop-performance
   - 'test_prof/rubocop'
-  - rubocop-rspec
   - rubocop-packaging
 
 AllCops:
