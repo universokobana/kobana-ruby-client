@@ -54,7 +54,7 @@ To use this gem:
 KobanaRubyClient.configure do |config|
   config.api_token = 'YOUR_API_KEY'
   config.environment = :sandbox # you can specify the environment as :development, :sandbox, or :production
-  config.service = :bank_billets #or :charges
+  config.api_version = :bank_billets #or :charges
 end
 ```
 
