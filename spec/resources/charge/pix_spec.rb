@@ -11,7 +11,7 @@ RSpec.describe KobanaRubyClient::Resources::Charge::Pix do
       KobanaRubyClient.configure do |config|
         config.api_token = ENV["KOBANA_API_TOKEN"]
         config.environment = :sandbox
-        config.service = :charges
+        config.api_version = :v2
       end
 
       VCR.use_cassette("resources/charge/pix/create_for_methods") do

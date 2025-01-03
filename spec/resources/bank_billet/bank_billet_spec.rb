@@ -11,7 +11,7 @@ RSpec.describe KobanaRubyClient::Resources::BankBillet::BankBillet do
       KobanaRubyClient.configure do |config|
         config.api_token = ENV["KOBANA_API_TOKEN"]
         config.environment = :sandbox
-        config.service = :bank_billets
+        config.api_version = :v1
       end
 
       VCR.use_cassette("resources/bank_billet/bank_billet/create_for_methods") do

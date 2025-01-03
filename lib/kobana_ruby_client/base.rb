@@ -8,12 +8,12 @@ module KobanaRubyClient
     attr_reader :base_url, :custom_headers
 
     BASE_URI = {
-      charges: {
+      v2: {
         sandbox: "https://api-sandbox.kobana.com.br/v2",
         production: "https://api.kobana.com.br/v2",
         development: "http://localhost:5000/api/v2"
       },
-      bank_billets: {
+      v1: {
         sandbox: "https://api-sandbox.kobana.com.br/v1",
         production: "https://api.kobana.com.br/v1",
         development: "http://localhost:5000/api/v1"
@@ -24,7 +24,7 @@ module KobanaRubyClient
       config = KobanaRubyClient.configuration
 
       @api_key = config.api_token
-      @base_url = BASE_URI[config.service][config.environment]
+      @base_url = BASE_URI[config.api_version][config.environment]
       @custom_headers = config.custom_headers
       @debug = config.debug
     end
