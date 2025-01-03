@@ -7,6 +7,8 @@ This Ruby gem provides a convenient method to interact with the Kobana APP, simp
 This is BETA and can change anytimes.
 Use with caution.
 
+[![Gem Version](https://badge.fury.io/rb/kobana.svg)](https://badge.fury.io/rb/kobana)
+
 ### Prerequisites
 
 - Ruby version >= 3.2
