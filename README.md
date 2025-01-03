@@ -54,7 +54,7 @@ To use this gem:
 KobanaRubyClient.configure do |config|
   config.api_token = 'YOUR_API_KEY'
   config.environment = :sandbox # you can specify the environment as :development, :sandbox, or :production
-  config.api_version = :bank_billets #or :charges
+  config.api_version = :v1 #or :v2
 end
 ```
 
@@ -103,7 +103,7 @@ puts result
 
 #### **Bank Billets**
 
-##### Creating a Bank Billeт
+##### Creating a Bank Billet
 
 ```ruby
 bank_billet_data = { ... }
@@ -113,7 +113,7 @@ result = bank_billet.create(bank_billet_data)
 puts result
 ```
 
-##### Fetching a Bank Billeт
+##### Fetching a Bank Billet
 
 ```ruby
 bank_billet_id = 1  # Replace with your charge ID

@@ -2,7 +2,7 @@
 
 module KobanaRubyClient
   module Resources
-    module BankBillet
+    module Charge
       class BankBillet < Base
         include ResourceOperations
 
@@ -10,6 +10,12 @@ module KobanaRubyClient
 
         class << self
           attr_reader :resource_endpoint
+        end
+
+        def cancel(resource_id)
+          url = "#{base_url}/#{endpoint}/#{resource_id}/cancel"
+          response = connection.put(url)
+          { status: response.status, data: {} }
         end
       end
     end

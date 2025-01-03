@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :bank_billet, class: Hash do
     amount { 9.01 }
     description { "Despesas do contrato 0012" }
-    expire_at { "2024-01-01" }
+    expire_at { "2027-01-01" }
     customer_address { "Rua quinhentos" }
     customer_address_complement { "Sala 4" }
 

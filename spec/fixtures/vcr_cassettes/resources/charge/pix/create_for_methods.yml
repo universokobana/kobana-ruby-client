@@ -6,14 +6,14 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"amount":120.99,"payer":{"document_number":"779.467.060-81","name":"João
-        da Silva"},"pix_account_id":112,"expire_at":"2024-12-02T10:03:56-03:00","message":"string","additional_info":{"Chave":"Valor"}}'
+        da Silva"},"pix_account_id":101,"expire_at":"2027-12-02T10:03:56-03:00","message":"string","additional_info":{"Chave":"Valor"}}'
     headers:
       Authorization:
       - Bearer <KOBANA_API_TOKEN>
       Content-Type:
       - application/json
       User-Agent:
-      - Faraday v1.10.3
+      - Faraday v2.12.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -32,9 +32,9 @@ http_interactions:
       Server:
       - Cowboy
       Report-To:
-      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1698694631&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=U7AAbqjKzqNnGEZqNzZOggB4fZ732EZ4piDuJawGD6Q%3D"}]}'
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1735935241&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=pvG1SoeVO%2BQRrrlQqsjN1QRZN0hEOyAvJn9mWiJ1ktM%3D"}]}'
       Reporting-Endpoints:
-      - heroku-nel=https://nel.heroku.com/reports?ts=1698694631&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=U7AAbqjKzqNnGEZqNzZOggB4fZ732EZ4piDuJawGD6Q%3D
+      - heroku-nel=https://nel.heroku.com/reports?ts=1735935241&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=pvG1SoeVO%2BQRrrlQqsjN1QRZN0hEOyAvJn9mWiJ1ktM%3D
       Nel:
       - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
       X-Frame-Options:
@@ -58,30 +58,38 @@ http_interactions:
       Cross-Origin-Opener-Policy:
       - unsafe-none
       X-Ratelimit-Limit:
-      - '5000'
+      - '18000'
       X-Ratelimit-Remaining:
-      - '4995'
+      - '17996'
+      Ratelimit-Limit:
+      - '18000'
+      Ratelimit-Remaining:
+      - '17996'
       Etag:
-      - W/"8143994128f115ddf1e08ab99bac82ae"
+      - W/"3459d9401875c56b3f959882ed0206bf"
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Feature-Policy:
+      - camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; payment 'none';
+        fullscreen 'self'; geolocation 'self'
       Content-Security-Policy-Report-Only:
       - 'base-uri ''none''; default-src ''self'' https://app-sandbox.kobana.com.br
         https://boletosimples.com.br https://*.boletosimples.com.br https://kobana.com.br
         https://*.kobana.com.br; font-src ''self'' data: https://app-sandbox.kobana.com.br
         https://fonts.googleapis.com https://fonts.gstatic.com https://themes.googleusercontent.com
-        https://cdnjs.cloudflare.com https://fonts.intercomcdn.com; img-src ''self''
-        data: https://app-sandbox.kobana.com.br https://maps.googleapis.com https://boleto.test:5001
-        https://bole.to https://*.google-analytics.com https://*.googletagmanager.com
+        https://cdnjs.cloudflare.com https://fonts.intercomcdn.com https://cdn.bb.com.br;
+        img-src ''self'' data: https://app-sandbox.kobana.com.br https://maps.googleapis.com
+        https://boleto.test:5001 https://bole.to https://*.google-analytics.com https://*.googletagmanager.com
         https://ssl.gstatic.com https://www.gstatic.com https://*.g.doubleclick.net
         https://*.google.com https://*.google.com.br https://googleads.g.doubleclick.net
         https://www.facebook.com https://secure.gravatar.com https://albato.com https://zapier-images.imgix.net
         https://boletosimples-sandbox.s3.amazonaws.com https://kobana-sandbox.s3.amazonaws.com
         https://d3caatrp30sdc5.cloudfront.net; object-src ''none''; script-src ''self''
         ''unsafe-inline'' ''strict-dynamic'' https://app-sandbox.kobana.com.br https://cdn.zapier.com
-        https://albato.com https://widget.pluga.co ''nonce-''; style-src ''self''
-        ''unsafe-inline'' https://app-sandbox.kobana.com.br https://fonts.googleapis.com
-        https://tagmanager.google.com https://cdn.zapier.com https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
+        https://albato.com https://widget.pluga.co https://assets.bounties4.com https://*.datadoghq-browser-agent.com
+        ''nonce-''; style-src ''self'' ''unsafe-inline'' https://app-sandbox.kobana.com.br
+        https://fonts.googleapis.com https://tagmanager.google.com https://cdn.zapier.com
+        https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
         https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css;
         child-src ''self'' https://www.googleadservices.com https://docs.google.com
         https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.br
@@ -92,13 +100,15 @@ http_interactions:
         https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com
         https://*.g.doubleclick.net https://*.google.com https://*.google.com.br https://*.amplitude.com
         https://*.mixpanel.com https://*.mxpnl.com https://*.intercom.io wss://*.intercom.io
-        https://albato.com https://zapier.com https://api.zapier.com; report-uri https://boletosimples.report-uri.com/r/d/csp/reportOnly'
+        https://albato.com https://zapier.com https://api.zapier.com https://service.bounties4.com
+        https://*.lr-ingest.io/ https://browser-intake-datadoghq.com https://*.datadoghq.com;
+        report-uri https://boletosimples.report-uri.com/r/d/csp/reportOnly'
       X-Request-Id:
-      - 7f9ac414-4e30-4ed9-a631-7d0085cc9b27
+      - 895be6ff-05d7-415a-8e87-79951d20c178
       X-Runtime:
-      - '0.295471'
+      - '0.159174'
       Date:
-      - Mon, 30 Oct 2023 19:37:11 GMT
+      - Fri, 03 Jan 2025 20:14:01 GMT
       X-Rack-Cache:
       - invalidate, pass
       Strict-Transport-Security:
@@ -108,18 +118,18 @@ http_interactions:
       Vary:
       - Origin,Accept-Encoding
       Via:
-      - 1.1 vegur, 1.1 80677c288b4024a45c671874b4fa625a.cloudfront.net (CloudFront)
+      - 1.1 vegur, 1.1 3b6959d147738fd4bde35db4104f4052.cloudfront.net (CloudFront)
       X-Cache:
       - Miss from cloudfront
       X-Amz-Cf-Pop:
       - MIA3-C1
       X-Amz-Cf-Id:
-      - GV2_-9wkMfEQN2q0-_8gbtTHlvU7KUF1T1QBegNOuPmHeF8k9GOp0g==
+      - 5-tRTsRzeZaY6kUd-27s9g0d3sKhIWqJ4_OuPnqx8kKChOh9wTbvqw==
     body:
       encoding: UTF-8
-      string: '{"status":201,"data":{"id":3291,"txid":null,"status":"opened","registration_status":"pending","pix_account_id":112,"created_at":"2023-10-30T16:37:11-03:00","expire_at":"2024-12-02T10:03:56-03:00","canceled_at":null,"registered_at":null,"amount":120.99,"additional_info":{"Chave":"Valor"},"command_ids":[54661],"message":"string","message_payer":null,"qrcode":{"emv":null,"png":null},"payer":{"document_number":"779.467.060-81","name":"João
-        da Silva"},"url":"https://sandbox.kdoc.to/1/TrDPBbWYF1UL","formats":{"default":{"html":"https://sandbox.kdoc.to/1/TrDPBbWYF1UL","png":"https://sandbox.kdoc.to/1/TrDPBbWYF1UL.png","pdf":"https://sandbox.kdoc.to/1/TrDPBbWYF1UL.pdf"},"qrcode":{"html":"https://sandbox.kdoc.to/1/TrDPBbWYF1UL/qrcode","png":"https://sandbox.kdoc.to/1/TrDPBbWYF1UL/qrcode.png","pdf":"https://sandbox.kdoc.to/1/TrDPBbWYF1UL/qrcode.pdf"}},"paid_amount":null,"paid_at":null,"end_to_end_id":null,"beneficiary":{"name":"francielle","address":{"state":"PR","number":"78","street":"Rua
-        Iracema Gonsalves Carvalho","zip_code":"81490526","city_name":"Curitiba","complement":"","neighborhood":"Campo
-        de Santana"},"document_number":"24455535000115"},"custom_data":null,"ignore_whatsapp":false}}'
-  recorded_at: Mon, 30 Oct 2023 19:37:11 GMT
-recorded_with: VCR 6.2.0
+      string: '{"status":201,"data":{"id":9792,"txid":null,"status":"opened","registration_status":"pending","pix_account_id":101,"created_at":"2025-01-03T17:14:01-03:00","updated_at":"2025-01-03T17:14:01-03:00","expire_at":"2027-12-02T10:03:56-03:00","canceled_at":null,"registered_at":null,"amount":120.99,"additional_info":{"Chave":"Valor"},"command_ids":[132955],"message":"string","message_payer":null,"qrcode":{"emv":null,"png":null},"payer":{"document_number":"779.467.060-81","name":"João
+        da Silva"},"url":"https://sandbox.kdoc.to/1/LXUSysOdVasY","formats":{"default":{"html":"https://sandbox.kdoc.to/1/LXUSysOdVasY","png":"https://sandbox.kdoc.to/1/LXUSysOdVasY.png","pdf":"https://sandbox.kdoc.to/1/LXUSysOdVasY.pdf"},"qrcode":{"html":"https://sandbox.kdoc.to/1/LXUSysOdVasY/qrcode","png":"https://sandbox.kdoc.to/1/LXUSysOdVasY/qrcode.png","pdf":"https://sandbox.kdoc.to/1/LXUSysOdVasY/qrcode.pdf"}},"paid_amount":null,"paid_at":null,"end_to_end_id":null,"beneficiary":{"name":"Jota
+        ka SA","document_number":"19.657.429/0001-84","addresses":[{"street":"Rua
+        Quatro","number":"9","complement":"","neighborhood":"CPA III","state":"MT","city_name":"Cuiabá","zip_code":"78058330"}],"document_type":"CNPJ","kind":"juridical","classification":"person"},"custom_data":null,"ignore_whatsapp":false,"interest":{"type":null,"amount":null,"percentage":null},"discounts":{"type":null,"discount_first":{"amount":null,"percentage":null,"days":null},"discount_second":{"amount":null,"percentage":null,"days":null},"discount_third":{"amount":null,"percentage":null,"days":null}},"reduction":{"type":"none","amount":null,"percentage":null},"fine":{"type":null,"amount":null,"percentage":null},"created_via_api":true,"financial_provider_external_id":null}}'
+  recorded_at: Fri, 03 Jan 2025 20:14:01 GMT
+recorded_with: VCR 6.3.1

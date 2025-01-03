@@ -1,12 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://api-sandbox.kobana.com.br/v2/charge/pix
+    method: put
+    uri: https://api-sandbox.kobana.com.br/v1/bank_billets/682178/cancel
     body:
       encoding: UTF-8
-      string: '{"amount":120.99,"payer":{"document_number":"779.467.060-81","name":"João
-        da Silva"},"pix_account_id":101,"expire_at":"2027-12-02T10:03:56-03:00","message":"string","additional_info":{"Chave":"Valor"}}'
+      string: ''
     headers:
       Authorization:
       - Bearer <KOBANA_API_TOKEN>
@@ -14,27 +13,27 @@ http_interactions:
       - application/json
       User-Agent:
       - Faraday v2.12.2
+      Content-Length:
+      - '0'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
   response:
     status:
-      code: 201
-      message: Created
+      code: 204
+      message: No Content
     headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '0'
       Connection:
       - keep-alive
       Server:
       - Cowboy
       Report-To:
-      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1735935219&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=hDBVvUax%2FeiBiQUrM4MD2tQPYNJorGiiV%2F6zcVTgcqE%3D"}]}'
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1735932480&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=sf1NQkNEoliH9laJNz4g6H6iJvARyEEEIwHNi0e6b9A%3D"}]}'
       Reporting-Endpoints:
-      - heroku-nel=https://nel.heroku.com/reports?ts=1735935219&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=hDBVvUax%2FeiBiQUrM4MD2tQPYNJorGiiV%2F6zcVTgcqE%3D
+      - heroku-nel=https://nel.heroku.com/reports?ts=1735932480&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=sf1NQkNEoliH9laJNz4g6H6iJvARyEEEIwHNi0e6b9A%3D
       Nel:
       - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
       X-Frame-Options:
@@ -60,15 +59,13 @@ http_interactions:
       X-Ratelimit-Limit:
       - '18000'
       X-Ratelimit-Remaining:
-      - '17997'
+      - '17996'
       Ratelimit-Limit:
       - '18000'
       Ratelimit-Remaining:
-      - '17997'
-      Etag:
-      - W/"8c944c305c52a5749ed254924e85fefd"
+      - '17996'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       Feature-Policy:
       - camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; payment 'none';
         fullscreen 'self'; geolocation 'self'
@@ -104,32 +101,29 @@ http_interactions:
         https://*.lr-ingest.io/ https://browser-intake-datadoghq.com https://*.datadoghq.com;
         report-uri https://boletosimples.report-uri.com/r/d/csp/reportOnly'
       X-Request-Id:
-      - 5de94147-32e2-4363-adb9-83fc8484e01d
+      - 725fde33-05cd-43be-a6f8-533003f73dde
       X-Runtime:
-      - '0.085836'
+      - '0.173062'
       Date:
-      - Fri, 03 Jan 2025 20:13:39 GMT
+      - Fri, 03 Jan 2025 19:28:00 GMT
       X-Rack-Cache:
       - invalidate, pass
       Strict-Transport-Security:
       - max-age=31556952; includeSubDomains; preload
+      Vary:
+      - Origin
       X-Rack-Cors:
       - miss; no-origin
-      Vary:
-      - Origin,Accept-Encoding
       Via:
-      - 1.1 vegur, 1.1 b6efbf009f233af7a7aa7da68e6e2848.cloudfront.net (CloudFront)
+      - 1.1 vegur, 1.1 b8848f7d85efd91eade9002255af21c0.cloudfront.net (CloudFront)
       X-Cache:
       - Miss from cloudfront
       X-Amz-Cf-Pop:
       - MIA3-C1
       X-Amz-Cf-Id:
-      - GSQJOOZ9y0rPfSzP6-ZTBuFbb3PRvkUcKSaWcYS_eu-Zp2bs-j_jNw==
+      - u5tPBeiGuaeF-oqZzQTia1hLGBmZnQbLpRIg20FTSeOX6Ny6FdjwmA==
     body:
       encoding: UTF-8
-      string: '{"status":201,"data":{"id":9791,"txid":null,"status":"opened","registration_status":"pending","pix_account_id":101,"created_at":"2025-01-03T17:13:39-03:00","updated_at":"2025-01-03T17:13:39-03:00","expire_at":"2027-12-02T10:03:56-03:00","canceled_at":null,"registered_at":null,"amount":120.99,"additional_info":{"Chave":"Valor"},"command_ids":[132954],"message":"string","message_payer":null,"qrcode":{"emv":null,"png":null},"payer":{"document_number":"779.467.060-81","name":"João
-        da Silva"},"url":"https://sandbox.kdoc.to/1/GSe3YnIpz7x6","formats":{"default":{"html":"https://sandbox.kdoc.to/1/GSe3YnIpz7x6","png":"https://sandbox.kdoc.to/1/GSe3YnIpz7x6.png","pdf":"https://sandbox.kdoc.to/1/GSe3YnIpz7x6.pdf"},"qrcode":{"html":"https://sandbox.kdoc.to/1/GSe3YnIpz7x6/qrcode","png":"https://sandbox.kdoc.to/1/GSe3YnIpz7x6/qrcode.png","pdf":"https://sandbox.kdoc.to/1/GSe3YnIpz7x6/qrcode.pdf"}},"paid_amount":null,"paid_at":null,"end_to_end_id":null,"beneficiary":{"name":"Jota
-        ka SA","document_number":"19.657.429/0001-84","addresses":[{"street":"Rua
-        Quatro","number":"9","complement":"","neighborhood":"CPA III","state":"MT","city_name":"Cuiabá","zip_code":"78058330"}],"document_type":"CNPJ","kind":"juridical","classification":"person"},"custom_data":null,"ignore_whatsapp":false,"interest":{"type":null,"amount":null,"percentage":null},"discounts":{"type":null,"discount_first":{"amount":null,"percentage":null,"days":null},"discount_second":{"amount":null,"percentage":null,"days":null},"discount_third":{"amount":null,"percentage":null,"days":null}},"reduction":{"type":"none","amount":null,"percentage":null},"fine":{"type":null,"amount":null,"percentage":null},"created_via_api":true,"financial_provider_external_id":null}}'
-  recorded_at: Fri, 03 Jan 2025 20:13:39 GMT
+      string: ''
+  recorded_at: Fri, 03 Jan 2025 19:28:00 GMT
 recorded_with: VCR 6.3.1
