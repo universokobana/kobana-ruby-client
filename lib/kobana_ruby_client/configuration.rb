@@ -2,7 +2,7 @@
 
 module KobanaRubyClient
   class Configuration
-    attr_accessor :api_token, :environment, :custom_headers, :service
+    attr_accessor :api_token, :environment, :custom_headers, :service, :debug
 
     def initialize
       @custom_headers = {}
