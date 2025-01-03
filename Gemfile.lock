@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    kobana_ruby_client (0.1.0)
+    kobana (0.1.0)
       faraday (>= 1.4, < 3.0)
       json
 
@@ -119,7 +119,7 @@ PLATFORMS
 DEPENDENCIES
   code-scanning-rubocop
   factory_bot
-  kobana_ruby_client!
+  kobana!
   lefthook
   pry
   rake

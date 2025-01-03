@@ -3,12 +3,12 @@
 require_relative "lib/kobana_ruby_client/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "kobana_ruby_client"
+  spec.name = "kobana"
   spec.version = KobanaRubyClient::VERSION
-  spec.authors = ["kivanio@kobana.com.br"]
-
-  spec.summary = "Kobana Ruby Client"
-  spec.description = "."
+  spec.authors = ["Kivanio Barbosa"]
+  spec.email   = ["kivanio@gmail.com"]
+  spec.summary = "Kobana API Client"
+  spec.description = "Kobana API Client"
   spec.homepage = "https://www.kobana.com.br/"
   spec.required_ruby_version = ">= 3.2.6"
 
