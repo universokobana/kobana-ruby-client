@@ -9,7 +9,7 @@ Use with caution.
 
 ### Prerequisites
 
-- Ruby version >= 2.7.0
+- Ruby version >= 3.2
 - Access to the Kobana API and a valid API key
 
 ### Installation
