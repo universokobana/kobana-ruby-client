@@ -12,7 +12,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - Faraday v1.10.3
+      - Faraday v2.12.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -30,6 +30,12 @@ http_interactions:
       - keep-alive
       Server:
       - Cowboy
+      Report-To:
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1735935242&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=7kTzzhaMhNTiGfH%2B6LgTfXEjtqLTfaqLeZacSr2FZAs%3D"}]}'
+      Reporting-Endpoints:
+      - heroku-nel=https://nel.heroku.com/reports?ts=1735935242&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=7kTzzhaMhNTiGfH%2B6LgTfXEjtqLTfaqLeZacSr2FZAs%3D
+      Nel:
+      - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
       X-Frame-Options:
       - DENY
       X-Xss-Protection:
@@ -51,28 +57,36 @@ http_interactions:
       Cross-Origin-Opener-Policy:
       - unsafe-none
       X-Ratelimit-Limit:
-      - '60'
+      - '100'
       X-Ratelimit-Remaining:
-      - '56'
+      - '97'
+      Ratelimit-Limit:
+      - '100'
+      Ratelimit-Remaining:
+      - '97'
       Etag:
-      - W/"4f748b312560a63879846bcb83d87e7d"
+      - W/"c48479f89e6eba57874269204ce54240"
+      Feature-Policy:
+      - camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; payment 'none';
+        fullscreen 'self'; geolocation 'self'
       Content-Security-Policy-Report-Only:
       - 'base-uri ''none''; default-src ''self'' https://app-sandbox.kobana.com.br
         https://boletosimples.com.br https://*.boletosimples.com.br https://kobana.com.br
         https://*.kobana.com.br; font-src ''self'' data: https://app-sandbox.kobana.com.br
         https://fonts.googleapis.com https://fonts.gstatic.com https://themes.googleusercontent.com
-        https://cdnjs.cloudflare.com https://fonts.intercomcdn.com; img-src ''self''
-        data: https://app-sandbox.kobana.com.br https://maps.googleapis.com https://boleto.test:5001
-        https://bole.to https://*.google-analytics.com https://*.googletagmanager.com
+        https://cdnjs.cloudflare.com https://fonts.intercomcdn.com https://cdn.bb.com.br;
+        img-src ''self'' data: https://app-sandbox.kobana.com.br https://maps.googleapis.com
+        https://boleto.test:5001 https://bole.to https://*.google-analytics.com https://*.googletagmanager.com
         https://ssl.gstatic.com https://www.gstatic.com https://*.g.doubleclick.net
         https://*.google.com https://*.google.com.br https://googleads.g.doubleclick.net
         https://www.facebook.com https://secure.gravatar.com https://albato.com https://zapier-images.imgix.net
         https://boletosimples-sandbox.s3.amazonaws.com https://kobana-sandbox.s3.amazonaws.com
         https://d3caatrp30sdc5.cloudfront.net; object-src ''none''; script-src ''self''
         ''unsafe-inline'' ''strict-dynamic'' https://app-sandbox.kobana.com.br https://cdn.zapier.com
-        https://albato.com https://widget.pluga.co ''nonce-''; style-src ''self''
-        ''unsafe-inline'' https://app-sandbox.kobana.com.br https://fonts.googleapis.com
-        https://tagmanager.google.com https://cdn.zapier.com https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
+        https://albato.com https://widget.pluga.co https://assets.bounties4.com https://*.datadoghq-browser-agent.com
+        ''nonce-''; style-src ''self'' ''unsafe-inline'' https://app-sandbox.kobana.com.br
+        https://fonts.googleapis.com https://tagmanager.google.com https://cdn.zapier.com
+        https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
         https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css;
         child-src ''self'' https://www.googleadservices.com https://docs.google.com
         https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.br
@@ -83,13 +97,15 @@ http_interactions:
         https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com
         https://*.g.doubleclick.net https://*.google.com https://*.google.com.br https://*.amplitude.com
         https://*.mixpanel.com https://*.mxpnl.com https://*.intercom.io wss://*.intercom.io
-        https://albato.com https://zapier.com https://api.zapier.com; report-uri https://boletosimples.report-uri.com/r/d/csp/reportOnly'
+        https://albato.com https://zapier.com https://api.zapier.com https://service.bounties4.com
+        https://*.lr-ingest.io/ https://browser-intake-datadoghq.com https://*.datadoghq.com;
+        report-uri https://boletosimples.report-uri.com/r/d/csp/reportOnly'
       X-Request-Id:
-      - 9c563e90-43a9-4fa0-8284-ea1ee4da2f0b
+      - f17a32f7-2eca-4f53-b049-58b07873fa28
       X-Runtime:
-      - '0.024441'
+      - '0.061607'
       Date:
-      - Mon, 30 Oct 2023 19:37:13 GMT
+      - Fri, 03 Jan 2025 20:14:02 GMT
       Cache-Control:
       - must-revalidate, private, max-age=0
       X-Rack-Cache:
@@ -101,27 +117,29 @@ http_interactions:
       Vary:
       - Origin,Accept-Encoding
       Via:
-      - 1.1 vegur, 1.1 3f72a8b28c744ea2f627e9f8a8ac8282.cloudfront.net (CloudFront)
+      - 1.1 vegur, 1.1 3b6959d147738fd4bde35db4104f4052.cloudfront.net (CloudFront)
       X-Cache:
       - Miss from cloudfront
       X-Amz-Cf-Pop:
       - MIA3-C1
       X-Amz-Cf-Id:
-      - d1LLWkbOJFsql6mijAlBIhtGQ2jzNuXUwKiKwcRSmzB-l8Os3gpTeA==
+      - 161zmWo-gpAFt_So7ohAQtHQ9swNfWgDmFmHMxx5yPbVqpEl33FZvQ==
     body:
       encoding: UTF-8
-      string: '{"status":200,"data":[{"id":3292,"txid":"BS000000000000000000000000000003292","status":"opened","registration_status":"confirmed","pix_account_id":112,"created_at":"2023-10-30T16:37:12-03:00","expire_at":"2024-12-02T10:03:56-03:00","canceled_at":null,"registered_at":"2023-10-30T16:37:12-03:00","amount":120.99,"additional_info":{"Chave":"Valor"},"command_ids":[54662],"message":"string","message_payer":null,"qrcode":{"emv":"00020101021226930014BR.GOV.BCB.PIX2571api.kobana.com.br/pix/example_bank/142958b7-bd82-4bb6-90db-6e39aaa524915204000053039865802BR5916BANCO
-        EXAMPLO SA6014RIO DE JANEIRO62070503***6304ED27","png":"iVBORw0KGgoAAAANSUhEUgAAAQkAAAEJAQAAAACvE+/JAAAEZUlEQVR4nO1Z\nS47qOhCtIpGSWbIDeyMk9LKQSBMaJJbVGDYS7yCeORLpuqd8x+/Ro24/6WWA\n+HhwVByfj72RV8+4oZfP/0v+aYlj5tq1J1tLiy/uRJ53eKF7wC+b3OAy/nDq\n56NLn3loyUTXXgwwH0VuucGlwJZcu9pQzBcCvgtAzwcfiVaufxjL95cY6sLA\nXMwHoo5OFi+/huX1kquS4WBImC1JW0h1+zUs/7qkkQncPfzdZZXMxdR8hCeB\nB4XEH8byegnGyVCBoW9uyog77S24u1q8O7FqRF5weyhD3LbXKbw3pdL24jHx\nylHX4Jev3OA6Lql+zOnTgRZuDyZil5nQt1CGe25wqRkJgx3UJoqpumGweAcq\ns68w8ezghoWbU3ucEmPDEZsu3kPpoQz7Pj/dZSkJIOG6mK7Tf98sbzJCKJox\nqUVecCk8DUCe+sieLb66+Hrbrj2/k3IjO7hUOPlsD9AD2ISsvAC47ryUeH4a\ny8slHeRLLWGqTqZyXIAHCGgwjA8QWJ04L7jCQx/7ee3rDrSQrzBS5WYYWkdr\nH7Pj7mM+TrwJ5wl7q6Slh5pF8MAvhTyJ8xMyJMYoBoZGYfQ1y+ghuU/CLium\n/JQBluDBg4XD26zJnEdN5qtFUF85v3gO3TUavKhazcLwipOtvkALcfNV8ttq\nHSJYjUwzLZguQXLT9+DzDtxYdrnBde3VYbr7PoVy9TKP74jiL2D5xpLeLxau\ndnXNDePEfpNpeQ+lqbW//TCWbyzBJI04PxI9wGK0Ca2WMrA4CJlG9rzgstoY\nNfAKGAarculzMAu4m2HE0b0FpLCJjlIJJhWK69TcmtGEXW5wNYJBaCEPDxkh\nZe2esen2dum5hCBnBxetF5mhmOC/F6gtCNycEX/lCxU5Q5uAl2ne5ahRMqXc\nqDWI1J3zaxPoajrJ81RBHkxMNa333NMDH5dNbnAdn0UPGnWSewsepCMGdOId\nXvIjQ4dKhjaxt9AIZLMOjEjtGLvsxEt2AfLhB8uwMQqpUDoGD7bQteoD4ptf\nV5P2CgEAd2tpj453zdPX94ZtGFCM84s4ei6qAoBJIilQh14R3oO46gM28cNY\nvrHkIYONWh9CgV2mICkdNiBAlhkKmfAT1dcMNh3oRsKI4Ronpn7OMZHxfJ1i\nqmlblVwVijTi6tM8ST5yg7s1z1QoKRmGmpzepxwl8nzJMjPg399yhRHTxdA9\nPD1qGvwXQjHll8jUwRDGhh4bDA1Nc86y0V5xD2zzO9/twYOUd5c3VAq0ib2t\nVphcZHlmaBPp1hJ1mMHdQePCVVAuStImTPldpaRbS54LkRUE1h6vByTpHH2k\n/Fwt3VqmcSIzeLSJCzWfPBIEufRVdlcp6XG8WP3j9RYF2fENtNVDXpPhdPVh\nOf+9/AMFSthEGPSS9eDza8Lp1hKPj1tTask8Tki5F41llTTZkSHdWuoDtV36\n+PAlaQOCdcCT8ys/6dZSTxcqASOqrwZq6/Au2XF+t5b/qSV/AHgSZ5Bzr5Dc\nAAAAAElFTkSuQmCC\n"},"payer":{"name":"João
-        da Silva","document_number":"779.467.060-81"},"url":"https://sandbox.kdoc.to/1/Gx709sNH0Zt8","formats":{"default":{"html":"https://sandbox.kdoc.to/1/Gx709sNH0Zt8","png":"https://sandbox.kdoc.to/1/Gx709sNH0Zt8.png","pdf":"https://sandbox.kdoc.to/1/Gx709sNH0Zt8.pdf"},"qrcode":{"html":"https://sandbox.kdoc.to/1/Gx709sNH0Zt8/qrcode","png":"https://sandbox.kdoc.to/1/Gx709sNH0Zt8/qrcode.png","pdf":"https://sandbox.kdoc.to/1/Gx709sNH0Zt8/qrcode.pdf"}},"paid_amount":null,"paid_at":null,"end_to_end_id":null,"beneficiary":{"name":"francielle","address":{"state":"PR","number":"78","street":"Rua
-        Iracema Gonsalves Carvalho","zip_code":"81490526","city_name":"Curitiba","complement":"","neighborhood":"Campo
-        de Santana"},"document_number":"24455535000115"},"custom_data":null,"ignore_whatsapp":false},{"id":3291,"txid":"BS000000000000000000000000000003291","status":"opened","registration_status":"confirmed","pix_account_id":112,"created_at":"2023-10-30T16:37:11-03:00","expire_at":"2024-12-02T10:03:56-03:00","canceled_at":null,"registered_at":"2023-10-30T16:37:11-03:00","amount":120.99,"additional_info":{"Chave":"Valor"},"command_ids":[54661],"message":"string","message_payer":null,"qrcode":{"emv":"00020101021226930014BR.GOV.BCB.PIX2571api.kobana.com.br/pix/example_bank/e7ee0a2c-a53f-4c44-90ba-f6ffec46793e5204000053039865802BR5916BANCO
-        EXAMPLO SA6014RIO DE JANEIRO62070503***63046500","png":"iVBORw0KGgoAAAANSUhEUgAAAQkAAAEJAQAAAACvE+/JAAAEXElEQVR4nO1Z\nS67qOhDsJkjJzNmBs5GDYVlXgpNwg3SWBc7ZSLyDeJZIgb7V5k2fDiOun/Qy\nCPl4UDjl6qr2Rn46ug39ePw/5N+GeGauPHdh2dOdcbsNla/xaoh4s8kNLuOD\n65U1t9jZimXVuzvznlqRW25wKXJDPF3C7G3p4ycezkRfMivm6s1YXh1iVks7\nujflDSduwxpw+5ew/DxkF0+N/lrQdUvl1Z4U+N/B8sMQIyP5+hKqIYovZSIL\nHpAFDwplRGZwBRMK7h4tTndHAx2p+g4dlIHOut4yg+ugDPPO9B7zXHowtvD0\nUX/5uDd488gNrq9VAMDdZQ8hW7gmS9+YZ5DhEvLTXQiAxUyWIneALf1EKBgG\nLH7ExeU3u0PsgrnW9wZzeqHlk84NQOJqQ1/+zVheGAKyjvEQIA+4kvJsexWK\no50FapYfGXg6u2pIPI0rgcArVXjGKmnvxvLCEF+3I77+0YK73MxQswbz3I68\nj/0473KDuwNP1YIFkLUdzdVuVXL/UeA3Y3lhCMvCmMSzS1V3URbPFDuSmzm5\n/CzOoAWXp9ZXT5B4yM52tDjuqPydG1wFCd3t7OxQj9WjN7rKgpGpyJC7epjf\nWtVcXYi5I0hESO4IKlPIjwxktiG6+pI+PC2F9GKurH7ScLNkp7sfdTGaBywO\nH2DKZwFwqNlRI8XbsbwwZKBfqra/mlJ1t+KwMH8aTPEDBSM/7jKKV8oQYCxM\nr84u/gKmGJbd5sfdXdxaaCziME+FpolWynv9q1kOz0ycGVzo7tMkILhvrd6G\ndNIcn6Huil2fyyqe4HdTTSaX3I2BIH/mBheLKbBjGc1NXS7Xdwf0wCzgc37c\nTYF3Z7Z2KUJnEd2Q2gY1Y1qYlRZ5wf0OpwZ2ITGi9eW5Tp7h5DJti3zYLoiH\nXUCtYAd7vjgEtmKsUNVchrobyhEZpxghuahliQx6oDDj2XuxvDDE26XR9l0T\nN7H0kC9Eig9emrJHfctvqXHox0p4TSqAqmZ7qQZoGO1MP2aou6i64G5nRQQu\nsggnXtrpEvAXcuTuzqzEJ3UK2kKfsfJoHpDalr1ZM/S7PF205XgMuNNu3gSP\njnJM4G4/vhnLC0NA22C82rID5AtZDfIgWtpUd5GFMoM7IDTEPX1J+dRdbZAc\nRKC7dG7y6+9qC+TZgXS63/MB8S0fwBw1DufHXYJthBU/BukD8HFA/SWUNqPc\nzU/ItFkDM1aMvNfS5uuvMXlgKFxqP2UG10mnWfLs5GEWbTFAI1ArPLGsNj/u\npl1LNb26dZl2JJp5hyChzXTKb28i7VoOiL5JFFK7d9lotESaCNo3ywtu2rVU\nZZg1E+veBJU3c2rKK6deZG5w9YB8BfjdVQ2kunXt7x6mdswvq6WDpZeoZDVX\nTm3/u3u+yG92dddS+yC46gXAkd61Kwl5gAxnJ2Rp11LdjTnzNkQGLebviXTR\nnZv8Zve5a4lL0Ha1aU9YnbmIn9oMdy3/U0P+ABWFcJAEgJkwAAAAAElFTkSu\nQmCC\n"},"payer":{"name":"João
-        da Silva","document_number":"779.467.060-81"},"url":"https://sandbox.kdoc.to/1/TrDPBbWYF1UL","formats":{"default":{"html":"https://sandbox.kdoc.to/1/TrDPBbWYF1UL","png":"https://sandbox.kdoc.to/1/TrDPBbWYF1UL.png","pdf":"https://sandbox.kdoc.to/1/TrDPBbWYF1UL.pdf"},"qrcode":{"html":"https://sandbox.kdoc.to/1/TrDPBbWYF1UL/qrcode","png":"https://sandbox.kdoc.to/1/TrDPBbWYF1UL/qrcode.png","pdf":"https://sandbox.kdoc.to/1/TrDPBbWYF1UL/qrcode.pdf"}},"paid_amount":null,"paid_at":null,"end_to_end_id":null,"beneficiary":{"name":"francielle","address":{"state":"PR","number":"78","street":"Rua
-        Iracema Gonsalves Carvalho","zip_code":"81490526","city_name":"Curitiba","complement":"","neighborhood":"Campo
-        de Santana"},"document_number":"24455535000115"},"custom_data":null,"ignore_whatsapp":false},{"id":3290,"txid":"BS000000000000000000000000000003290","status":"opened","registration_status":"confirmed","pix_account_id":112,"created_at":"2023-10-30T16:36:34-03:00","expire_at":"2023-10-30T23:59:00-03:00","canceled_at":null,"registered_at":"2023-10-30T16:36:35-03:00","amount":20.0,"additional_info":{"chave":"valor"},"command_ids":[54660],"message":"teste
-        01","message_payer":null,"qrcode":{"emv":"00020101021226930014BR.GOV.BCB.PIX2571api.kobana.com.br/pix/example_bank/b226859c-21ba-4e94-ad6a-bdfa8c6437da5204000053039865802BR5916BANCO
-        EXAMPLO SA6014RIO DE JANEIRO62070503***6304D5A4","png":"iVBORw0KGgoAAAANSUhEUgAAAQkAAAEJAQAAAACvE+/JAAAEZklEQVR4nO1a\nQY7qOhDsJpGSXXID5yKD4VhIMIQBiWMNhovEN4h3thTwq7Zm+//Mal5/6XuB\nmOBFqVOurmrPKn+3xhV9u/7f8k9bHDO3jkdqc48HdyLPG3zQPeCXlTa4jBdO\nNh+4/M2Hnkx0/cUA8zHnmza4FHhAic85VPOFgO8C0PPeR6Int7+M5adbOubm\nFg7M1bwnWtNpwMdfwvKjLaZd095QZh4o91Vubn8Py79t6fKESlZTdGb0TZ6r\nqfsIC4EHVY6/jOX7LSgn08OnoWU/GijDbgB3nwO+nVg0QhdcC2WIb/3VpUN/\nEdpePCreOFp3+OWlDa7jmtp7t1DkvFDifm8iTpkJtocy3LXBJYJosT8MaBPV\n1NxQWHyDPLBvJgGuC66dn7aVcoKxEOEjhCzeQ+2hDDurT3dzfxVROE8x9xcv\nb9+kbR7Rjrux9GRdcB/zjvm99DIwAo+A+a1/WjyrprTRBnct8gqk4hn2Jj85\n2Si0IHE8Cj0DVneTjw+6Oq7Ag9b15JsPELhVd9QEGrgLIZMmnF9hpMbNqPga\nDSOq4+4aJwrNq8qtMzUlCzXDoSOfqlwTCKwMLmhrsxOyUhh9y3n0eLYQhAw+\n50MbXDgZB1N+4mjnnY3IFeLMn4MYdR822uBCXk2+hcW02Uhh59PQvLqapOKG\n1B018TTwDI0LWzACklueHyfegBu/jOUHW8Qxhk1ItphyKbYXtSCxuqSwCUsI\n5vniO7x9lDPkKb2H2kB8n1afPRd3kz+lnJJ/kSakHSMYZ5cXL/1DF9yHtDEk\noJy2PrF4Gll7k8BdhRZHzlYsaWdNJU2QAQWuU3eDZOgTsoevPUsvA77FIE3s\nGIduNyTLGj1D4e6LTsCHrAbG1qY749DlFyKyPkeWTXbtA/hgZ9DfxOVGiUHl\nZ31JGEhNODBMgkNwjyWmWdADLCk5XhncN1AA1b1OkIc0gAdlxLAnBAm045s2\nuPewEHg6lhGDmN7KwapD3GRGFtQZSJnmtfBkNpb5rmPw4I3PE7zj3uurrp2P\nE+I6SSc+Ot50izgeHsLh67zpgpv7k0WvReqF0MIxhvMU3kN2zQfaxC9j+cGW\nh198YHMYspwyAUll2AADWSsUMuqa3GUZQsuKBDOGXHFiGe8Mv43l+y1ywEqW\nhDOXwTmqW0rcfJrFZ3VZDXHdczWLzympci73KccssxGF4ae8fQrNhDpfjMiw\nR0y7yL1V5fQNnaSDdU8cNV5JQhOfk1YS0+6BB33zXQt7Hh9zNYlnIKSJ3dA8\nYSBlOm30tYlya7lGJ06b7iB24ZrhHkTDkCb0ZbVyawllkOFjI3dAO0aEL3P0\nkTQeNR6AGeXcQhmQJi7UfSIdIyLXCucMZd1DGuTFyy0KvOMWtC1Cpk8Zvlbl\nyuUfKFCjTYSDJM29wiRcbi2zwbF6M7X8b8BxSu9fg6ipU3evVm4t2cOMPXyy\nEcFYevLeROnJaaUNbrm1XHeL2AWY8hfSe+PyeSrtWN+t5X9qyx9LvGyQlgsI\nnAAAAABJRU5ErkJggg==\n"},"payer":{"name":"fran","document_number":"484809920001-28"},"url":"https://sandbox.kdoc.to/1/rcBa_MdZmKfS","formats":{"default":{"html":"https://sandbox.kdoc.to/1/rcBa_MdZmKfS","png":"https://sandbox.kdoc.to/1/rcBa_MdZmKfS.png","pdf":"https://sandbox.kdoc.to/1/rcBa_MdZmKfS.pdf"},"qrcode":{"html":"https://sandbox.kdoc.to/1/rcBa_MdZmKfS/qrcode","png":"https://sandbox.kdoc.to/1/rcBa_MdZmKfS/qrcode.png","pdf":"https://sandbox.kdoc.to/1/rcBa_MdZmKfS/qrcode.pdf"}},"paid_amount":null,"paid_at":null,"end_to_end_id":null,"beneficiary":{"name":"francielle","address":{"state":"PR","number":"78","street":"Rua
-        Iracema Gonsalves Carvalho","zip_code":"81490526","city_name":"Curitiba","complement":"","neighborhood":"Campo
-        de Santana"},"document_number":"24455535000115"},"custom_data":null,"ignore_whatsapp":false}],"pagination":{"prev_url":"/api/v2/charge/pix?page=\u0026per_page=50","next_url":"/api/v2/charge/pix?page=\u0026per_page=50","page":1}}'
-  recorded_at: Mon, 30 Oct 2023 19:37:13 GMT
-recorded_with: VCR 6.2.0
+      string: '{"status":200,"data":[{"id":9792,"txid":null,"status":"opened","registration_status":"pending","pix_account_id":101,"created_at":"2025-01-03T17:14:01-03:00","updated_at":"2025-01-03T17:14:01-03:00","expire_at":"2027-12-02T10:03:56-03:00","canceled_at":null,"registered_at":null,"amount":120.99,"additional_info":{"Chave":"Valor"},"command_ids":[132955],"message":"string","message_payer":null,"qrcode":{"emv":null,"png":null},"payer":{"name":"João
+        da Silva","document_number":"779.467.060-81"},"url":"https://sandbox.kdoc.to/1/LXUSysOdVasY","formats":{"default":{"html":"https://sandbox.kdoc.to/1/LXUSysOdVasY","png":"https://sandbox.kdoc.to/1/LXUSysOdVasY.png","pdf":"https://sandbox.kdoc.to/1/LXUSysOdVasY.pdf"},"qrcode":{"html":"https://sandbox.kdoc.to/1/LXUSysOdVasY/qrcode","png":"https://sandbox.kdoc.to/1/LXUSysOdVasY/qrcode.png","pdf":"https://sandbox.kdoc.to/1/LXUSysOdVasY/qrcode.pdf"}},"paid_amount":null,"paid_at":null,"end_to_end_id":null,"beneficiary":{"kind":"juridical","name":"Jota
+        ka SA","addresses":[{"state":"MT","number":"9","street":"Rua Quatro","zip_code":"78058330","city_name":"Cuiabá","complement":"","neighborhood":"CPA
+        III"}],"document_type":"CNPJ","classification":"person","document_number":"19.657.429/0001-84"},"custom_data":null,"ignore_whatsapp":false,"interest":{"type":null,"amount":null,"percentage":null},"discounts":{"type":null,"discount_first":{"amount":null,"percentage":null,"days":null},"discount_second":{"amount":null,"percentage":null,"days":null},"discount_third":{"amount":null,"percentage":null,"days":null}},"reduction":{"type":"none","amount":null,"percentage":null},"fine":{"type":null,"amount":null,"percentage":null},"created_via_api":true,"financial_provider_external_id":null},{"id":9791,"txid":null,"status":"opened","registration_status":"pending","pix_account_id":101,"created_at":"2025-01-03T17:13:39-03:00","updated_at":"2025-01-03T17:13:39-03:00","expire_at":"2027-12-02T10:03:56-03:00","canceled_at":null,"registered_at":null,"amount":120.99,"additional_info":{"Chave":"Valor"},"command_ids":[132954],"message":"string","message_payer":null,"qrcode":{"emv":null,"png":null},"payer":{"name":"João
+        da Silva","document_number":"779.467.060-81"},"url":"https://sandbox.kdoc.to/1/GSe3YnIpz7x6","formats":{"default":{"html":"https://sandbox.kdoc.to/1/GSe3YnIpz7x6","png":"https://sandbox.kdoc.to/1/GSe3YnIpz7x6.png","pdf":"https://sandbox.kdoc.to/1/GSe3YnIpz7x6.pdf"},"qrcode":{"html":"https://sandbox.kdoc.to/1/GSe3YnIpz7x6/qrcode","png":"https://sandbox.kdoc.to/1/GSe3YnIpz7x6/qrcode.png","pdf":"https://sandbox.kdoc.to/1/GSe3YnIpz7x6/qrcode.pdf"}},"paid_amount":null,"paid_at":null,"end_to_end_id":null,"beneficiary":{"kind":"juridical","name":"Jota
+        ka SA","addresses":[{"state":"MT","number":"9","street":"Rua Quatro","zip_code":"78058330","city_name":"Cuiabá","complement":"","neighborhood":"CPA
+        III"}],"document_type":"CNPJ","classification":"person","document_number":"19.657.429/0001-84"},"custom_data":null,"ignore_whatsapp":false,"interest":{"type":null,"amount":null,"percentage":null},"discounts":{"type":null,"discount_first":{"amount":null,"percentage":null,"days":null},"discount_second":{"amount":null,"percentage":null,"days":null},"discount_third":{"amount":null,"percentage":null,"days":null}},"reduction":{"type":"none","amount":null,"percentage":null},"fine":{"type":null,"amount":null,"percentage":null},"created_via_api":true,"financial_provider_external_id":null},{"id":9790,"txid":"BS000000000000000000000000000009790","status":"opened","registration_status":"confirmed","pix_account_id":101,"created_at":"2025-01-03T16:41:55-03:00","updated_at":"2025-01-03T16:45:22-03:00","expire_at":"2027-12-02T10:03:56-03:00","canceled_at":null,"registered_at":"2025-01-03T16:44:10-03:00","amount":120.99,"additional_info":{"Chave":"Valor"},"command_ids":[132953],"message":"string","message_payer":null,"qrcode":{"emv":"00020101021226930014BR.GOV.BCB.PIX2571api.kobana.com.br/pix/example_bank/15a3ca3e-2551-4b28-a1b7-f5e1d84938de5204000053039865802BR5916BANCO
+        EXAMPLO SA6014RIO DE JANEIRO62070503***63042744","png":"iVBORw0KGgoAAAANSUhEUgAAAQkAAAEJAQAAAACvE+/JAAAEZklEQVR4nO1a\nQW7rOAwlYwP2Tr6BfJFG7bECJI1bB+ixGiUXsW5g7WQgDudRne0gnU2+Bhgt\nDDvR4oWmHt8js5FHa9jQw/X/ln/a4pm59d2JWunwwYUo8CsudIn4ZlMaXMYL\nJzevjKePng8d2QT0FpiPIufS4FLkHiEeZanmagK+ExHP+5CIVm6fjOVfbJFz\nPDBX855oizjj8uewPNii4QS+vSVh7km6SprzH8LyYIuRibbm0ONuCI0gI8xn\nvBHyoJL0ZCyPtyCcDBYYbKsXMMOuR7DXHncfrBxRFlwHZkgvdpzSVk8ZLgFx\nbjwijm/upcH1XFN7DXVYnB1o4W5vAZxsdB2Y4VIaXJ7BZc4iWRlp25wRWBQM\n0AOHZorvpcElJKvx80mf1j4eQWTpEusAZlhdebz70n1NieKhT9Idvb59u7zJ\ngHJsbs/G8pst5hYQxKM0Y+AeH51C+9Ktjt+pmqi43M2BhVzgXCZk5cUlzWdS\nxVOeZrhKMyGSe337jecKeQCBRqH5RAK329Lg6kre1hYpgOje40CNn1HQtrRz\nqbhkAGnZ1qmwuYIeFtdVEw4dhaWSmrg4InOhJvngZkIWD6FlGQIo90YgMtDw\nZ2lwxS49grhyrmXJ86DKfM1CPcTX0uASffkENrMtgDOK3Eff3A0i7meyTXGa\ngeLiWoZmiG+gL5y3/Plx4lfkxvJaHFwzevnoVJlDlIPNkLsgMlKpa5+N5fGW\ni+bp2/w1qX2AdowyLe8RvOY7iN7nYvnFFghcK9/dDhodd3ATai3lwOLlRuZc\nGlwUAhgdU1vQ14HzI9beLshdKlAzYP2IhC1lEww2A1tM5mwGKs+rqQlm14EK\nNmYAlWlaSLfrF8clagbhWsO59s3ancC2UlszzhTkDotcXnSdjN4I8MUNVT6r\nXGgGSF1d5bkJlbVwO+PU+DDYlG2aQ3rQFY/4CYXBzbz7iqrbZtc2/rQY9qQF\nTQ1bYXA5jALezaRwIuicyms/h/SU2aU4ASnaTnDz6qL2GbTd6+iFR9WOK5cX\n3a0ZJTLOVsvz0SMt4DQvhvt4+Pu8lQUXUjy0Tk2wUhptcejiexTffIKGn4zl\nN1tQf5NH7qYrTpmCpNxsgICE+XktDS6EF5s7QOaGbiKIseRm+Hg3l6jIkLES\nK5QJdcKgBwWuIW6+7S1IcV4N9iHkoU/SdnTu8MGmHUVljy1PM+jbF4E8z3d0\niYipdvjwEypfnrXUCtYKQ4BtoGmgzU60bGDTdK7Wl9ffdQJZezE/moHgJnaq\nzXZ9YrnZ8spEnloiReF6dZ5yoS9Rc0HqhEuU5zq15PmkzcdmgnDYMSx87qMP\nz8bymy06tVRm4DcZAtzEicw3D6RFLpQncfLS8VRuLCQ1bMsb0jb7t/Lk+c+C\nUsjDP6RAjTIRD312muU1TPPUUgVuerG1/jfgOCEFTirLGjHF9cjy1BIvPsDt\nLC5dQ03qgGzSmrwUZ37y1FKdgyrfqbkbsK2XccrluLyp5X9qy1+AAGCQ9e00\n6gAAAABJRU5ErkJggg==\n"},"payer":{"name":"João
+        da Silva","document_number":"779.467.060-81"},"url":"https://sandbox.kdoc.to/1/GiZvpphuopgO","formats":{"default":{"html":"https://sandbox.kdoc.to/1/GiZvpphuopgO","png":"https://sandbox.kdoc.to/1/GiZvpphuopgO.png","pdf":"https://sandbox.kdoc.to/1/GiZvpphuopgO.pdf"},"qrcode":{"html":"https://sandbox.kdoc.to/1/GiZvpphuopgO/qrcode","png":"https://sandbox.kdoc.to/1/GiZvpphuopgO/qrcode.png","pdf":"https://sandbox.kdoc.to/1/GiZvpphuopgO/qrcode.pdf"}},"paid_amount":null,"paid_at":null,"end_to_end_id":null,"beneficiary":{"kind":"juridical","name":"Jota
+        ka SA","addresses":[{"state":"MT","number":"9","street":"Rua Quatro","zip_code":"78058330","city_name":"Cuiabá","complement":"","neighborhood":"CPA
+        III"}],"document_type":"CNPJ","classification":"person","document_number":"19.657.429/0001-84"},"custom_data":null,"ignore_whatsapp":false,"interest":{"type":null,"amount":null,"percentage":null},"discounts":{"type":null,"discount_first":{"amount":null,"percentage":null,"days":null},"discount_second":{"amount":null,"percentage":null,"days":null},"discount_third":{"amount":null,"percentage":null,"days":null}},"reduction":{"type":"none","amount":null,"percentage":null},"fine":{"type":null,"amount":null,"percentage":null},"created_via_api":true,"financial_provider_external_id":null},{"id":9789,"txid":"BS000000000000000000000000000009789","status":"opened","registration_status":"confirmed","pix_account_id":101,"created_at":"2025-01-03T16:41:54-03:00","updated_at":"2025-01-03T16:45:22-03:00","expire_at":"2027-12-02T10:03:56-03:00","canceled_at":null,"registered_at":"2025-01-03T16:44:10-03:00","amount":120.99,"additional_info":{"Chave":"Valor"},"command_ids":[132952],"message":"string","message_payer":null,"qrcode":{"emv":"00020101021226930014BR.GOV.BCB.PIX2571api.kobana.com.br/pix/example_bank/c13f3db2-cd76-4c4e-9d16-dc792f9f48a25204000053039865802BR5916BANCO
+        EXAMPLO SA6014RIO DE JANEIRO62070503***6304C644","png":"iVBORw0KGgoAAAANSUhEUgAAAQkAAAEJAQAAAACvE+/JAAAEcUlEQVR4nO1Z\nQY6rSAy1AxLsihsUF+lUcqyWQkOaSDlWArkIdQNqB1KI55meWY46K36NNLVo\ndcCLJ/P8/FzeyW+n2dGv5/+QfwvpmDnv6eLnAy2Mn6nPuwKv+oA3u9jgMj44\nUaicuYdWcpanPl+YD1SL3GODS4FLEtsQdbbx4QsPJ6KrTIo53xjLmyE8AuSe\nzmV2p6Xk2j897f8QljdC/oFmQdeUsputFPifwfJLiJGBuqLueBeky2QkCx6Q\nBQ8SZURkcAUJJfaVy7pxcdTTifKHb6AMdNZ6iwyugzJMHwWEzBXXDrRIOvrA\nf+Fg8OYVG9yugABoqaHeTnbmgiw9kGeQ4eLj012gorAzTysLCg2MIDQMAxa/\nQmOhFpHB3VM95AKcyGkyzF9QM1DgQvOOTn5jLO+EoE2geX06AD/Z7GxbFYqT\nncRyab6jg4vD6GU+p9DQfAhPApXPrJKGn7HB7c2Tpsd4leCQzonHpVwJwgdY\nCIqPuyETcyvIQ2jrwdxsqpL7twJvjOWNEIhWCY2d0SbQHOajl2FSWsjdoH9s\ni+WNkL3S1o0XygUuVx0jsYNBmx03lMVXaqax8k11Nzn0Y/XopVaZN4KuoX4y\nLrhSrGXFJZowWbMgxWFH1wG6m3Tx+d0+pCQAafHh62FOpEXlcVUi7VzGRwY3\nnjwf8fX56Bs/SXEhqNlJR4rNsbwR0pu1q9VDBs9Q5uxn5i+DFL/CM0Lu7iFa\narwoJKgt0uxCcpHiDqZyYyxvhPRqxqCxmC+LRKeJWrKl+CznozxtfKUmkFeg\nwgxBIbVI7NrfIGT3EKPuOh2CKbQDZoeZ0TVABn2mgkzx+V2lKGtzyJW2mCYW\nN6llR9pTio8MBO4iiReMPL6xGN3aDlrcDlCzuovPQOrXz9VFhgM6cXYuVs9Q\nuR9a9LHB7eHHtSV48zLsYM/Vm2EMysnMZXzc5fHamRdMAoQMvWwlg57gimTY\nGMs7IbC6gWESwi5kHeQLI8UHz2XW+qqMr9S0OcAs4uvzSOhqthVQuSHam3aI\nT3fZpxaO8dPJYqtyTnzFcz1ePIZ5dvFxd0+fnO9NSvMuwJF9YJCYdGqbD+bp\n4yNDb1IrN5Yuu6+3eWMiIHBK4G47bIzljZB9kIGPUpUwvckgihmmd1l5EOE9\ng17WYFa7Svaju3qRdxSB7tLZbYzlrZC6Q1lV66xG9AHxzV7AHJyVYXMsv4fA\nNoZanl6+4RhzvZjGs9mZ1qcRGsj1urwPmUB3E73Nuw7qFODIivX6KTK4ThqS\nW/HJ4QsmAdPEyWuv6Eg3bPHtJtatpXYwjOvNupGAsfm5i8QQd4gN7rq1fIwX\nO+9QYLqb0BsRjJaYJnx8BnLdWhKmiUkXFLqboOxuqjK7YZrYGsubIZAv9btP\nNZCrD6vROsZ6iM8zrIfRcIOSFQSG2u71fnc98ZFBt5a9zmpkWgGVMb3r/e66\n1s6jy+66tZQCw8+ZUx8YtJgeI2nRncv4srtuLZ1gHNY/605YnblIN9YRbi3/\nUyF/Ab8DeJAUdtnhAAAAAElFTkSuQmCC\n"},"payer":{"name":"João
+        da Silva","document_number":"779.467.060-81"},"url":"https://sandbox.kdoc.to/1/2OI1OlDmTxYl","formats":{"default":{"html":"https://sandbox.kdoc.to/1/2OI1OlDmTxYl","png":"https://sandbox.kdoc.to/1/2OI1OlDmTxYl.png","pdf":"https://sandbox.kdoc.to/1/2OI1OlDmTxYl.pdf"},"qrcode":{"html":"https://sandbox.kdoc.to/1/2OI1OlDmTxYl/qrcode","png":"https://sandbox.kdoc.to/1/2OI1OlDmTxYl/qrcode.png","pdf":"https://sandbox.kdoc.to/1/2OI1OlDmTxYl/qrcode.pdf"}},"paid_amount":null,"paid_at":null,"end_to_end_id":null,"beneficiary":{"kind":"juridical","name":"Jota
+        ka SA","addresses":[{"state":"MT","number":"9","street":"Rua Quatro","zip_code":"78058330","city_name":"Cuiabá","complement":"","neighborhood":"CPA
+        III"}],"document_type":"CNPJ","classification":"person","document_number":"19.657.429/0001-84"},"custom_data":null,"ignore_whatsapp":false,"interest":{"type":null,"amount":null,"percentage":null},"discounts":{"type":null,"discount_first":{"amount":null,"percentage":null,"days":null},"discount_second":{"amount":null,"percentage":null,"days":null},"discount_third":{"amount":null,"percentage":null,"days":null}},"reduction":{"type":"none","amount":null,"percentage":null},"fine":{"type":null,"amount":null,"percentage":null},"created_via_api":true,"financial_provider_external_id":null}],"pagination":{"prev_url":"/api/v2/charge/pix?page=\u0026per_page=50","next_url":"/api/v2/charge/pix?page=\u0026per_page=50","page":1}}'
+  recorded_at: Fri, 03 Jan 2025 20:14:02 GMT
+recorded_with: VCR 6.3.1

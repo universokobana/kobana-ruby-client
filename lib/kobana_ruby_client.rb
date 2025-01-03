@@ -26,10 +26,7 @@ module KobanaRubyClient
     autoload :ResourceOperations, "kobana_ruby_client/resources/resource_operations"
     module Charge
       autoload :Pix, "kobana_ruby_client/resources/charge/pix"
-    end
-
-    module BankBillet
-      autoload :BankBillet, "kobana_ruby_client/resources/bank_billet/bank_billet"
+      autoload :BankBillet, "kobana_ruby_client/resources/charge/bank_billet"
     end
   end
 end

@@ -49,7 +49,13 @@ module KobanaRubyClient
     end
 
     def parse_response(response)
-      JSON.parse(response.body)
+      body_parsed = JSON.parse(response.body, symbolize_names: true)
+
+      if body_parsed.is_a?(Array) || !body_parsed.key?(:data)
+        { status: response.status, data: body_parsed }
+      else
+        body_parsed
+      end
     end
   end
 end
