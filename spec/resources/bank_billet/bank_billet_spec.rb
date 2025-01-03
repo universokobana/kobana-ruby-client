@@ -3,13 +3,13 @@
 require "spec_helper"
 
 RSpec.describe KobanaRubyClient::Resources::BankBillet::BankBillet do
-  let!(:api_key) { ENV["KOBANA_API_TOKEN"] }
+  let!(:api_key) { ENV.fetch("KOBANA_API_TOKEN", nil) }
   let(:bank_billet_attributes) { attributes_for(:bank_billet) }
 
   describe "methods" do
     before do
       KobanaRubyClient.configure do |config|
-        config.api_token = ENV["KOBANA_API_TOKEN"]
+        config.api_token = ENV.fetch("KOBANA_API_TOKEN", nil)
         config.environment = :sandbox
         config.api_version = :v1
       end

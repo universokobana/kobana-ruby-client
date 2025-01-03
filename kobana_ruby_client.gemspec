@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.summary = "kobana ruby client"
   spec.description = "."
   spec.homepage = "https://www.kobana.com.br/"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.required_ruby_version = ">= 3.2.6"
 
   spec.files = Dir.chdir(__dir__) do
     `git ls-files -z`.split("\x0").reject do |f|
@@ -32,4 +32,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rubocop"
   spec.add_dependency "vcr"
   spec.add_dependency "webmock"
+  spec.metadata["rubygems_mfa_required"] = "true"
 end
