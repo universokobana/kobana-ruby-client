@@ -1,13 +1,12 @@
 # frozen_string_literal: true
 
 require "kobana_ruby_client"
-require "webmock/rspec"
 require "vcr"
 require "factory_bot"
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
-  config.hook_into :webmock
+  config.hook_into :faraday
   config.configure_rspec_metadata!
 
   config.before_record do |interaction|

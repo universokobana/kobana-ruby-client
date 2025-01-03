@@ -2,9 +2,7 @@
 
 require "faraday"
 require "json"
-require "dotenv"
 require "kobana_ruby_client/configuration"
-Dotenv.load
 
 module KobanaRubyClient
   class << self
