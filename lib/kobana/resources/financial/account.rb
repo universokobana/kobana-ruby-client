@@ -11,7 +11,7 @@ module Kobana
         class << self
           attr_reader :resource_endpoint
         end
-      end 
+      end
     end
   end
 end

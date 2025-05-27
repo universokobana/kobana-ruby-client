@@ -56,8 +56,8 @@ RSpec.describe Kobana::Resources::Charge::Pix do
 
       it "returns the list of commands/charge/pix" do
         expect(subject[:data]).not_to be_empty
-        expect(subject[:data].first[:operation]).to eq('update')
-        expect(subject[:data].first[:status]).to eq('pending')
+        expect(subject[:data].first[:operation]).to eq("update")
+        expect(subject[:data].first[:status]).to eq("pending")
       end
     end
 

@@ -65,8 +65,8 @@ RSpec.describe Kobana::Resources::Financial::Account do
 
       it "returns the list of commands/accounts" do
         expect(subject[:data]).not_to be_empty
-        expect(subject[:data].first[:operation]).to eq('statement_sync')
-        expect(subject[:data].first[:status]).to eq('pending')
+        expect(subject[:data].first[:operation]).to eq("statement_sync")
+        expect(subject[:data].first[:status]).to eq("pending")
       end
     end
 

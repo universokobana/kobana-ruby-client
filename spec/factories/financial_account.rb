@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :financial_account, class: Hash do
     uid { "0196f5e5-dd65-7322-9f36-c3979af436b7" }
@@ -14,4 +16,3 @@ FactoryBot.define do
     initialize_with { attributes }
   end
 end
-
