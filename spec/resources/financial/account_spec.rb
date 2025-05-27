@@ -4,7 +4,7 @@ require "spec_helper"
 require "pry"
 
 RSpec.describe Kobana::Resources::Financial::Account do
-  let!(:api_key) { ENV.fetch("KOBANA_API_TOKEN", "qrGhmFpdolCi6zJMWJcGog7Owo8H5k7ELOV3BMdrRJs") }
+  let!(:api_key) { ENV.fetch("KOBANA_API_TOKEN", nil) }
   let(:financial_account_attributes) { attributes_for(:financial_account).deep_symbolize_keys }
 
   before do

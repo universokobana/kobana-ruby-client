@@ -10,7 +10,7 @@ http_interactions:
         CC: 81519387-3"}'
     headers:
       Authorization:
-      - Bearer qrGhmFpdolCi6zJMWJcGog7Owo8H5k7ELOV3BMdrRJs
+      - Bearer <KOBANA_API_TOKEN>
       Content-Type:
       - application/json
       User-Agent:
