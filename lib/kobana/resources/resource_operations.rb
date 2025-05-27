@@ -21,6 +21,18 @@ module Kobana
         parse_response(response)
       end
 
+      def list_command(resource_id, params = {})
+        url = "#{base_url}/#{endpoint}/#{resource_id}/commands"
+        response = connection.get(url, params)
+        parse_response(response)
+      end
+
+      def find_command(resource_id, command_id)
+        url = "#{base_url}/#{endpoint}/#{resource_id}/commands/#{command_id}"
+        response = connection.get(url)
+        parse_response(response)
+      end
+
       private
 
       def endpoint

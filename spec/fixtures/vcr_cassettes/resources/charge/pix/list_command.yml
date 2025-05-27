@@ -1,0 +1,119 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api-sandbox.kobana.com.br/v2/charge/pix//commands
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - 'Bearer '
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.12.2
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - Cowboy
+      report-to:
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1748357052&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=p4rRXAioetrfrDt7n0%2F75E5ofK0mTD2Nv%2B2vqU2atYU%3D"}]}'
+      reporting-endpoints:
+      - heroku-nel=https://nel.heroku.com/reports?ts=1748357052&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=p4rRXAioetrfrDt7n0%2F75E5ofK0mTD2Nv%2B2vqU2atYU%3D
+      nel:
+      - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
+      x-frame-options:
+      - DENY
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      expect-ct:
+      - max-age=0, report-uri="https://boletosimples.report-uri.com/r/d/ct/reportOnly"
+      cross-origin-resource-policy:
+      - cross-origin
+      cross-origin-embedder-policy:
+      - unsafe-none
+      cross-origin-opener-policy:
+      - unsafe-none
+      feature-policy:
+      - camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; payment 'none';
+        fullscreen 'self'; geolocation 'self'
+      content-security-policy-report-only:
+      - 'base-uri ''none''; default-src ''self'' https://app-sandbox.kobana.com.br
+        https://boletosimples.com.br https://*.boletosimples.com.br https://kobana.com.br
+        https://*.kobana.com.br; font-src ''self'' data: https://app-sandbox.kobana.com.br
+        https://fonts.googleapis.com https://fonts.gstatic.com https://themes.googleusercontent.com
+        https://cdnjs.cloudflare.com https://fonts.intercomcdn.com https://cdn.bb.com.br;
+        img-src ''self'' data: https://app-sandbox.kobana.com.br https://maps.googleapis.com
+        https://boleto.test:5001 https://bole.to https://*.google-analytics.com https://*.googletagmanager.com
+        https://ssl.gstatic.com https://www.gstatic.com https://*.g.doubleclick.net
+        https://*.google.com https://*.google.com.br https://googleads.g.doubleclick.net
+        https://www.facebook.com https://secure.gravatar.com https://albato.com https://zapier-images.imgix.net
+        https://boletosimples-sandbox.s3.amazonaws.com https://kobana-sandbox.s3.amazonaws.com
+        https://d3caatrp30sdc5.cloudfront.net; object-src ''none''; script-src ''self''
+        ''unsafe-inline'' ''strict-dynamic'' https://app-sandbox.kobana.com.br https://cdn.zapier.com
+        https://albato.com https://widget.pluga.co https://*.datadoghq-browser-agent.com
+        ''nonce-Hjny7f/3cv7Eg+eOuKGJyA==''; style-src ''self'' ''unsafe-inline'' https://app-sandbox.kobana.com.br
+        https://fonts.googleapis.com https://tagmanager.google.com https://cdn.zapier.com
+        https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
+        https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css;
+        child-src ''self'' https://www.googleadservices.com https://docs.google.com
+        https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.br
+        https://app.popupdomination.com https://bid.g.doubleclick.net https://widget.pluga.co
+        https://www.googletagmanager.com https://www.facebook.com https://www.youtube.com
+        https://www.recaptcha.net; connect-src ''self'' https://boletosimples.com.br
+        https://*.boletosimples.com.br https://kobana.com.br https://*.kobana.com.br
+        https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com
+        https://*.g.doubleclick.net https://*.google.com https://*.google.com.br https://*.amplitude.com
+        https://*.mixpanel.com https://*.mxpnl.com https://*.intercom.io wss://*.intercom.io
+        https://albato.com https://zapier.com https://api.zapier.com https://*.lr-ingest.io/
+        https://browser-intake-datadoghq.com https://*.datadoghq.com https://recaptchaenterprise.googleapis.com
+        https://www.recaptcha.net'
+      x-request-id:
+      - 915d7fae-3bd5-451d-b42c-ab2df8f702d5
+      x-runtime:
+      - '0.006522'
+      date:
+      - Tue, 27 May 2025 14:44:12 GMT
+      cache-control:
+      - no-cache, private
+      x-rack-cache:
+      - miss
+      strict-transport-security:
+      - max-age=31556952; includeSubDomains; preload
+      x-rack-cors:
+      - miss; no-origin
+      content-encoding:
+      - gzip
+      via:
+      - 1.1 vegur, 1.1 b6efbf009f233af7a7aa7da68e6e2848.cloudfront.net (CloudFront)
+      vary:
+      - Accept-Encoding
+      x-cache:
+      - Error from cloudfront
+      x-amz-cf-pop:
+      - MIA3-C1
+      x-amz-cf-id:
+      - Vz0Dl9e8fPIhBNYcSPH9ccl73njhaU61KZrw1TKXjIkyRpEpexFQLw==
+    body:
+      encoding: UTF-8
+      string: '{"status": 200,"data": [{"id": 6,"status": "pending","operation": "update","params": {"amount": 100,"expire_at": "2025-06-06T01:33:21+00:00"},"payload": null,"created_at": "2025-05-27T01:33:21+00:00","updated_at": "2025-05-27T01:33:21+00:00","message": null,"error_message": null,"warning_message": null,"pix": {"id": 59,"uid": "01970f5f-6ce6-7e39-8b51-90ba616ca06c","txid": null,"status": "opened","registration_status": "pending","pix_account_id": 79,"created_at": "2025-05-27T01:33:21+00:00","updated_at": "2025-05-27T01:33:21+00:00","expire_at": "2025-05-30T00:00:00+00:00","canceled_at": null,"registered_at": null,"amount": 25,"additional_info": {},"command_ids": [6],"message": "MyText","message_payer": null,"qrcode": {"emv": null,"png": null},"payer": {"name": "José da Silva","document_number": "39988107226"},"url": "http://dev.kdoc.to:5001/1/oOa7B1xaFoEN","formats": {"default": {"html": "http://dev.kdoc.to:5001/1/oOa7B1xaFoEN","png": "http://dev.kdoc.to:5001/1/oOa7B1xaFoEN.png","pdf": "http://dev.kdoc.to:5001/1/oOa7B1xaFoEN.pdf"},"qrcode": {"html": "http://dev.kdoc.to:5001/1/oOa7B1xaFoEN/qrcode","png": "http://dev.kdoc.to:5001/1/oOa7B1xaFoEN/qrcode.png","pdf": "http://dev.kdoc.to:5001/1/oOa7B1xaFoEN/qrcode.pdf"}},"paid_amount": null,"paid_at": null,"end_to_end_id": null,"beneficiary": {},"custom_data": null,"ignore_whatsapp": false,"interest": {"type": null,"amount": null,"percentage": null},"discounts": {"type": null,"discount_first": {"amount": null,"percentage": null,"days": null},"discount_second": {"amount": null,"percentage": null,"days": null},"discount_third": {"amount": null,"percentage": null,"days": null}},"reduction": {"type": "none","amount": null,"percentage": null},"fine": {"type": null,"amount": null,"percentage": null},"created_via_api": false,"financial_provider_external_id": null,"tags": [],"tag_list": null}}],"pagination": {"prev_url": "/v2/charge/pix/59/commands?page=&per_page=50","next_url": "/v2/charge/pix/59/commands?page=&per_page=50","page": 1}}'
+  recorded_at: Tue, 27 May 2025 14:44:12 GMT
+recorded_with: VCR 6.3.1

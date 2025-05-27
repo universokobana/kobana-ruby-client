@@ -1,0 +1,131 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api-sandbox.kobana.com.br/v2/financial/accounts/019711df-38ad-7c89-9611-4ba61ce08b54
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer qrGhmFpdolCi6zJMWJcGog7Owo8H5k7ELOV3BMdrRJs
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.12.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - Cowboy
+      report-to:
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1748351532&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=ZHW9YMXRfC8sUD%2FKN5Bf%2FzPuIdGmh4Z1ZXw7hw5Ea20%3D"}]}'
+      reporting-endpoints:
+      - heroku-nel=https://nel.heroku.com/reports?ts=1748351532&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=ZHW9YMXRfC8sUD%2FKN5Bf%2FzPuIdGmh4Z1ZXw7hw5Ea20%3D
+      nel:
+      - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
+      x-frame-options:
+      - DENY
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      expect-ct:
+      - max-age=0, report-uri="https://boletosimples.report-uri.com/r/d/ct/reportOnly"
+      cross-origin-resource-policy:
+      - cross-origin
+      cross-origin-embedder-policy:
+      - unsafe-none
+      cross-origin-opener-policy:
+      - unsafe-none
+      x-ratelimit-limit:
+      - '60'
+      x-ratelimit-remaining:
+      - '58'
+      ratelimit-limit:
+      - '60'
+      ratelimit-remaining:
+      - '58'
+      etag:
+      - W/"25e63c8795f704390a75f47d575d3fb3"
+      feature-policy:
+      - camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; payment 'none';
+        fullscreen 'self'; geolocation 'self'
+      content-security-policy-report-only:
+      - 'base-uri ''none''; default-src ''self'' https://app-sandbox.kobana.com.br
+        https://boletosimples.com.br https://*.boletosimples.com.br https://kobana.com.br
+        https://*.kobana.com.br; font-src ''self'' data: https://app-sandbox.kobana.com.br
+        https://fonts.googleapis.com https://fonts.gstatic.com https://themes.googleusercontent.com
+        https://cdnjs.cloudflare.com https://fonts.intercomcdn.com https://cdn.bb.com.br;
+        img-src ''self'' data: https://app-sandbox.kobana.com.br https://maps.googleapis.com
+        https://boleto.test:5001 https://bole.to https://*.google-analytics.com https://*.googletagmanager.com
+        https://ssl.gstatic.com https://www.gstatic.com https://*.g.doubleclick.net
+        https://*.google.com https://*.google.com.br https://googleads.g.doubleclick.net
+        https://www.facebook.com https://secure.gravatar.com https://albato.com https://zapier-images.imgix.net
+        https://boletosimples-sandbox.s3.amazonaws.com https://kobana-sandbox.s3.amazonaws.com
+        https://d3caatrp30sdc5.cloudfront.net; object-src ''none''; script-src ''self''
+        ''unsafe-inline'' ''strict-dynamic'' https://app-sandbox.kobana.com.br https://cdn.zapier.com
+        https://albato.com https://widget.pluga.co https://*.datadoghq-browser-agent.com
+        ''nonce-OuzF2hYXyaN3g+HAcnxCRQ==''; style-src ''self'' ''unsafe-inline'' https://app-sandbox.kobana.com.br
+        https://fonts.googleapis.com https://tagmanager.google.com https://cdn.zapier.com
+        https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
+        https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css;
+        child-src ''self'' https://www.googleadservices.com https://docs.google.com
+        https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.br
+        https://app.popupdomination.com https://bid.g.doubleclick.net https://widget.pluga.co
+        https://www.googletagmanager.com https://www.facebook.com https://www.youtube.com
+        https://www.recaptcha.net; connect-src ''self'' https://boletosimples.com.br
+        https://*.boletosimples.com.br https://kobana.com.br https://*.kobana.com.br
+        https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com
+        https://*.g.doubleclick.net https://*.google.com https://*.google.com.br https://*.amplitude.com
+        https://*.mixpanel.com https://*.mxpnl.com https://*.intercom.io wss://*.intercom.io
+        https://albato.com https://zapier.com https://api.zapier.com https://*.lr-ingest.io/
+        https://browser-intake-datadoghq.com https://*.datadoghq.com https://recaptchaenterprise.googleapis.com
+        https://www.recaptcha.net'
+      x-request-id:
+      - bdcef8e2-4169-4b0b-9af6-f512d1b982db
+      x-runtime:
+      - '0.041804'
+      date:
+      - Tue, 27 May 2025 13:12:12 GMT
+      cache-control:
+      - must-revalidate, private, max-age=0
+      x-rack-cache:
+      - miss
+      strict-transport-security:
+      - max-age=31556952; includeSubDomains; preload
+      x-rack-cors:
+      - miss; no-origin
+      content-encoding:
+      - gzip
+      via:
+      - 1.1 vegur, 1.1 ae1829b60febaec799bcb0313d9bcacc.cloudfront.net (CloudFront)
+      vary:
+      - Accept-Encoding
+      x-cache:
+      - Miss from cloudfront
+      x-amz-cf-pop:
+      - MIA3-C1
+      x-amz-cf-id:
+      - CHBvXidK0LyyrUF_oEepIgBLkoGmJHT74AjYkSDuRW6IXyOQBgwpHQ==
+    body:
+      encoding: UTF-8
+      string: '{"status":200,"data":{"uid":"019711df-38ad-7c89-9611-4ba61ce08b54","account_number":"00000000075506467","account_digit":"3","agency_number":"19426","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-27T10:12:11-03:00","updated_at":"2025-05-27T10:12:11-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null}}'
+  recorded_at: Tue, 27 May 2025 13:12:12 GMT
+recorded_with: VCR 6.3.1

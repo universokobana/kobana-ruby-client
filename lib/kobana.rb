@@ -26,5 +26,9 @@ module Kobana
       autoload :Pix, "kobana/resources/charge/pix"
       autoload :BankBillet, "kobana/resources/charge/bank_billet"
     end
+
+    module Financial
+      autoload :Account, "kobana/resources/financial/account"
+    end
   end
 end

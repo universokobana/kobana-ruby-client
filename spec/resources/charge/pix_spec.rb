@@ -51,5 +51,27 @@ RSpec.describe Kobana::Resources::Charge::Pix do
         expect(subject[:data]).to include(charge_pix_attributes)
       end
     end
+    describe "#list_command", vcr: { cassette_name: "resources/charge/pix/list_command" } do
+      subject { pix.list_command(@created_pix[:data][:uid]) }
+
+      it "returns the list of commands/charge/pix" do
+        expect(subject[:data]).not_to be_empty
+        expect(subject[:data].first[:operation]).to eq('update')
+        expect(subject[:data].first[:status]).to eq('pending')
+      end
+    end
+
+    describe "#find_command", vcr: { cassette_name: "resources/charge/pix/find_command" } do
+      before do
+        @commands = pix.list_command(@created_pix[:data][:uid])
+        @command_id = @commands[:data].is_a?(Array) && @commands[:data].any? ? @commands[:data].first[:id] : nil
+      end
+
+      subject { pix.find_command(@created_pix[:data][:uid], @command_id) }
+
+      it "returns the specific command/charge/pix" do
+        expect(subject[:data][:id]).to eq(@command_id)
+      end
+    end
   end
 end
