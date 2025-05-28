@@ -1,0 +1,229 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api-sandbox.kobana.com.br/v2/financial/accounts
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <KOBANA_API_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.12.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - Cowboy
+      report-to:
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1748351531&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=QHhsyLc5MJ0mcJHpexf8nAw5vpDkki4MpqDgrwiyvmY%3D"}]}'
+      reporting-endpoints:
+      - heroku-nel=https://nel.heroku.com/reports?ts=1748351531&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=QHhsyLc5MJ0mcJHpexf8nAw5vpDkki4MpqDgrwiyvmY%3D
+      nel:
+      - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
+      x-frame-options:
+      - DENY
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      expect-ct:
+      - max-age=0, report-uri="https://boletosimples.report-uri.com/r/d/ct/reportOnly"
+      cross-origin-resource-policy:
+      - cross-origin
+      cross-origin-embedder-policy:
+      - unsafe-none
+      cross-origin-opener-policy:
+      - unsafe-none
+      x-ratelimit-limit:
+      - '60'
+      x-ratelimit-remaining:
+      - '59'
+      ratelimit-limit:
+      - '60'
+      ratelimit-remaining:
+      - '59'
+      etag:
+      - W/"cdff67532bc61a088ee339b4deff347a"
+      feature-policy:
+      - camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; payment 'none';
+        fullscreen 'self'; geolocation 'self'
+      content-security-policy-report-only:
+      - 'base-uri ''none''; default-src ''self'' https://app-sandbox.kobana.com.br
+        https://boletosimples.com.br https://*.boletosimples.com.br https://kobana.com.br
+        https://*.kobana.com.br; font-src ''self'' data: https://app-sandbox.kobana.com.br
+        https://fonts.googleapis.com https://fonts.gstatic.com https://themes.googleusercontent.com
+        https://cdnjs.cloudflare.com https://fonts.intercomcdn.com https://cdn.bb.com.br;
+        img-src ''self'' data: https://app-sandbox.kobana.com.br https://maps.googleapis.com
+        https://boleto.test:5001 https://bole.to https://*.google-analytics.com https://*.googletagmanager.com
+        https://ssl.gstatic.com https://www.gstatic.com https://*.g.doubleclick.net
+        https://*.google.com https://*.google.com.br https://googleads.g.doubleclick.net
+        https://www.facebook.com https://secure.gravatar.com https://albato.com https://zapier-images.imgix.net
+        https://boletosimples-sandbox.s3.amazonaws.com https://kobana-sandbox.s3.amazonaws.com
+        https://d3caatrp30sdc5.cloudfront.net; object-src ''none''; script-src ''self''
+        ''unsafe-inline'' ''strict-dynamic'' https://app-sandbox.kobana.com.br https://cdn.zapier.com
+        https://albato.com https://widget.pluga.co https://*.datadoghq-browser-agent.com
+        ''nonce-FDt3OZ3d9wB6cED+vjddOQ==''; style-src ''self'' ''unsafe-inline'' https://app-sandbox.kobana.com.br
+        https://fonts.googleapis.com https://tagmanager.google.com https://cdn.zapier.com
+        https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
+        https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css;
+        child-src ''self'' https://www.googleadservices.com https://docs.google.com
+        https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.br
+        https://app.popupdomination.com https://bid.g.doubleclick.net https://widget.pluga.co
+        https://www.googletagmanager.com https://www.facebook.com https://www.youtube.com
+        https://www.recaptcha.net; connect-src ''self'' https://boletosimples.com.br
+        https://*.boletosimples.com.br https://kobana.com.br https://*.kobana.com.br
+        https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com
+        https://*.g.doubleclick.net https://*.google.com https://*.google.com.br https://*.amplitude.com
+        https://*.mixpanel.com https://*.mxpnl.com https://*.intercom.io wss://*.intercom.io
+        https://albato.com https://zapier.com https://api.zapier.com https://*.lr-ingest.io/
+        https://browser-intake-datadoghq.com https://*.datadoghq.com https://recaptchaenterprise.googleapis.com
+        https://www.recaptcha.net'
+      x-request-id:
+      - c1bbc63d-807d-479a-b885-251668bfe117
+      x-runtime:
+      - '0.053325'
+      date:
+      - Tue, 27 May 2025 13:12:11 GMT
+      cache-control:
+      - must-revalidate, private, max-age=0
+      x-rack-cache:
+      - miss
+      strict-transport-security:
+      - max-age=31556952; includeSubDomains; preload
+      x-rack-cors:
+      - miss; no-origin
+      content-encoding:
+      - gzip
+      via:
+      - 1.1 vegur, 1.1 2feed206ccd80c991a2378002008d9f0.cloudfront.net (CloudFront)
+      vary:
+      - Accept-Encoding
+      x-cache:
+      - Miss from cloudfront
+      x-amz-cf-pop:
+      - MIA3-C1
+      x-amz-cf-id:
+      - rJtgDY2BuaNxbNynyqu9FPPmXWb-0D0piUnjCDLQFLCQ9AEkKgZi1Q==
+    body:
+      encoding: UTF-8
+      string: '{"status":200,"data":[{"uid":"019711df-38ad-7c89-9611-4ba61ce08b54","account_number":"00000000075506467","account_digit":"3","agency_number":"19426","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-27T10:12:11-03:00","updated_at":"2025-05-27T10:12:11-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"019711df-3686-7d11-b998-cf6bd649f730","account_number":"00000000000000024618560","account_digit":"3","agency_number":"79731","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-27T10:12:10-03:00","updated_at":"2025-05-27T10:12:10-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e88-98e7-7449-82d8-9cbfb63fb74f","account_number":"0000000000058275919","account_digit":"3","agency_number":"92000","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T18:38:42-03:00","updated_at":"2025-05-26T18:38:42-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e88-970c-7dcd-8cdf-5145c1fea469","account_number":"0000000000000054839795","account_digit":"3","agency_number":"72357","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T18:38:42-03:00","updated_at":"2025-05-26T18:38:42-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e85-ab07-7f9d-9d82-3efb38c3e63a","account_number":"00062037558","account_digit":"3","agency_number":"51308","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T18:35:30-03:00","updated_at":"2025-05-26T18:35:30-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e85-a93e-7184-b1ed-f63b563ea045","account_number":"0000090274824","account_digit":"3","agency_number":"10819","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T18:35:30-03:00","updated_at":"2025-05-26T18:35:30-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e81-667d-7f33-822d-1c22cd8b6615","account_number":"0000045423048","account_digit":"3","agency_number":"41337","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T18:30:50-03:00","updated_at":"2025-05-26T18:30:50-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e81-43e4-78d3-b9d0-e8402648b391","account_number":"00012746433","account_digit":"3","agency_number":"46972","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T18:30:42-03:00","updated_at":"2025-05-26T18:30:42-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e79-9063-71b0-9b71-97f508ff92f8","account_number":"000090141758","account_digit":"3","agency_number":"92969","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T18:22:17-03:00","updated_at":"2025-05-26T18:22:17-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e79-8e40-74d3-af11-8b1f6150670a","account_number":"0000000000055572195","account_digit":"3","agency_number":"90639","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T18:22:16-03:00","updated_at":"2025-05-26T18:22:16-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e6f-a6e6-71a2-8185-03010c707942","account_number":"0000000000000000008522921","account_digit":"3","agency_number":"93447","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T18:11:27-03:00","updated_at":"2025-05-26T18:11:27-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e6f-965a-7ed7-a02e-be7206006bf6","account_number":"00000000000037353112","account_digit":"3","agency_number":"82346","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T18:11:23-03:00","updated_at":"2025-05-26T18:11:23-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e6e-6a66-7ae6-b4e9-58d7e8effa1d","account_number":"000009547455","account_digit":"3","agency_number":"85185","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T18:10:06-03:00","updated_at":"2025-05-26T18:10:06-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e6e-5445-7d2a-98cb-6ebb63effa57","account_number":"000000097104330","account_digit":"3","agency_number":"85336","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T18:10:01-03:00","updated_at":"2025-05-26T18:10:01-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e64-720b-7912-8a4e-974c1ac8eb35","account_number":"0000090116155","account_digit":"3","agency_number":"56989","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T17:59:13-03:00","updated_at":"2025-05-26T17:59:13-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e64-702f-7b4f-ae47-95809176457f","account_number":"0000090701461","account_digit":"3","agency_number":"12440","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T17:59:12-03:00","updated_at":"2025-05-26T17:59:12-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e4d-ef5a-79b3-9f06-8e12f13b63ad","account_number":"0000000000000072264332","account_digit":"3","agency_number":"66269","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T17:34:38-03:00","updated_at":"2025-05-26T17:34:38-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e4d-ed8b-7519-8c8c-a361cca5511e","account_number":"000000086085464","account_digit":"3","agency_number":"69275","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T17:34:37-03:00","updated_at":"2025-05-26T17:34:37-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e45-79ed-75d4-90f9-a64ad13320ce","account_number":"00000000000000005833034","account_digit":"3","agency_number":"39293","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T17:25:23-03:00","updated_at":"2025-05-26T17:25:23-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e45-77e6-7eb0-8bf3-e56425e1bd30","account_number":"0000000000000000091707900","account_digit":"3","agency_number":"75847","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T17:25:23-03:00","updated_at":"2025-05-26T17:25:23-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e18-67ed-7fde-a356-ae733a028bf2","account_number":"00026321496","account_digit":"3","agency_number":"78088","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T16:36:09-03:00","updated_at":"2025-05-26T16:36:09-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e18-660c-77da-9200-1dc6c734d0a0","account_number":"0000000000000000082885809","account_digit":"3","agency_number":"72489","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T16:36:09-03:00","updated_at":"2025-05-26T16:36:09-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e17-76db-7ee7-9aa4-0e431da0989d","account_number":"000000000087035549","account_digit":"3","agency_number":"32567","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T16:35:08-03:00","updated_at":"2025-05-26T16:35:08-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e17-7509-70e8-a4c0-0de7f4d9ac74","account_number":"00000000225643","account_digit":"3","agency_number":"51133","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T16:35:07-03:00","updated_at":"2025-05-26T16:35:07-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e16-8d5e-7aa8-ab24-76c381af2d7c","account_number":"00000078588682","account_digit":"3","agency_number":"05778","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T16:34:08-03:00","updated_at":"2025-05-26T16:34:08-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e16-8b6c-7911-a4da-3deb67232dc7","account_number":"0000000027027698","account_digit":"3","agency_number":"08594","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T16:34:07-03:00","updated_at":"2025-05-26T16:34:07-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e13-91ce-7408-9734-8c6e94a82961","account_number":"000000000000084423045","account_digit":"3","agency_number":"74962","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T16:30:53-03:00","updated_at":"2025-05-26T16:30:53-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e13-8ff2-7e81-a009-4547e8826d5a","account_number":"000000000000000021108815","account_digit":"3","agency_number":"72813","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T16:30:52-03:00","updated_at":"2025-05-26T16:30:52-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e0e-d578-7950-8929-4a95717fa87a","account_number":"0000000000040340473","account_digit":"3","agency_number":"03452","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T16:25:42-03:00","updated_at":"2025-05-26T16:25:42-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e0e-d394-7623-a980-bdf591782d41","account_number":"00000000075104346","account_digit":"3","agency_number":"37306","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T16:25:42-03:00","updated_at":"2025-05-26T16:25:42-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e05-fd0b-7a81-ad62-f754d5d506bb","account_number":"0000000078833058","account_digit":"3","agency_number":"00979","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T16:16:02-03:00","updated_at":"2025-05-26T16:16:02-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e05-fadf-7c29-b97b-62d5dc37d48c","account_number":"000042729682","account_digit":"3","agency_number":"81278","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T16:16:02-03:00","updated_at":"2025-05-26T16:16:02-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e05-a261-728b-acb2-d51a8e9dee2b","account_number":"000000093361649","account_digit":"3","agency_number":"97302","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T16:15:39-03:00","updated_at":"2025-05-26T16:15:39-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e05-5847-712a-941a-9b23b4f8ab08","account_number":"00027398322","account_digit":"3","agency_number":"27208","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T16:15:20-03:00","updated_at":"2025-05-26T16:15:20-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e05-5678-7e00-b50b-eb743c80ae7c","account_number":"000000000054417484","account_digit":"3","agency_number":"52737","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T16:15:20-03:00","updated_at":"2025-05-26T16:15:20-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970e04-ba35-72eb-b70e-b66b6ff4c20f","account_number":"00000000000000085698938","account_digit":"3","agency_number":"04931","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T16:14:40-03:00","updated_at":"2025-05-26T16:14:40-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970df0-d8c3-7b07-a8fe-20fc820d73c3","account_number":"00000000000028897392","account_digit":"3","agency_number":"48028","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T15:52:57-03:00","updated_at":"2025-05-26T15:52:57-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970df0-d6c9-77ee-86f0-496588108c5d","account_number":"000049325476","account_digit":"3","agency_number":"35430","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T15:52:56-03:00","updated_at":"2025-05-26T15:52:56-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970def-a4e5-7c40-bfff-c8c2a9acb594","account_number":"00000000000060613573","account_digit":"3","agency_number":"08884","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T15:51:38-03:00","updated_at":"2025-05-26T15:51:38-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970dca-c34d-758e-81bc-cd52b20f0613","account_number":"000000000000000007236218","account_digit":"3","agency_number":"84228","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T15:11:21-03:00","updated_at":"2025-05-26T15:11:21-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970dca-c16e-78a0-9360-954e23689720","account_number":"0000000000000041635823","account_digit":"3","agency_number":"90716","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T15:11:21-03:00","updated_at":"2025-05-26T15:11:21-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970dc9-d3bd-726e-9d10-bf93995867da","account_number":"00000000044119994","account_digit":"3","agency_number":"64706","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T15:10:20-03:00","updated_at":"2025-05-26T15:10:20-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970dc9-d1c2-7413-b647-b40047fbca28","account_number":"0000000000000048222624","account_digit":"3","agency_number":"42817","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T15:10:19-03:00","updated_at":"2025-05-26T15:10:19-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970dc4-2d21-700d-9cae-7871c66db38d","account_number":"0000000000000096568744","account_digit":"3","agency_number":"26509","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T15:04:09-03:00","updated_at":"2025-05-26T15:04:09-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970dc4-2b3c-728d-abd5-518df283340d","account_number":"0000000027487264","account_digit":"3","agency_number":"82584","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T15:04:09-03:00","updated_at":"2025-05-26T15:04:09-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970dba-6068-71d5-95f5-382a062906f9","account_number":"000000061479398","account_digit":"3","agency_number":"40329","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T14:53:27-03:00","updated_at":"2025-05-26T14:53:27-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970dba-5e8d-7e62-925e-ca4af6a0c9a3","account_number":"000033908993","account_digit":"3","agency_number":"14133","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T14:53:27-03:00","updated_at":"2025-05-26T14:53:27-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970db6-10db-7255-a561-95ebbe83f04f","account_number":"0000000000000000051150749","account_digit":"3","agency_number":"67786","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T14:48:45-03:00","updated_at":"2025-05-26T14:48:45-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970db6-0efa-798b-a0c9-b2deb3967642","account_number":"000000000033778986","account_digit":"3","agency_number":"85352","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T14:48:44-03:00","updated_at":"2025-05-26T14:48:44-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null},{"uid":"01970d9b-384e-7bbd-af4e-cbd3e31555a7","account_number":"000000007204759","account_digit":"3","agency_number":"69308","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-26T14:19:25-03:00","updated_at":"2025-05-26T14:19:25-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","payment_agreement_code":null,"person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null}],"pagination":{"prev_url":"/api/v2/financial/accounts?page=\u0026per_page=50","next_url":"/api/v2/financial/accounts?page=2\u0026per_page=50","page":1}}'
+  recorded_at: Tue, 27 May 2025 13:12:11 GMT
+recorded_with: VCR 6.3.1
