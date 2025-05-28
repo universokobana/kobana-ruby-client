@@ -76,5 +76,21 @@ RSpec.describe Kobana::Resources::Charge::BankBillet do
         expect(subject[:data]).to eq({})
       end
     end
+
+    describe "#list_command", vcr: { cassette_name: "resources/charge/bank_billet/list_command_error" } do
+      subject { bank_billet.list_command(@created_bank_billet[:id]) }
+
+      it "fails with 404 or 422 because command endpoint is not available for bank_billets" do
+        expect([404, 422]).to include(subject[:status])
+      end
+    end
+
+    describe "#find_command", vcr: { cassette_name: "resources/charge/bank_billet/find_command_error" } do
+      subject { bank_billet.find_command(@created_bank_billet[:id], "fake-command-id") }
+
+      it "fails with 404 or 422 because command endpoint is not available for bank_billets" do
+        expect([404, 422]).to include(subject[:status])
+      end
+    end
   end
 end
