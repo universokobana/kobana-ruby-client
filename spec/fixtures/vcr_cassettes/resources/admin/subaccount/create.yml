@@ -1,0 +1,131 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api-sandbox.kobana.com.br/v2/admin/subaccounts
+    body:
+      encoding: UTF-8
+      string: '{"email":"usuario@example.com","account_type":"juridical","business_legal_name":"Empresa
+        LTDA","business_cnpj":"12.345.678/0001-95","nickname":"Empresa","users":[{"email":"empresa@example.com"}]}'
+    headers:
+      Authorization:
+      - Bearer LoFyLIgVjEm7m6K66zAqIkahhBC8orCXwpS4eiesN_g
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.12.2
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - Cowboy
+      report-to:
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1748461183&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=YFaZJw6lr1vUDsURrzUDm8%2FYTWoWXZ%2FSgaJUebVvCYg%3D"}]}'
+      reporting-endpoints:
+      - heroku-nel=https://nel.heroku.com/reports?ts=1748461183&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=YFaZJw6lr1vUDsURrzUDm8%2FYTWoWXZ%2FSgaJUebVvCYg%3D
+      nel:
+      - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
+      x-frame-options:
+      - DENY
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      expect-ct:
+      - max-age=0, report-uri="https://boletosimples.report-uri.com/r/d/ct/reportOnly"
+      cross-origin-resource-policy:
+      - cross-origin
+      cross-origin-embedder-policy:
+      - unsafe-none
+      cross-origin-opener-policy:
+      - unsafe-none
+      x-ratelimit-limit:
+      - '1000'
+      x-ratelimit-remaining:
+      - '971'
+      ratelimit-limit:
+      - '1000'
+      ratelimit-remaining:
+      - '971'
+      etag:
+      - W/"b1a3ff7ab3b60677d1369d77536f20a7"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      feature-policy:
+      - camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; payment 'none';
+        fullscreen 'self'; geolocation 'self'
+      content-security-policy-report-only:
+      - 'base-uri ''none''; default-src ''self'' https://app-sandbox.kobana.com.br
+        https://boletosimples.com.br https://*.boletosimples.com.br https://kobana.com.br
+        https://*.kobana.com.br; font-src ''self'' data: https://app-sandbox.kobana.com.br
+        https://fonts.googleapis.com https://fonts.gstatic.com https://themes.googleusercontent.com
+        https://cdnjs.cloudflare.com https://fonts.intercomcdn.com https://cdn.bb.com.br;
+        img-src ''self'' data: https://app-sandbox.kobana.com.br https://maps.googleapis.com
+        https://boleto.test:5001 https://bole.to https://*.google-analytics.com https://*.googletagmanager.com
+        https://ssl.gstatic.com https://www.gstatic.com https://*.g.doubleclick.net
+        https://*.google.com https://*.google.com.br https://googleads.g.doubleclick.net
+        https://www.facebook.com https://secure.gravatar.com https://albato.com https://zapier-images.imgix.net
+        https://boletosimples-sandbox.s3.amazonaws.com https://kobana-sandbox.s3.amazonaws.com
+        https://d3caatrp30sdc5.cloudfront.net; object-src ''none''; script-src ''self''
+        ''unsafe-inline'' ''strict-dynamic'' https://app-sandbox.kobana.com.br https://cdn.zapier.com
+        https://albato.com https://widget.pluga.co https://*.datadoghq-browser-agent.com
+        ''nonce-qsTss8MH9q3hUsDomibiMw==''; style-src ''self'' ''unsafe-inline'' https://app-sandbox.kobana.com.br
+        https://fonts.googleapis.com https://tagmanager.google.com https://cdn.zapier.com
+        https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
+        https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css;
+        child-src ''self'' https://www.googleadservices.com https://docs.google.com
+        https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.br
+        https://app.popupdomination.com https://bid.g.doubleclick.net https://widget.pluga.co
+        https://www.googletagmanager.com https://www.facebook.com https://www.youtube.com
+        https://www.recaptcha.net; connect-src ''self'' https://boletosimples.com.br
+        https://*.boletosimples.com.br https://kobana.com.br https://*.kobana.com.br
+        https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com
+        https://*.g.doubleclick.net https://*.google.com https://*.google.com.br https://*.amplitude.com
+        https://*.mixpanel.com https://*.mxpnl.com https://*.intercom.io wss://*.intercom.io
+        https://albato.com https://zapier.com https://api.zapier.com https://*.lr-ingest.io/
+        https://browser-intake-datadoghq.com https://*.datadoghq.com https://recaptchaenterprise.googleapis.com
+        https://www.recaptcha.net'
+      x-request-id:
+      - 3e004962-89f9-4a83-bfda-b65beb4c082b
+      x-runtime:
+      - '0.520490'
+      date:
+      - Wed, 28 May 2025 19:39:44 GMT
+      x-rack-cache:
+      - invalidate, pass
+      strict-transport-security:
+      - max-age=31556952; includeSubDomains; preload
+      x-rack-cors:
+      - miss; no-origin
+      vary:
+      - Origin,Accept-Encoding
+      content-encoding:
+      - gzip
+      via:
+      - 1.1 vegur, 1.1 6bcc5cb16e0756268a257daab0f6082c.cloudfront.net (CloudFront)
+      x-cache:
+      - Miss from cloudfront
+      x-amz-cf-pop:
+      - MIA3-C1
+      x-amz-cf-id:
+      - O0NdpdtOLREE20I_2r4uQ78_NRWzxVWlT0MulmUHhXr9mAs-NyuccQ==
+    body:
+      encoding: UTF-8
+      string: '{"status":201,"data":{"id":4477,"email":"usuario@example.com","account_type":"juridical","gender":null,"cpf":null,"address_street_name":null,"address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":null,"address_complement":null,"phone_number":null,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":null,"business_legal_name":"Empresa
+        LTDA","business_type":null,"business_cnpj":"12.345.678/0001-95","address_city_name":null,"full_name":null,"mother_name":null,"father_name":null,"configuration":null,"simple_opting":false,"parent_id":4001,"created_via_api":true,"api_access_token":"sfSE2qwvbIlmuiwWdmn-GI96dHyf1NeHs8ZoT3E8l7Y","nickname":"Empresa","created_at":"2025-05-28T16:39:43-03:00","updated_at":"2025-05-28T16:39:43-03:00","external_id":null,"custom_data":null,"tags":[],"tag_list":null}}'
+  recorded_at: Wed, 28 May 2025 19:39:44 GMT
+recorded_with: VCR 6.3.1
