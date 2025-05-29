@@ -9,7 +9,7 @@ http_interactions:
         LTDA","business_cnpj":"12.345.678/0001-95","nickname":"Empresa","users":[{"email":"empresa@example.com"}]}'
     headers:
       Authorization:
-      - Bearer LoFyLIgVjEm7m6K66zAqIkahhBC8orCXwpS4eiesN_g
+      - Bearer <KOBANA_API_TOKEN>
       Content-Type:
       - application/json
       User-Agent:

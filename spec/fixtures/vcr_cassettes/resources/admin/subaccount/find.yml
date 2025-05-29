@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       Authorization:
-      - Bearer LoFyLIgVjEm7m6K66zAqIkahhBC8orCXwpS4eiesN_g
+      - Bearer <KOBANA_API_TOKEN>
       Content-Type:
       - application/json
       User-Agent:
@@ -135,7 +135,7 @@ http_interactions:
       string: ''
     headers:
       Authorization:
-      - Bearer LoFyLIgVjEm7m6K66zAqIkahhBC8orCXwpS4eiesN_g
+      - Bearer LoFyLIgVjEm7m6K66zAqIkahhBC8orCXwpS4eiesN_
       Content-Type:
       - application/json
       User-Agent:
