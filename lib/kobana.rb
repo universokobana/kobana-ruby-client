@@ -30,5 +30,9 @@ module Kobana
     module Financial
       autoload :Account, "kobana/resources/financial/account"
     end
+
+    module Admin
+      autoload :Subaccount, "kobana/resources/admin/subaccount"
+    end
   end
 end
