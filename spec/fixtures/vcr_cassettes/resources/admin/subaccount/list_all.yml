@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api-sandbox.kobana.com.br/v2/financial/accounts/019711df-38ad-7c89-9611-4ba61ce08b54/commands
+    uri: https://api-sandbox.kobana.com.br/v2/admin/subaccounts
     body:
       encoding: US-ASCII
       string: ''
@@ -27,9 +27,9 @@ http_interactions:
       server:
       - Cowboy
       report-to:
-      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1748351532&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=ZHW9YMXRfC8sUD%2FKN5Bf%2FzPuIdGmh4Z1ZXw7hw5Ea20%3D"}]}'
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1748461185&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=ROqwVDFPmVvWFkYatcBMY7hXvwwOBqOROevidym9R3w%3D"}]}'
       reporting-endpoints:
-      - heroku-nel=https://nel.heroku.com/reports?ts=1748351532&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=ZHW9YMXRfC8sUD%2FKN5Bf%2FzPuIdGmh4Z1ZXw7hw5Ea20%3D
+      - heroku-nel=https://nel.heroku.com/reports?ts=1748461185&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=ROqwVDFPmVvWFkYatcBMY7hXvwwOBqOROevidym9R3w%3D
       nel:
       - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
       x-frame-options:
@@ -55,13 +55,13 @@ http_interactions:
       x-ratelimit-limit:
       - '60'
       x-ratelimit-remaining:
-      - '57'
+      - '44'
       ratelimit-limit:
       - '60'
       ratelimit-remaining:
-      - '57'
+      - '44'
       etag:
-      - W/"6611e7cf9771558953703f07d526ebc8"
+      - W/"c5866466e6530ab9ee44c2f9cb900e70"
       feature-policy:
       - camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; payment 'none';
         fullscreen 'self'; geolocation 'self'
@@ -80,7 +80,7 @@ http_interactions:
         https://d3caatrp30sdc5.cloudfront.net; object-src ''none''; script-src ''self''
         ''unsafe-inline'' ''strict-dynamic'' https://app-sandbox.kobana.com.br https://cdn.zapier.com
         https://albato.com https://widget.pluga.co https://*.datadoghq-browser-agent.com
-        ''nonce-ZsAbB7ERCrYh9FPR//G3kg==''; style-src ''self'' ''unsafe-inline'' https://app-sandbox.kobana.com.br
+        ''nonce-R9kC1ejLnzXDgHHjiKIAuQ==''; style-src ''self'' ''unsafe-inline'' https://app-sandbox.kobana.com.br
         https://fonts.googleapis.com https://tagmanager.google.com https://cdn.zapier.com
         https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
         https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css;
@@ -97,11 +97,11 @@ http_interactions:
         https://browser-intake-datadoghq.com https://*.datadoghq.com https://recaptchaenterprise.googleapis.com
         https://www.recaptcha.net'
       x-request-id:
-      - fdb82df9-d020-4630-a464-064438bfbd9f
+      - 34891bb8-c8cb-4d4d-a9ae-e93c94d75b85
       x-runtime:
-      - '0.040382'
+      - '0.147039'
       date:
-      - Tue, 27 May 2025 13:12:12 GMT
+      - Wed, 28 May 2025 19:39:45 GMT
       cache-control:
       - must-revalidate, private, max-age=0
       x-rack-cache:
@@ -113,7 +113,7 @@ http_interactions:
       content-encoding:
       - gzip
       via:
-      - 1.1 vegur, 1.1 3b6959d147738fd4bde35db4104f4052.cloudfront.net (CloudFront)
+      - 1.1 vegur, 1.1 fae059afbeac18143c8bf2780b8d7052.cloudfront.net (CloudFront)
       vary:
       - Accept-Encoding
       x-cache:
@@ -121,9 +121,10 @@ http_interactions:
       x-amz-cf-pop:
       - MIA3-C1
       x-amz-cf-id:
-      - ic2Ft8Z-eq0EzqXvDdNLTXReQO_EodCC_ej0Nuop7028PAQSQLa9FQ==
+      - eD166FNlqr-9PqAYRLYb4_klkWMa7RtDZsrzuegdA4_vLk3rIHQuCQ==
     body:
       encoding: UTF-8
-      string: '{"status": 200,"data": [{"id": 8,"status": "pending","operation": "statement_sync","params": {},"payload": null,"created_at": "2025-05-25T21:36:25+08:00","updated_at": "2025-05-25T21:36:25+08:00","message": null,"error_message": null,"warning_message": null}],"pagination": {"prev_url": "/v2/financial/accounts/019707a8-b1e4-796b-8afe-12379238e1eb/commands?page=&per_page=50","next_url": "/v2/financial/accounts/019707a8-b1e4-796b-8afe-12379238e1eb/commands?page=&per_page=50","page": 1}}'
-  recorded_at: Tue, 27 May 2025 13:12:12 GMT
+      string: '{"status":200,"data":[{"id":4477,"email":"usuario@example.com","account_type":"juridical","gender":null,"cpf":null,"address_street_name":null,"address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":null,"address_complement":null,"phone_number":null,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":null,"business_legal_name":"Empresa
+        LTDA","business_type":null,"business_cnpj":"12.345.678/0001-95","address_city_name":null,"full_name":null,"mother_name":null,"father_name":null,"configuration":null,"simple_opting":false,"parent_id":4001,"created_via_api":true,"api_access_token":"REDACTED_TOKEN_8","nickname":"Empresa","created_at":"2025-05-28T16:39:43-03:00","updated_at":"2025-05-28T16:39:43-03:00","external_id":null,"custom_data":null,"tags":[],"tag_list":null},{"id":4289,"email":null,"account_type":"juridical","gender":null,"cpf":null,"address_street_name":null,"address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":null,"address_complement":null,"phone_number":null,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":null,"business_legal_name":"","business_type":null,"business_cnpj":null,"address_city_name":null,"full_name":null,"mother_name":null,"father_name":null,"configuration":null,"simple_opting":false,"parent_id":4001,"created_via_api":false,"api_access_token":"REDACTED_TOKEN_4","nickname":"teste","created_at":"2025-01-29T14:46:38-03:00","updated_at":"2025-01-29T14:46:54-03:00","external_id":null,"custom_data":null,"tags":[],"tag_list":null},{"id":4007,"email":null,"account_type":"juridical","gender":null,"cpf":null,"address_street_name":null,"address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":null,"address_complement":null,"phone_number":null,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":null,"business_legal_name":"","business_type":null,"business_cnpj":null,"address_city_name":null,"full_name":null,"mother_name":null,"father_name":null,"configuration":null,"simple_opting":false,"parent_id":4001,"created_via_api":false,"api_access_token":"REDACTED_TOKEN_2","nickname":"Gerente","created_at":"2024-08-13T17:33:34-03:00","updated_at":"2024-08-13T17:33:34-03:00","external_id":null,"custom_data":null,"tags":[],"tag_list":null}],"pagination":{"prev_url":"/api/v2/admin/subaccounts?page=\u0026per_page=50","next_url":"/api/v2/admin/subaccounts?page=\u0026per_page=50","page":1}}'
+  recorded_at: Wed, 28 May 2025 19:39:45 GMT
 recorded_with: VCR 6.3.1
