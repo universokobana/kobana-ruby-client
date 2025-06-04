@@ -50,8 +50,8 @@ RSpec.describe Kobana::Resources::Charge::Pix do
         expect(subject.attributes).to include(charge_pix_attributes)
       end
     end
-    describe "#list_command", vcr: { cassette_name: "resources/charge/pix/list_command" } do
-      subject { pix.list_command }
+    describe "#list_commands", vcr: { cassette_name: "resources/charge/pix/list_commands" } do
+      subject { pix.list_commands }
 
       it "returns the list of commands/charge/pix" do
         expect(subject.first[:operation]).to eq("update")
@@ -61,7 +61,7 @@ RSpec.describe Kobana::Resources::Charge::Pix do
 
     describe "#find_command", vcr: { cassette_name: "resources/charge/pix/find_command" } do
       before do
-        @commands = pix.list_command
+        @commands = pix.list_commands
         @command_id = @commands[:data].is_a?(Array) && @commands[:data].any? ? @commands[:data].first[:id] : nil
       end
 

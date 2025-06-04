@@ -73,8 +73,8 @@ RSpec.describe Kobana::Resources::Charge::BankBillet do
       end
     end
 
-    describe "#list_command", vcr: { cassette_name: "resources/charge/bank_billet/list_command_error" } do
-      subject { bank_billet.list_command }
+    describe "#list_commands", vcr: { cassette_name: "resources/charge/bank_billet/list_commands_error" } do
+      subject { bank_billet.list_commands }
 
       it do
         expect(subject).to be_nil

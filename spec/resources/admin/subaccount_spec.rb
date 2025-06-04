@@ -63,8 +63,8 @@ RSpec.describe Kobana::Resources::Admin::Subaccount do
       end
     end
 
-    describe "#list_command", vcr: { cassette_name: "resources/admin/subaccount/list_command_error" } do
-      subject { subaccount.list_command }
+    describe "#list_commands", vcr: { cassette_name: "resources/admin/subaccount/list_commands_error" } do
+      subject { subaccount.list_commands }
 
       it do
         expect(subject).to be_nil

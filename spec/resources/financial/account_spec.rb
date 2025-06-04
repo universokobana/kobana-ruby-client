@@ -67,8 +67,8 @@ RSpec.describe Kobana::Resources::Financial::Account do
       end
     end
 
-    describe "#list_command", vcr: { cassette_name: "resources/financial/account/list_command" } do
-      subject { account.list_command }
+    describe "#list_commands", vcr: { cassette_name: "resources/financial/account/list_commands" } do
+      subject { account.list_commands }
 
       it "returns the list of commands/accounts" do
         expect(subject).to be_a(Array)
@@ -77,7 +77,7 @@ RSpec.describe Kobana::Resources::Financial::Account do
 
     describe "#find_command", vcr: { cassette_name: "resources/financial/account/find_command" } do
       before do
-        @commands = account.list_command
+        @commands = account.list_commands
         @command_id = @commands.is_a?(Array) && @commands.any? ? @commands.first[:id] : nil
       end
 

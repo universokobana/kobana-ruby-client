@@ -45,7 +45,7 @@ module Kobana
         request(:delete, uri)
       end
 
-      def list_command(params = {})
+      def list_commands(params = {})
         response = request(:get, "#{uri}/commands", params)
         case response[:status]
         when 200
