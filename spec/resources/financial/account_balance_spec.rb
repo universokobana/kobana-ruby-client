@@ -15,5 +15,4 @@ RSpec.describe Kobana::Resources::Financial::AccountBalance do
   describe "resource_endpoint" do
     it { expect(described_class.resource_endpoint).to eq("financial/account_balances") }
   end
-
 end

@@ -10,7 +10,7 @@ module Kobana
       include Operations
 
       class << self
-        attr_accessor :primary_key, :api_version, :resource_endpoint, :errors
+        attr_accessor :primary_key, :api_version, :resource_endpoint, :errors, :default_attributes
 
         def inherited(subclass)
           super
@@ -18,6 +18,7 @@ module Kobana
           subclass.primary_key ||= :uid
           subclass.api_version ||= :v2
           subclass.errors ||= []
+          subclass.default_attributes ||= {}
         end
 
         def infer_resource_endpoint(klass)
@@ -28,8 +29,19 @@ module Kobana
           ::Regexp.last_match(1).underscore.pluralize
         end
 
-        def uri
-          "#{base_url}/#{resource_endpoint}"
+        def uri(attributes = {})
+          "#{base_url}/#{interpolate(resource_endpoint, default_attributes.merge(attributes))}"
+        end
+
+        def interpolate(template, attributes)
+          template.gsub(/\{([^\}]+)\}/) do
+            key = Regexp.last_match(1)
+            begin
+              attributes[key.to_sym].to_s
+            rescue NameError
+              "{#{key}}" # Keep original if variable is undefined
+            end
+          end
         end
       end
 
@@ -60,7 +72,7 @@ module Kobana
       end
 
       def uri
-        "#{self.class.uri}/#{attributes[self.class.primary_key]}"
+        "#{self.class.uri(attributes)}/#{attributes[self.class.primary_key]}"
       end
 
       def request(*)

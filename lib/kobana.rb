@@ -35,6 +35,7 @@ module Kobana
     module Financial
       autoload :Account, "kobana/resources/financial/account"
       autoload :AccountBalance, "kobana/resources/financial/account_balance"
+      autoload :StatementTransactionsImport, "kobana/resources/financial/statement_transactions_import"
     end
 
     module Admin
