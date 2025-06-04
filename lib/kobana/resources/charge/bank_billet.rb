@@ -4,6 +4,7 @@ module Kobana
   module Resources
     module Charge
       class BankBillet < Base
+        self.primary_key = :id
         self.api_version = :v1
         self.resource_endpoint = "bank_billets"
 

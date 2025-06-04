@@ -15,7 +15,7 @@ module Kobana
         def inherited(subclass)
           super
           subclass.resource_endpoint ||= infer_resource_endpoint(subclass)
-          subclass.primary_key ||= :id
+          subclass.primary_key ||= :uid
           subclass.api_version ||= :v2
         end
 
