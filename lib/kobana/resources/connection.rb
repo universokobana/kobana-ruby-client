@@ -34,8 +34,17 @@ module Kobana
             faraday.request :url_encoded
             faraday.adapter Faraday.default_adapter
             faraday.headers = headers
-            faraday.response :logger if Kobana.configuration.debug
+            faraday.response :logger, logger if Kobana.configuration.debug
           end
+        end
+
+        def logger
+          logger = Logger.new($stdout)
+          logger.formatter = proc do |severity, datetime, _progname, msg|
+            redacted_msg = msg.gsub(/(Bearer|Token)\s+[A-Za-z0-9\-_\.]+/, '\1 [REDACTED]')
+            "#{severity} #{datetime}: #{redacted_msg}\n"
+          end
+          logger
         end
 
         def request(method, url, params_or_body = nil)
