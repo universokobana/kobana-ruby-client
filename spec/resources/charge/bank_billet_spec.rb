@@ -3,7 +3,7 @@
 require "spec_helper"
 
 RSpec.describe Kobana::Resources::Charge::BankBillet do
-  let!(:api_key) { ENV.fetch("KOBANA_API_TOKEN", nil) }
+  let!(:api_token) { ENV.fetch("KOBANA_API_TOKEN", nil) }
   let(:bank_billet_attributes) { attributes_for(:bank_billet).deep_symbolize_keys }
 
   before do

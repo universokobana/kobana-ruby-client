@@ -23,7 +23,7 @@ module Kobana
     def initialize
       config = Kobana.configuration
 
-      @api_key = config.api_token
+      @api_token = config.api_token
       @base_url = BASE_URI[config.api_version][config.environment]
       @custom_headers = config.custom_headers
       @debug = config.debug
@@ -33,7 +33,7 @@ module Kobana
 
     def default_headers
       {
-        "Authorization" => "Bearer #{@api_key}",
+        "Authorization" => "Bearer #{@api_token}",
         "Content-Type" => "application/json"
       }
     end

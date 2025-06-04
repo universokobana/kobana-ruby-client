@@ -3,7 +3,7 @@
 require "spec_helper"
 
 RSpec.describe Kobana::Resources::Charge::Pix do
-  let!(:api_key) { ENV.fetch("KOBANA_API_TOKEN", nil) }
+  let!(:api_token) { ENV.fetch("KOBANA_API_TOKEN", nil) }
   let(:charge_pix_attributes) { attributes_for(:charge_pix).deep_symbolize_keys }
 
   before do
