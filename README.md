@@ -44,7 +44,6 @@ Configure your API key by creating an initializer in your Rails project:
 Kobana.configure do |config|
   config.api_token = 'YOUR_API_TOKEN'
   config.environment = :sandbox # you can specify the environment as :development, :sandbox, or :production
-  config.api_version = :v1 #default: :v2
 end
 ```
 

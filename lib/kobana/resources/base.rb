@@ -8,15 +8,22 @@ module Kobana
     class Base
       include Connection
       include Operations
-      attr_accessor :attributes
 
       class << self
-        attr_accessor :primary_key, :resource_endpoint
+        attr_accessor :primary_key, :api_version, :resource_endpoint
+
+        def inherited(subclass)
+          super
+          subclass.primary_key ||= :id
+          subclass.api_version ||= :v2
+        end
 
         def uri
           "#{base_url}/#{resource_endpoint}"
         end
       end
+
+      attr_accessor :attributes
 
       def initialize(attributes = {})
         @attributes = attributes.deep_symbolize_keys
@@ -37,7 +44,7 @@ module Kobana
       end
 
       def uri
-        "#{self.class.uri}/#{attributes[self.class.primary_key || :id]}"
+        "#{self.class.uri}/#{attributes[self.class.primary_key]}"
       end
 
       def request(*)

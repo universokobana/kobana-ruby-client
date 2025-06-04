@@ -10,7 +10,6 @@ RSpec.describe Kobana::Resources::Financial::Account do
     Kobana.configure do |config|
       config.api_token = api_token
       config.environment = :sandbox
-      config.api_version = :v2
     end
   end
 

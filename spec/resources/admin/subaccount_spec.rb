@@ -10,8 +10,12 @@ RSpec.describe Kobana::Resources::Admin::Subaccount do
     Kobana.configure do |config|
       config.api_token = api_token
       config.environment = :sandbox
-      config.api_version = :v2
     end
+  end
+
+  describe "api_version" do
+    # it { expect(Kobana::Resources::Base.api_version).to eq(:v2) }
+    it { expect(described_class.api_version).to eq(:v2) }
   end
 
   context "do not exist" do

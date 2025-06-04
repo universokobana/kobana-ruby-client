@@ -10,7 +10,6 @@ RSpec.describe Kobana::Resources::Charge::Pix do
     Kobana.configure do |config|
       config.api_token = ENV.fetch("KOBANA_API_TOKEN", nil)
       config.environment = :sandbox
-      config.api_version = :v2
     end
   end
 
