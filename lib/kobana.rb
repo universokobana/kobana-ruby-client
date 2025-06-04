@@ -22,6 +22,7 @@ module Kobana
 
   module Resources
     autoload :Base, "kobana/resources/base"
+    autoload :Connection, "kobana/resources/connection"
     autoload :Operations, "kobana/resources/operations"
     module Charge
       autoload :Pix, "kobana/resources/charge/pix"

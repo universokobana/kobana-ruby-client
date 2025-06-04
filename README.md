@@ -73,7 +73,7 @@ attributes = {
 }
 
 pix = Kobana::Resources::Charge::Pix.create(attributes)
-puts pix
+puts pix.id
 ```
 
 ##### Fetching a Charge

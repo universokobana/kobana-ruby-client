@@ -6,70 +6,42 @@ require "json"
 module Kobana
   module Resources
     class Base
+      include Connection
       include Operations
-
-      BASE_URI = {
-        v2: {
-          sandbox: "https://api-sandbox.kobana.com.br/v2",
-          production: "https://api.kobana.com.br/v2",
-          development: "http://localhost:5000/api/v2"
-        },
-        v1: {
-          sandbox: "https://api-sandbox.kobana.com.br/v1",
-          production: "https://api.kobana.com.br/v1",
-          development: "http://localhost:5000/api/v1"
-        }
-      }.freeze
+      attr_accessor :attributes
 
       class << self
-        attr_accessor :resource_endpoint
+        attr_accessor :primary_key, :resource_endpoint
 
-        def default_headers
-          {
-            "Authorization" => "Bearer #{Kobana.configuration.api_token}",
-            "Content-Type" => "application/json"
-          }
-        end
-
-        def connection
-          headers = default_headers.merge(Kobana.configuration.custom_headers)
-          Faraday.new(url: base_url) do |faraday|
-            faraday.request :url_encoded
-            faraday.adapter Faraday.default_adapter
-            faraday.headers = headers
-            faraday.response :logger if Kobana.configuration.debug
-          end
-        end
-
-        def parse_response(response)
-          body_parsed = JSON.parse(response.body, symbolize_names: true)
-
-          if body_parsed.is_a?(Array) || !body_parsed.key?(:data)
-            { status: response.status, data: body_parsed }
-          else
-            body_parsed
-          end
-        end
-
-        def base_url
-          @base_url ||= BASE_URI[Kobana.configuration.api_version&.to_sym][Kobana.configuration.environment&.to_sym]
+        def uri
+          "#{base_url}/#{resource_endpoint}"
         end
       end
 
-      def base_url
-        self.class.base_url
+      def initialize(attributes = {})
+        @attributes = attributes.deep_symbolize_keys
       end
 
-      def connection
-        self.class.connection
+      def [](key)
+        attributes[key.to_sym]
       end
 
-      def parse_response(response)
-        self.class.parse_response(response)
+      def method_missing(key, *, &)
+        return unless attributes.key?(key.to_sym)
+
+        attributes[key]
       end
 
-      def resource_endpoint
-        self.class.resource_endpoint
+      def respond_to_missing?(key, include_private = false)
+        attributes.key?(key.to_sym) || super
+      end
+
+      def uri
+        "#{self.class.uri}/#{attributes[self.class.primary_key || :id]}"
+      end
+
+      def request(*)
+        self.class.request(*)
       end
     end
   end

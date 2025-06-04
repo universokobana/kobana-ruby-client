@@ -6,10 +6,14 @@ module Kobana
       class BankBillet < Base
         self.resource_endpoint = "bank_billets"
 
-        def cancel(resource_id)
-          url = "#{base_url}/#{resource_endpoint}/#{resource_id}/cancel"
-          response = connection.put(url)
-          { status: response.status, data: {} }
+        def cancel
+          response = request(:put, "#{uri}/cancel")
+          case response[:status]
+          when 204
+            true
+          else
+            false
+          end
         end
       end
     end

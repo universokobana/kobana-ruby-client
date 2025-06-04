@@ -9,48 +9,60 @@ module Kobana
 
       module ClassMethods
         def all(params = {})
-          url = "#{base_url}/#{resource_endpoint}"
-          response = connection.get(url, params)
-          parse_response(response)
+          response = request(:get, uri, params)
+          case response[:status]
+          when 200
+            response[:data].map { |data| new(data) }
+          else
+            []
+          end
         end
 
         def create(data)
-          url = "#{base_url}/#{resource_endpoint}"
-          response = connection.post(url, data.to_json)
-          parse_response(response)
+          response = request(:post, uri, data.to_json)
+          case response[:status]
+          when 201
+            new(response[:data])
+          else
+            false
+          end
         end
 
         def find(resource_id, params = {})
-          url = "#{base_url}/#{resource_endpoint}/#{resource_id}"
-          response = connection.get(url, params)
-          parse_response(response)
+          response = request(:get, "#{uri}/#{resource_id}", params)
+          case response[:status]
+          when 200
+            new(response[:data])
+          end
         end
       end
 
-      def update(resource_id, data)
-        url = "#{base_url}/#{resource_endpoint}/#{resource_id}"
-        response = connection.put(url, data.to_json)
-        parse_response(response)
+      def update(data)
+        request(:put, uri, data.to_json)
       end
 
-      def delete(resource_id)
-        url = "#{base_url}/#{resource_endpoint}/#{resource_id}"
-        response = connection.delete(url)
-        parse_response(response)
+      def delete
+        request(:delete, uri)
       end
 
-      def list_command(resource_id, params = {})
-        url = "#{base_url}/#{resource_endpoint}/#{resource_id}/commands"
-        response = connection.get(url, params)
-        parse_response(response)
+      def list_command(params = {})
+        response = request(:get, "#{uri}/commands", params)
+        case response[:status]
+        when 200
+          # response[:data].map { |command| Kobana::Resources::Command.new(command) }
+          response[:data].map { |command| command }
+        end
       end
 
-      def find_command(resource_id, command_id)
-        raise ArgumentError, "Command ID and Resource ID cannot be nil" if command_id.nil? || resource_id.nil?
+      def find_command(command_id)
+        raise ArgumentError, "Command ID cannot be nil" if command_id.nil?
 
-        url = "#{base_url}/#{resource_endpoint}/#{resource_id}/commands/#{command_id}"
-        response = connection.get(url)
-        parse_response(response)
+        response = request(:get, "#{uri}/commands/#{command_id}")
+        case response[:status]
+        when 200
+          # response[:data].map { |command| Kobana::Resources::Command.new(command) }
+          response[:data].map { |command| command }
+        end
       end
     end
   end

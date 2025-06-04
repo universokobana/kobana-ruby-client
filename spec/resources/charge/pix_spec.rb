@@ -21,8 +21,7 @@ RSpec.describe Kobana::Resources::Charge::Pix do
       subject { described_class.create(charge_pix_attributes) }
 
       it "creates a new charge" do
-        expect(subject[:status]).to eq(201)
-        expect(subject[:data]).to include(charge_pix_attributes)
+        expect(subject.attributes).to include(charge_pix_attributes)
       end
     end
   end
@@ -39,35 +38,34 @@ RSpec.describe Kobana::Resources::Charge::Pix do
 
       it "checks if the first charge is the one we created" do
         transformed_attributes = charge_pix_attributes
-        expect(subject[:data].first).to include(transformed_attributes)
+        expect(subject.first.attributes).to include(transformed_attributes)
       end
     end
 
     describe "#find", vcr: { cassette_name: "resources/charge/pix/find" } do
-      subject { described_class.find(@created_pix[:data][:id]) }
+      subject { described_class.find(@created_pix.id) }
 
       it "fetches the correct charge" do
-        expect(subject[:data][:id]).to eq(@created_pix[:data][:id])
-        expect(subject[:data]).to include(charge_pix_attributes)
+        expect(subject.id).to eq(@created_pix.id)
+        expect(subject.attributes).to include(charge_pix_attributes)
       end
     end
     describe "#list_command", vcr: { cassette_name: "resources/charge/pix/list_command" } do
-      subject { pix.list_command(@created_pix[:data][:uid]) }
+      subject { pix.list_command }
 
       it "returns the list of commands/charge/pix" do
-        expect(subject[:data]).not_to be_empty
-        expect(subject[:data].first[:operation]).to eq("update")
-        expect(subject[:data].first[:status]).to eq("pending")
+        expect(subject.first[:operation]).to eq("update")
+        expect(subject.first[:status]).to eq("pending")
       end
     end
 
     describe "#find_command", vcr: { cassette_name: "resources/charge/pix/find_command" } do
       before do
-        @commands = pix.list_command(@created_pix[:data][:uid])
+        @commands = pix.list_command
         @command_id = @commands[:data].is_a?(Array) && @commands[:data].any? ? @commands[:data].first[:id] : nil
       end
 
-      subject { pix.find_command(@created_pix[:data][:uid], @command_id) }
+      subject { pix.find_command(@command_id) }
 
       xit "returns the specific command/charge/pix" do
         expect(subject[:data][:id]).to eq(@command_id)
