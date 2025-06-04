@@ -7,7 +7,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"uid":"0196f5e5-dd65-7322-9f36-c3979af436b7","account_number":"00000000000000024618560","account_digit":"3","agency_number":"79731","agency_digit":"3","financial_provider_slug":"sicoob","kind":"checking","person_info":{"name":"Margret
         Santos Filgueiras","document_number":"864.668.358-39"},"bank_id":"206","custom_name":"Bancoob/Sicoob
-        CC: 81519387-3"}'
+        CC: 81519387-3","external_id":"external9999"}'
     headers:
       Authorization:
       - Bearer <KOBANA_API_TOKEN>
@@ -29,9 +29,9 @@ http_interactions:
       server:
       - Cowboy
       report-to:
-      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1748351530&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=K3z4NNssX30BKarF53O5STmrw4SV26nDCoxLdXMiGhQ%3D"}]}'
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1749003546&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=zrUrPW35%2BdqlSs8pmuIrhYlOkdUVOx81HMgywefgbjA%3D"}]}'
       reporting-endpoints:
-      - heroku-nel=https://nel.heroku.com/reports?ts=1748351530&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=K3z4NNssX30BKarF53O5STmrw4SV26nDCoxLdXMiGhQ%3D
+      - heroku-nel=https://nel.heroku.com/reports?ts=1749003546&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=zrUrPW35%2BdqlSs8pmuIrhYlOkdUVOx81HMgywefgbjA%3D
       nel:
       - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
       x-frame-options:
@@ -55,15 +55,15 @@ http_interactions:
       cross-origin-opener-policy:
       - unsafe-none
       x-ratelimit-limit:
-      - '1000'
+      - '10000'
       x-ratelimit-remaining:
-      - '999'
+      - '9994'
       ratelimit-limit:
-      - '1000'
+      - '10000'
       ratelimit-remaining:
-      - '999'
+      - '9994'
       etag:
-      - W/"5d766cf74d1b9c468a1af285a1c362cf"
+      - W/"0723a0c66ca9fd6d0686224c976fbca5"
       cache-control:
       - max-age=0, private, must-revalidate
       feature-policy:
@@ -84,7 +84,7 @@ http_interactions:
         https://d3caatrp30sdc5.cloudfront.net; object-src ''none''; script-src ''self''
         ''unsafe-inline'' ''strict-dynamic'' https://app-sandbox.kobana.com.br https://cdn.zapier.com
         https://albato.com https://widget.pluga.co https://*.datadoghq-browser-agent.com
-        ''nonce-WM0X8uBvnpMc8P/bC8FSyw==''; style-src ''self'' ''unsafe-inline'' https://app-sandbox.kobana.com.br
+        ''nonce-9L6gg2pUCDhoZPSwR9JynQ==''; style-src ''self'' ''unsafe-inline'' https://app-sandbox.kobana.com.br
         https://fonts.googleapis.com https://tagmanager.google.com https://cdn.zapier.com
         https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
         https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css;
@@ -101,11 +101,11 @@ http_interactions:
         https://browser-intake-datadoghq.com https://*.datadoghq.com https://recaptchaenterprise.googleapis.com
         https://www.recaptcha.net'
       x-request-id:
-      - 4d0b72fb-df46-43b0-ba67-6ea0c51052f2
+      - b495e593-44dd-40e1-8e2a-a1de628e0513
       x-runtime:
-      - '0.115779'
+      - '0.072225'
       date:
-      - Tue, 27 May 2025 13:12:10 GMT
+      - Wed, 04 Jun 2025 02:19:06 GMT
       x-rack-cache:
       - invalidate, pass
       strict-transport-security:
@@ -117,17 +117,17 @@ http_interactions:
       content-encoding:
       - gzip
       via:
-      - 1.1 vegur, 1.1 3b6959d147738fd4bde35db4104f4052.cloudfront.net (CloudFront)
+      - 1.1 vegur, 1.1 982dd7ed309ab3025635ef6f0ff61e82.cloudfront.net (CloudFront)
       x-cache:
       - Miss from cloudfront
       x-amz-cf-pop:
       - MIA3-C1
       x-amz-cf-id:
-      - _j7cVxkcRuREfHAjMA8f0ZSqV8C1NURcMceedifevJ1qR1rjqvKTGA==
+      - nLrDUE0DWKLK-lckgLxvhnRNXOu9Oeg3naaJSXTsQvHDwYLpPyC4mg==
     body:
       encoding: UTF-8
-      string: '{"status":201,"data":{"uid":"019711df-3686-7d11-b998-cf6bd649f730","account_number":"00000000000000024618560","account_digit":"3","agency_number":"79731","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-05-27T10:12:10-03:00","updated_at":"2025-05-27T10:12:10-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
+      string: '{"status":201,"data":{"uid":"019738bc-2f45-7a5f-9267-fa6efbcaf3d5","account_number":"00000000000000024618560","account_digit":"3","agency_number":"79731","agency_digit":"3","financial_provider_slug":"sicoob","bank_id":206,"created_at":"2025-06-03T23:19:06-03:00","updated_at":"2025-06-03T23:19:06-03:00","kind":"checking","current_balance":0.0,"custom_name":"Bancoob/Sicoob
         CC: 81519387-3","payment_agreement_code":null,"person_info":{"document_number":"864.668.358-39","name":"Margret
-        Santos Filgueiras"},"tags":[],"tag_list":null,"custom_data":null,"external_id":null}}'
-  recorded_at: Tue, 27 May 2025 13:12:10 GMT
+        Santos Filgueiras"},"tags":[],"tag_list":null,"custom_data":null,"external_id":"external9999"}}'
+  recorded_at: Wed, 04 Jun 2025 02:19:06 GMT
 recorded_with: VCR 6.3.1

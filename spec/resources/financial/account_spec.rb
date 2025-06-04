@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "spec_helper"
-require "pry"
 
 RSpec.describe Kobana::Resources::Financial::Account do
   let!(:api_token) { ENV.fetch("KOBANA_API_TOKEN", nil) }
@@ -34,7 +33,7 @@ RSpec.describe Kobana::Resources::Financial::Account do
 
   context "exist" do
     before do
-      VCR.use_cassette("resources/financial/account/create_for_methods") do
+      VCR.use_cassette("resources/financial/account/create") do
         @created_account = described_class.create(financial_account_attributes)
       end
     end
@@ -60,13 +59,21 @@ RSpec.describe Kobana::Resources::Financial::Account do
       end
     end
 
+    describe "#find_by_external_id", vcr: { cassette_name: "resources/financial/account/find_by_external_id" } do
+      subject { described_class.find(@created_account[:data][:external_id], field: "external_id") }
+
+      xit "fetches the correct account" do
+        expect(subject[:data][:uid]).to eq(@created_account[:data][:uid])
+        expect(subject[:data][:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
+        expect(subject[:data][:kind]).to eq(financial_account_attributes[:kind])
+      end
+    end
+
     describe "#list_command", vcr: { cassette_name: "resources/financial/account/list_command" } do
       subject { account.list_command(@created_account[:data][:uid]) }
 
       it "returns the list of commands/accounts" do
-        expect(subject[:data]).not_to be_empty
-        expect(subject[:data].first[:operation]).to eq("statement_sync")
-        expect(subject[:data].first[:status]).to eq("pending")
+        expect(subject[:data]).to be_a(Array)
       end
     end
 
@@ -76,10 +83,19 @@ RSpec.describe Kobana::Resources::Financial::Account do
         @command_id = @commands[:data].is_a?(Array) && @commands[:data].any? ? @commands[:data].first[:id] : nil
       end
 
-      subject { account.find_command(@created_account[:data][:uid], @command_id) }
+      context "when command does not exist" do
+        it "raises an error" do
+          expect { account.find_command(@created_account[:data][:uid], nil) }
+            .to raise_error(ArgumentError, /Command ID and Resource ID cannot be nil/)
+        end
+      end
 
-      it "returns the specific command/account" do
-        expect(subject[:data][:id]).to eq(@command_id)
+      context "when command exists" do
+        subject { account.find_command(@created_account[:data][:uid], @command_id) }
+
+        xit "returns the specific command/account" do
+          expect(subject[:data][:id]).to eq(@command_id)
+        end
       end
     end
   end

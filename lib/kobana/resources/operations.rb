@@ -20,9 +20,9 @@ module Kobana
           parse_response(response)
         end
 
-        def find(resource_id)
+        def find(resource_id, params = {})
           url = "#{base_url}/#{resource_endpoint}/#{resource_id}"
-          response = connection.get(url)
+          response = connection.get(url, params)
           parse_response(response)
         end
       end
@@ -46,6 +46,8 @@ module Kobana
       end
 
       def find_command(resource_id, command_id)
+        raise ArgumentError, "Command ID and Resource ID cannot be nil" if command_id.nil? || resource_id.nil?
+
         url = "#{base_url}/#{resource_endpoint}/#{resource_id}/commands/#{command_id}"
         response = connection.get(url)
         parse_response(response)

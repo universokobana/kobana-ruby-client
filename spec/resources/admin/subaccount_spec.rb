@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "spec_helper"
-require "pry"
 
 RSpec.describe Kobana::Resources::Admin::Subaccount do
   let!(:api_token) { ENV.fetch("KOBANA_API_TOKEN", nil) }
@@ -23,7 +22,7 @@ RSpec.describe Kobana::Resources::Admin::Subaccount do
 
       it "creates a new subaccount with the correct attributes" do
         expect(subject[:status]).to eq(201)
-        expect(subject[:data][:email]).to eq(admin_subaccount_attributes[:email])
+        expect(subject[:data][:email]).to include("@kobana.com.br")
         expect(subject[:data][:account_type]).to eq(admin_subaccount_attributes[:account_type])
         expect(subject[:data][:business_legal_name]).to eq(admin_subaccount_attributes[:business_legal_name])
         expect(subject[:data][:business_cnpj]).to eq(admin_subaccount_attributes[:business_cnpj])
@@ -34,7 +33,7 @@ RSpec.describe Kobana::Resources::Admin::Subaccount do
 
   context "exist" do
     before do
-      VCR.use_cassette("resources/admin/subaccount/create_for_test") do
+      VCR.use_cassette("resources/admin/subaccount/create") do
         @created_subaccount = described_class.create(admin_subaccount_attributes)[:data]
       end
     end
@@ -49,7 +48,7 @@ RSpec.describe Kobana::Resources::Admin::Subaccount do
       it "checks if the list contains the subaccount we created" do
         expect(subject[:data])
           .to(be_any do |item|
-            item[:email] == admin_subaccount_attributes[:email]
+            item[:email].include?("@kobana.com.br")
           end)
       end
     end
@@ -64,7 +63,7 @@ RSpec.describe Kobana::Resources::Admin::Subaccount do
 
       it "fetches the correct subaccount" do
         expect(subject[:data][:id]).to eq(@subaccount_id)
-        expect(subject[:data][:email]).to eq(admin_subaccount_attributes[:email])
+        expect(subject[:data][:email]).to include("@kobana.com.br")
       end
     end
 

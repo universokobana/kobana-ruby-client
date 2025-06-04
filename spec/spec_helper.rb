@@ -2,8 +2,10 @@
 
 require "kobana"
 require "vcr"
+require "cpf_cnpj"
 require "factory_bot"
 require "dotenv/load"
+require "pry"
 
 Dir[File.join(__dir__, "support", "**", "*.rb")].each { |f| require f }
 

@@ -14,6 +14,7 @@ end
 
 group :test do
   gem "code-scanning-rubocop"
+  gem "cpf_cnpj"
   gem "dotenv"
   gem "factory_bot"
   gem "lefthook"
