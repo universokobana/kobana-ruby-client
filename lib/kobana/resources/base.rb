@@ -10,13 +10,14 @@ module Kobana
       include Operations
 
       class << self
-        attr_accessor :primary_key, :api_version, :resource_endpoint
+        attr_accessor :primary_key, :api_version, :resource_endpoint, :errors
 
         def inherited(subclass)
           super
           subclass.resource_endpoint ||= infer_resource_endpoint(subclass)
           subclass.primary_key ||= :uid
           subclass.api_version ||= :v2
+          subclass.errors ||= []
         end
 
         def infer_resource_endpoint(klass)
@@ -36,16 +37,22 @@ module Kobana
 
       def initialize(attributes = {})
         @attributes = attributes.deep_symbolize_keys
+        @errors = []
       end
 
       def [](key)
         attributes[key.to_sym]
       end
 
-      def method_missing(key, *, &)
-        return unless attributes.key?(key.to_sym)
+      def method_missing(key, *args, &)
+        if key.to_s.end_with?("=")
+          key = key.to_s.chomp("=").to_sym
+          attributes[key] = args.first
+        else
+          return unless attributes.key?(key.to_sym)
 
-        attributes[key]
+          attributes[key]
+        end
       end
 
       def respond_to_missing?(key, include_private = false)
@@ -62,6 +69,10 @@ module Kobana
 
       def created?
         attributes[:created] || false
+      end
+
+      def updated?
+        attributes[:updated] || false
       end
 
       def new_record?

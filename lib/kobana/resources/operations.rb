@@ -14,6 +14,7 @@ module Kobana
           when 200
             response[:data].map { |data| new(data) }
           else
+            handle_error_response(response)
             []
           end
         end
@@ -30,13 +31,14 @@ module Kobana
           result.first
         end
 
-        def create(data)
-          response = request(:post, uri, data.to_json)
+        def create(attributes = {})
+          response = request(:post, uri, attributes.to_json)
           case response[:status]
           when 201
             new(response[:data].merge(created: true))
           else
-            false
+            handle_error_response(response)
+            new(attributes.merge(errors: errors, created: false))
           end
         end
 
@@ -45,11 +47,21 @@ module Kobana
           case response[:status]
           when 200
             new(response[:data])
+          else
+            handle_error_response(response)
+            nil
           end
         end
 
         def find_or_create_by(find_by_params, attributes = {})
           find_by(find_by_params, ignore_multiple: true) || create(attributes.merge(find_by_params.deep_symbolize_keys))
+        end
+
+        def handle_error_response(response)
+          return unless response[:data].is_a?(Hash)
+
+          self.errors = response[:data][:errors] if response[:data].key?(:errors)
+          self.errors = [title: response[:data][:error]] if response[:data].key?(:error)
         end
       end
 
@@ -57,12 +69,28 @@ module Kobana
         return if new_attributes.empty?
 
         data = attributes.merge(new_attributes.deep_symbolize_keys)
-        request(:put, uri, data.to_json)
+        response = request(:put, uri, data.to_json)
+        case response[:status]
+        when 200..204
+          new(response[:data].merge(updated: true))
+        else
+          handle_error_response(response)
+          new(attributes.merge(errors: errors, updated: false))
+        end
       end
 
+      # rubocop:disable Naming/PredicateMethod
       def delete
-        request(:delete, uri)
+        response = request(:delete, uri)
+        case response[:status]
+        when 204
+          true
+        else
+          handle_error_response(response)
+          false
+        end
       end
+      # rubocop:enable Naming/PredicateMethod
 
       def list_commands(params = {})
         response = request(:get, "#{uri}/commands", params)
@@ -70,6 +98,9 @@ module Kobana
         when 200
           # response[:data].map { |command| Kobana::Resources::Command.new(command) }
           response[:data].map { |command| command }
+        else
+          handle_error_response(response)
+          []
         end
       end
 
@@ -81,7 +112,15 @@ module Kobana
         when 200
           # response[:data].map { |command| Kobana::Resources::Command.new(command) }
           response[:data].map { |command| command }
+        else
+          handle_error_response(response)
+          nil
         end
+      end
+
+      def handle_error_response(response)
+        self.class.handle_error_response(response)
+        self.errors = self.class.errors
       end
     end
   end

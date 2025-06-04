@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Hash
-  # rubocop:disable Metrics/MethodLength
   def deep_symbolize_keys
     result = {}
     each do |key, value|

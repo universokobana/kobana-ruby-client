@@ -71,7 +71,10 @@ RSpec.describe Kobana::Resources::Admin::Subaccount do
       subject { subaccount.list_commands }
 
       it do
-        expect(subject).to be_nil
+        expect(subject).to be_empty
+        expect(described_class.errors).to eq([{ code: "not_found",
+                                                detail: "Este registro não existe, ou foi deletado.",
+                                                title: "Não foi possível encontrar o registro" }])
       end
     end
 
@@ -80,6 +83,7 @@ RSpec.describe Kobana::Resources::Admin::Subaccount do
 
       it do
         expect(subject).to be_nil
+        expect(described_class.errors).to eq([{ title: "Not found" }])
       end
     end
   end

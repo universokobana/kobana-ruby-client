@@ -22,6 +22,7 @@ RSpec.describe Kobana::Resources::Financial::Account do
         expect(subject[:account_number]).to eq(financial_account_attributes[:account_number])
         expect(subject[:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
         expect(subject[:kind]).to eq(financial_account_attributes[:kind])
+        expect(subject[:created]).to be_truthy
       end
     end
 
@@ -44,6 +45,21 @@ RSpec.describe Kobana::Resources::Financial::Account do
     before do
       VCR.use_cassette("resources/financial/account/create") do
         @created_account = described_class.create(financial_account_attributes)
+      end
+    end
+
+    describe "#create", vcr: { cassette_name: "resources/financial/account/create_error" } do
+      subject { described_class.create(financial_account_attributes) }
+
+      it "return error" do
+        expect(subject[:agency_number]).to eq(financial_account_attributes[:agency_number])
+        expect(subject[:account_number]).to eq(financial_account_attributes[:account_number])
+        expect(subject[:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
+        expect(subject[:kind]).to eq(financial_account_attributes[:kind])
+        expect(subject).not_to be_created
+        expect(subject.errors).to eq([{ code: "validation_error",
+                                        detail: "Número da Conta já está em uso",
+                                        param: "account_number" }])
       end
     end
 

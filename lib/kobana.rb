@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
+$LOAD_PATH.unshift(File.expand_path(".", __dir__))
+
 require "faraday"
 require "json"
 require "support/string"
 require "support/hash"
 require "kobana/configuration"
-
-$LOAD_PATH.unshift(File.expand_path(".", __dir__))
 
 module Kobana
   class << self

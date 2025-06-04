@@ -76,7 +76,8 @@ RSpec.describe Kobana::Resources::Charge::BankBillet do
       subject { bank_billet.list_commands }
 
       it do
-        expect(subject).to be_nil
+        expect(subject).to be_empty
+        expect(described_class.errors).to eq([{ title: "Not found" }])
       end
     end
 
@@ -85,6 +86,7 @@ RSpec.describe Kobana::Resources::Charge::BankBillet do
 
       it do
         expect(subject).to be_nil
+        expect(described_class.errors).to eq([{ title: "Not found" }])
       end
     end
   end
