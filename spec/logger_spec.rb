@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-require 'stringio'
+require "stringio"
 
 def capture_stdout
   original_stdout = $stdout
@@ -14,7 +14,7 @@ ensure
   $stdout = original_stdout
 end
 
-RSpec.describe 'Logger' do
+RSpec.describe "Logger" do
   let!(:api_token) { ENV.fetch("KOBANA_API_TOKEN", nil) }
 
   before do
