@@ -14,8 +14,17 @@ module Kobana
 
         def inherited(subclass)
           super
+          subclass.resource_endpoint ||= infer_resource_endpoint(subclass)
           subclass.primary_key ||= :id
           subclass.api_version ||= :v2
+        end
+
+        def infer_resource_endpoint(klass)
+          return resource_endpoint if resource_endpoint
+
+          return unless klass.name =~ /Kobana::Resources::(.*)$/
+
+          ::Regexp.last_match(1).underscore.pluralize
         end
 
         def uri

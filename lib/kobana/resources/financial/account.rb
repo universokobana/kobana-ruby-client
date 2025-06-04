@@ -5,7 +5,6 @@ module Kobana
     module Financial
       class Account < Base
         self.primary_key = :uid
-        self.resource_endpoint = "financial/accounts"
       end
     end
   end

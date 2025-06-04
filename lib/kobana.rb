@@ -5,6 +5,12 @@ require "json"
 require "kobana/configuration"
 
 $LOAD_PATH.unshift(File.expand_path(".", __dir__))
+
+require "active_support/inflector"
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular "pix", "pix"
+end
+
 module Kobana
   class << self
     attr_writer :configuration
