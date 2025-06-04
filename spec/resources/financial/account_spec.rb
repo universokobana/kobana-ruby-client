@@ -24,6 +24,18 @@ RSpec.describe Kobana::Resources::Financial::Account do
         expect(subject[:kind]).to eq(financial_account_attributes[:kind])
       end
     end
+
+    describe "#find_or_create_by", vcr: { cassette_name: "resources/financial/account/find_or_create_by" } do
+      subject { described_class.find_or_create_by({ external_id: "external8888" }, financial_account_attributes) }
+
+      it "creates a new financial account" do
+        expect(subject[:agency_number]).to eq(financial_account_attributes[:agency_number])
+        expect(subject[:account_number]).to eq(financial_account_attributes[:account_number])
+        expect(subject[:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
+        expect(subject[:kind]).to eq(financial_account_attributes[:kind])
+        expect(subject[:created]).to be_truthy
+      end
+    end
   end
 
   context "exist" do

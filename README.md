@@ -72,7 +72,19 @@ attributes = {
 }
 
 pix = Kobana::Resources::Charge::Pix.create(attributes)
-puts pix.id
+pix.id # 1
+pix.new_record? false
+pix.created? # true
+pix.attributes # {}
+
+
+pix = Kobana::Resources::Charge::Pix.new(attributes)
+pix.id nil
+pix.new_record? # true
+pix.created? # false
+pix.attributes # {}
+
+pix.save
 ```
 
 ##### Fetching a Charge

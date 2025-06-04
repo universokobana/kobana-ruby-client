@@ -59,6 +59,18 @@ module Kobana
       def request(*)
         self.class.request(*)
       end
+
+      def created?
+        attributes[:created] || false
+      end
+
+      def new_record?
+        primary_key.nil? || primary_key.to_s.empty?
+      end
+
+      def primary_key
+        attributes[self.class.primary_key]
+      end
     end
   end
 end
