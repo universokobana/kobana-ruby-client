@@ -32,6 +32,7 @@ GEM
     connection_pool (2.4.1)
     diff-lcs (1.5.1)
     docile (1.4.1)
+    dotenv (3.1.7)
     drb (2.2.1)
     factory_bot (6.5.0)
       activesupport (>= 5.0.0)
@@ -118,6 +119,7 @@ PLATFORMS
 
 DEPENDENCIES
   code-scanning-rubocop
+  dotenv
   factory_bot
   kobana!
   lefthook
