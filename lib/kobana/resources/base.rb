@@ -52,7 +52,7 @@ module Kobana
         end
 
         def base_url
-          @base_url ||= BASE_URI[Kobana.configuration.api_version][Kobana.configuration.environment]
+          @base_url ||= BASE_URI[Kobana.configuration.api_version&.to_sym][Kobana.configuration.environment&.to_sym]
         end
       end
 
