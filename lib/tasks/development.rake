@@ -2,7 +2,7 @@
 
 desc "Start an interactive console"
 task :console do
-  require 'irb'
+  require "irb"
 
   # Load the application environment if needed
   require File.expand_path("../kobana.rb", __dir__)

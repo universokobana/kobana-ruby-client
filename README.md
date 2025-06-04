@@ -41,24 +41,16 @@ Configure your API key by creating an initializer in your Rails project:
 `config/initializers/kobana.rb`
 
 ```ruby
-Kobana.api_token = 'YOUR_API_TOKEN'
-```
-
-Replace `'YOUR_API_TOKEN'` with your actual API key.
-
-### Usage
-
-To use this gem:
-
-#### **Configuration**
-
-```ruby
 Kobana.configure do |config|
   config.api_token = 'YOUR_API_TOKEN'
   config.environment = :sandbox # you can specify the environment as :development, :sandbox, or :production
-  config.api_version = :v1 #or :v2
+  config.api_version = :v1 #default: :v2
 end
 ```
+
+Replace `'YOUR_API_TOKEN'` with your actual API key from the corresponding environment.
+
+### Usage
 
 #### **Charges**
 

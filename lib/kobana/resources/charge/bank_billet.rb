@@ -4,13 +4,7 @@ module Kobana
   module Resources
     module Charge
       class BankBillet < Base
-        include ResourceOperations
-
         @resource_endpoint = "bank_billets"
-
-        class << self
-          attr_reader :resource_endpoint
-        end
 
         def cancel(resource_id)
           url = "#{base_url}/#{endpoint}/#{resource_id}/cancel"

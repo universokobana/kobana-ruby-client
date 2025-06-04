@@ -6,6 +6,7 @@ module Kobana
 
     def initialize
       @custom_headers = {}
+      @api_version = :v2
       @environment = :development
     end
   end

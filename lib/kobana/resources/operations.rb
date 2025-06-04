@@ -2,7 +2,7 @@
 
 module Kobana
   module Resources
-    module ResourceOperations
+    module Operations
       def index(params = {})
         url = "#{base_url}/#{endpoint}"
         response = connection.get(url, params)

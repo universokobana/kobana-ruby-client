@@ -17,11 +17,11 @@ module Kobana
     end
   end
 
-  autoload :Base, "kobana/base"
   autoload :Version, "kobana/version"
 
   module Resources
-    autoload :ResourceOperations, "kobana/resources/resource_operations"
+    autoload :Operations, "kobana/resources/operations"
+    autoload :Base, "kobana/resources/base"
     module Charge
       autoload :Pix, "kobana/resources/charge/pix"
       autoload :BankBillet, "kobana/resources/charge/bank_billet"
