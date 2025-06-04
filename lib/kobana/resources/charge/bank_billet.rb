@@ -8,6 +8,7 @@ module Kobana
         self.api_version = :v1
         self.resource_endpoint = "bank_billets"
 
+        # rubocop:disable Naming/PredicateMethod
         def cancel
           response = request(:put, "#{uri}/cancel")
           case response[:status]
@@ -17,6 +18,7 @@ module Kobana
             false
           end
         end
+        # rubocop:enable Naming/PredicateMethod
       end
     end
   end

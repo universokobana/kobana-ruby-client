@@ -1,5 +1,7 @@
-require:
+plugins:
   - rubocop-performance
+
+require:
   - 'test_prof/rubocop'
   - rubocop-packaging
 
