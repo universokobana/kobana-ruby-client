@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api-sandbox.kobana.com.br/v2/admin/subaccounts//commands
+    uri: https://api-sandbox.kobana.com.br/v2/admin/subaccounts/4483/commands
     body:
       encoding: US-ASCII
       string: ''
@@ -27,9 +27,9 @@ http_interactions:
       server:
       - Cowboy
       report-to:
-      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1749048164&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=w5G%2BvtefDVvsHLrpec2wf7zxBBSNoxn4Cw3MrMSHf8U%3D"}]}'
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1749057682&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=SkORUbjb%2BhZeJ62ENecIbQSgYIJbXmNYv4fyajE46TM%3D"}]}'
       reporting-endpoints:
-      - heroku-nel=https://nel.heroku.com/reports?ts=1749048164&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=w5G%2BvtefDVvsHLrpec2wf7zxBBSNoxn4Cw3MrMSHf8U%3D
+      - heroku-nel=https://nel.heroku.com/reports?ts=1749057682&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=SkORUbjb%2BhZeJ62ENecIbQSgYIJbXmNYv4fyajE46TM%3D
       nel:
       - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
       x-frame-options:
@@ -52,14 +52,17 @@ http_interactions:
       - unsafe-none
       cross-origin-opener-policy:
       - unsafe-none
+      permissions-policy:
+      - camera=(), gyroscope=(), microphone=(), usb=(), payment=(), fullscreen=(self),
+        geolocation=(self)
       x-ratelimit-limit:
       - '10000'
       x-ratelimit-remaining:
-      - '9993'
+      - '9998'
       ratelimit-limit:
       - '10000'
       ratelimit-remaining:
-      - '9993'
+      - '9998'
       feature-policy:
       - camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; payment 'none';
         fullscreen 'self'; geolocation 'self'
@@ -78,9 +81,9 @@ http_interactions:
         https://d3caatrp30sdc5.cloudfront.net; object-src ''none''; script-src ''self''
         ''unsafe-inline'' ''strict-dynamic'' https://app-sandbox.kobana.com.br https://cdn.zapier.com
         https://albato.com https://widget.pluga.co https://*.datadoghq-browser-agent.com
-        ''nonce-w065ocasii4aM340mnbBhw==''; style-src ''self'' ''unsafe-inline'' https://app-sandbox.kobana.com.br
-        https://fonts.googleapis.com https://tagmanager.google.com https://cdn.zapier.com
-        https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
+        ''nonce-3808b3d12cbdf20c1092ff04bffe3858''; style-src ''self'' ''unsafe-inline''
+        https://app-sandbox.kobana.com.br https://fonts.googleapis.com https://tagmanager.google.com
+        https://cdn.zapier.com https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
         https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css;
         child-src ''self'' https://www.googleadservices.com https://docs.google.com
         https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.br
@@ -94,12 +97,15 @@ http_interactions:
         https://albato.com https://zapier.com https://api.zapier.com https://*.lr-ingest.io/
         https://browser-intake-datadoghq.com https://*.datadoghq.com https://recaptchaenterprise.googleapis.com
         https://www.recaptcha.net'
+      set-cookie:
+      - _kobana_session=yDD4G953i7eJA5YX9qvo4NsbxewIolPDps5cnRsmJqin2dujIrBxjrZKgrR4EyPVxCJzQ%2Ft2aG2Pd597zOitYDpMP96rwKlLF1ervUIxismfXCrjlqYwYh6Hoh6OHmOFQtYq63IcgbwRbBBF%2B6k45JGtGn7PVZtbq65y4Ijs3N98gMzCON2FtPDdMAcNBWEHKA8igFaC6g%3D%3D--d41qPeZlz%2FqbuaJG--Stqb3YRkJgOpSloDunJGiw%3D%3D;
+        path=/; secure; HttpOnly; SameSite=Lax
       x-request-id:
-      - ea889026-3776-4e46-900c-61b5424c9aab
+      - ac32f5f7-7cc8-476e-ba0a-1d246a2b4ed6
       x-runtime:
-      - '0.032933'
+      - '0.053306'
       date:
-      - Wed, 04 Jun 2025 14:42:44 GMT
+      - Wed, 04 Jun 2025 17:21:22 GMT
       cache-control:
       - no-cache, private
       x-rack-cache:
@@ -119,10 +125,9 @@ http_interactions:
       x-amz-cf-pop:
       - MIA3-C1
       x-amz-cf-id:
-      - SIRqs4BhqWPWfgV6OSrglxQbosrUb0xBdXRP9UwCog2gRi1hrKSEwQ==
+      - tWRfW14DCBPpPDTgFxXAQJkg8zSsCtX4knlAWeNOyo1u1iqQW6nlGg==
     body:
       encoding: UTF-8
-      string: '{"status":404,"errors":[{"title":"Não foi possível encontrar o registro","code":"not_found","detail":"Este
-        registro não existe, ou foi deletado."}]}'
-  recorded_at: Wed, 04 Jun 2025 14:42:44 GMT
+      string: '{"error":"Not found"}'
+  recorded_at: Wed, 04 Jun 2025 17:21:22 GMT
 recorded_with: VCR 6.3.1
