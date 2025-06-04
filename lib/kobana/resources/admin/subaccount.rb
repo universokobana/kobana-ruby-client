@@ -4,7 +4,7 @@ module Kobana
   module Resources
     module Admin
       class Subaccount < Base
-        @resource_endpoint = "admin/subaccounts"
+        self.resource_endpoint = "admin/subaccounts"
       end
     end
   end

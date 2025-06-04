@@ -19,7 +19,7 @@ RSpec.describe Kobana::Resources::Admin::Subaccount do
 
   context "do not exist" do
     describe "#create", vcr: { cassette_name: "resources/admin/subaccount/create" } do
-      subject { subaccount.create(admin_subaccount_attributes) }
+      subject { described_class.create(admin_subaccount_attributes) }
 
       it "creates a new subaccount with the correct attributes" do
         expect(subject[:status]).to eq(201)
@@ -35,12 +35,12 @@ RSpec.describe Kobana::Resources::Admin::Subaccount do
   context "exist" do
     before do
       VCR.use_cassette("resources/admin/subaccount/create_for_test") do
-        @created_subaccount = subaccount.create(admin_subaccount_attributes)[:data]
+        @created_subaccount = described_class.create(admin_subaccount_attributes)[:data]
       end
     end
 
     describe "#index", vcr: { cassette_name: "resources/admin/subaccount/list_all" } do
-      subject { subaccount.index }
+      subject { described_class.all }
 
       it "returns an array of subaccounts" do
         expect(subject[:data]).to be_an_instance_of(Array)
@@ -56,11 +56,11 @@ RSpec.describe Kobana::Resources::Admin::Subaccount do
 
     describe "#find", vcr: { cassette_name: "resources/admin/subaccount/find" } do
       before do
-        @subaccounts = subaccount.index
+        @subaccounts = described_class.all
         data = @subaccounts[:data]
         @subaccount_id = data.is_a?(Array) && data.any? ? data.first[:id] : nil
       end
-      subject { subaccount.find(@subaccount_id) }
+      subject { described_class.find(@subaccount_id) }
 
       it "fetches the correct subaccount" do
         expect(subject[:data][:id]).to eq(@subaccount_id)

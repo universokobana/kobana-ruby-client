@@ -4,7 +4,7 @@ module Kobana
   module Resources
     module Charge
       class Pix < Base
-        @resource_endpoint = "charge/pix"
+        self.resource_endpoint = "charge/pix"
       end
     end
   end

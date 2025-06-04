@@ -19,7 +19,7 @@ RSpec.describe Kobana::Resources::Financial::Account do
 
   context "do not exist" do
     describe "#create", vcr: { cassette_name: "resources/financial/account/create" } do
-      subject { account.create(financial_account_attributes) }
+      subject { described_class.create(financial_account_attributes) }
 
       it "creates a new account" do
         expect(subject[:status]).to eq(201)
@@ -35,12 +35,12 @@ RSpec.describe Kobana::Resources::Financial::Account do
   context "exist" do
     before do
       VCR.use_cassette("resources/financial/account/create_for_methods") do
-        @created_account = account.create(financial_account_attributes)
+        @created_account = described_class.create(financial_account_attributes)
       end
     end
 
     describe "#index", vcr: { cassette_name: "resources/financial/account/list_all" } do
-      subject { account.index }
+      subject { described_class.all }
 
       it "checks if the first account is the one we created" do
         expect(subject[:data].first[:financial_provider_slug]).to eq(
@@ -51,7 +51,7 @@ RSpec.describe Kobana::Resources::Financial::Account do
     end
 
     describe "#find", vcr: { cassette_name: "resources/financial/account/find" } do
-      subject { account.find(@created_account[:data][:uid]) }
+      subject { described_class.find(@created_account[:data][:uid]) }
 
       it "fetches the correct account" do
         expect(subject[:data][:uid]).to eq(@created_account[:data][:uid])

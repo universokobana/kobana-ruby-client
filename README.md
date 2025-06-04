@@ -57,7 +57,7 @@ Replace `'YOUR_API_TOKEN'` with your actual API key from the corresponding envir
 ##### Creating a Charge
 
 ```ruby
-charge_data = {
+attributes = {
   'amount' => 100.50,
   'payer' => {
     'document_number' => '1234567890',
@@ -72,26 +72,23 @@ charge_data = {
   'custom_data' => '{"order_id": "12345"}'
 }
 
-charge = Kobana::Resources::Charge::Pix.new
-result = charge.create(charge_data)
-puts result
+pix = Kobana::Resources::Charge::Pix.create(attributes)
+puts pix
 ```
 
 ##### Fetching a Charge
 
 ```ruby
 charge_id = 1  # Replace with your charge ID
-charge = Kobana::Resources::Charge::Pix.new
-result = charge.find(charge_id)
-puts result
+pix = Kobana::Resources::Charge::Pix.find(charge_id)
+puts pix
 ```
 
 ##### Listing All Charges
 
 ```ruby
-charge = Kobana::Resources::Charge::Pix.new
 params = { status: ["opened", "overdue"], page: 2 }
-results = charge.index(params)
+results = Kobana::Resources::Charge::Pix.all(params)
 puts result
 ```
 
@@ -100,26 +97,23 @@ puts result
 ##### Creating a Bank Billet
 
 ```ruby
-bank_billet_data = { ... }
+attributes = { ... }
 
-bank_billet = Kobana::Resources::BankBillet::BankBillet.new
-result = bank_billet.create(bank_billet_data)
-puts result
+bank_billet = Kobana::Resources::BankBillet::BankBillet.create(attributes)
+puts bank_billet
 ```
 
 ##### Fetching a Bank Billet
 
 ```ruby
 bank_billet_id = 1  # Replace with your charge ID
-bank_billet = Kobana::Resources::BankBillet::BankBillet.new
-result = bank_billet.find(bank_billet_id)
-puts result
+bank_billet = Kobana::Resources::BankBillet::BankBillet.find(bank_billet_id)
+puts bank_billet
 ```
 
 ##### Listing All Bank Billets
 
 ```ruby
-bank_billet = Kobana::Resources::BankBillet::BankBillet.new
-result = bank_billet.index
-puts result
+bank_billets = Kobana::Resources::BankBillet::BankBillet.all
+puts bank_billets
 ```

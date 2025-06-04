@@ -18,7 +18,7 @@ RSpec.describe Kobana::Resources::Charge::Pix do
 
   context "do not exist" do
     describe "#create", vcr: { cassette_name: "resources/charge/pix/create" } do
-      subject { pix.create(charge_pix_attributes) }
+      subject { described_class.create(charge_pix_attributes) }
 
       it "creates a new charge" do
         expect(subject[:status]).to eq(201)
@@ -30,12 +30,12 @@ RSpec.describe Kobana::Resources::Charge::Pix do
   context "exist" do
     before do
       VCR.use_cassette("resources/charge/pix/create_for_methods") do
-        @created_pix = pix.create(charge_pix_attributes)
+        @created_pix = described_class.create(charge_pix_attributes)
       end
     end
 
     describe "#index", vcr: { cassette_name: "resources/charge/pix/list_all" } do
-      subject { pix.index }
+      subject { described_class.all }
 
       it "checks if the first charge is the one we created" do
         transformed_attributes = charge_pix_attributes
@@ -44,7 +44,7 @@ RSpec.describe Kobana::Resources::Charge::Pix do
     end
 
     describe "#find", vcr: { cassette_name: "resources/charge/pix/find" } do
-      subject { pix.find(@created_pix[:data][:id]) }
+      subject { described_class.find(@created_pix[:data][:id]) }
 
       it "fetches the correct charge" do
         expect(subject[:data][:id]).to eq(@created_pix[:data][:id])

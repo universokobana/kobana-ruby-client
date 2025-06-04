@@ -4,10 +4,10 @@ module Kobana
   module Resources
     module Charge
       class BankBillet < Base
-        @resource_endpoint = "bank_billets"
+        self.resource_endpoint = "bank_billets"
 
         def cancel(resource_id)
-          url = "#{base_url}/#{endpoint}/#{resource_id}/cancel"
+          url = "#{base_url}/#{resource_endpoint}/#{resource_id}/cancel"
           response = connection.put(url)
           { status: response.status, data: {} }
         end

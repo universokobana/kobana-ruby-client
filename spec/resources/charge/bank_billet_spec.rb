@@ -18,7 +18,7 @@ RSpec.describe Kobana::Resources::Charge::BankBillet do
 
   context "do not exist" do
     describe "#create", vcr: { cassette_name: "resources/charge/bank_billet/create" } do
-      subject { bank_billet.create(bank_billet_attributes) }
+      subject { described_class.create(bank_billet_attributes) }
 
       it "creates a new bank_billet with the correct attributes" do
         expect(subject[:data][:amount]).to eq(bank_billet_attributes[:amount])
@@ -40,12 +40,12 @@ RSpec.describe Kobana::Resources::Charge::BankBillet do
   context "exist" do
     before do
       VCR.use_cassette("resources/charge/bank_billet/create_for_test") do
-        @created_bank_billet = bank_billet.create(bank_billet_attributes)[:data]
+        @created_bank_billet = described_class.create(bank_billet_attributes)[:data]
       end
     end
 
     describe "#index", vcr: { cassette_name: "resources/charge/bank_billet/list_all" } do
-      subject { bank_billet.index }
+      subject { described_class.all }
 
       it "returns an array of bank_billets" do
         expect(subject[:data]).to be_an_instance_of(Array)
@@ -61,7 +61,7 @@ RSpec.describe Kobana::Resources::Charge::BankBillet do
     end
 
     describe "#find", vcr: { cassette_name: "resources/charge/bank_billet/find" } do
-      subject { bank_billet.find(@created_bank_billet[:id]) }
+      subject { described_class.find(@created_bank_billet[:id]) }
 
       it "fetches the correct bank billet" do
         expect(subject[:data][:id]).to eq(@created_bank_billet[:id])

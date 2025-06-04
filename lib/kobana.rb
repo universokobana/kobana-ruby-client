@@ -4,6 +4,7 @@ require "faraday"
 require "json"
 require "kobana/configuration"
 
+$LOAD_PATH.unshift(File.expand_path(".", __dir__))
 module Kobana
   class << self
     attr_writer :configuration
@@ -20,8 +21,8 @@ module Kobana
   autoload :Version, "kobana/version"
 
   module Resources
-    autoload :Operations, "kobana/resources/operations"
     autoload :Base, "kobana/resources/base"
+    autoload :Operations, "kobana/resources/operations"
     module Charge
       autoload :Pix, "kobana/resources/charge/pix"
       autoload :BankBillet, "kobana/resources/charge/bank_billet"
