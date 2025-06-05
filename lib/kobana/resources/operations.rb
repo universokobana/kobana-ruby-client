@@ -55,9 +55,13 @@ module Kobana
           end
         end
 
-        def find_or_create_by(find_by_params, attributes = {}, options = {})
-          options = { ignore_multiple: false }.merge(options)
-          find_by(find_by_params, options) || create(attributes.merge(find_by_params.deep_symbolize_keys))
+        def find_or_create_by(params, attributes = {}, options = {})
+          options = { ignore_multiple: false, find_by_id: false, find_params: nil }.merge(options)
+          if options[:find_by_id]
+            find(params, options[:find_params]) || create(attributes)
+          else
+            find_by(params, options) || create(attributes.merge(params.deep_symbolize_keys))
+          end
         end
 
         def handle_error_response(response)

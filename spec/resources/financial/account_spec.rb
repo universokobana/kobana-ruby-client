@@ -27,16 +27,35 @@ RSpec.describe Kobana::Resources::Financial::Account do
       end
     end
 
-    describe "#find_or_create_by", vcr: { cassette_name: "resources/financial/account/find_or_create_by" } do
-      subject { described_class.find_or_create_by({ external_id: "external8888" }, financial_account_attributes) }
+    describe "#find_or_create_by" do
+      context "without params", vcr: { cassette_name: "resources/financial/account/find_or_create_by" } do
+        subject { described_class.find_or_create_by({ external_id: "external8888" }, financial_account_attributes) }
 
-      it "creates a new financial account" do
-        expect(subject[:agency_number]).to eq(financial_account_attributes[:agency_number])
-        expect(subject[:account_number]).to eq(financial_account_attributes[:account_number])
-        expect(subject[:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
-        expect(subject[:kind]).to eq(financial_account_attributes[:kind])
-        expect(subject).to be_created
-        expect(subject).to be_valid
+        it "creates a new financial account" do
+          expect(subject[:agency_number]).to eq(financial_account_attributes[:agency_number])
+          expect(subject[:account_number]).to eq(financial_account_attributes[:account_number])
+          expect(subject[:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
+          expect(subject[:kind]).to eq(financial_account_attributes[:kind])
+          expect(subject).to be_created
+          expect(subject).to be_valid
+        end
+      end
+
+      context "with find by id", vcr: { cassette_name: "resources/financial/account/find_or_create_by_id" } do
+        subject do
+          described_class.find_or_create_by(financial_account_attributes[:external_id], financial_account_attributes,
+                                            find_by_id: true, find_params: { field: "external_id" })
+        end
+
+        it "creates a new financial account" do
+          expect(subject[:agency_number]).to eq(financial_account_attributes[:agency_number])
+          expect(subject[:account_number]).to eq(financial_account_attributes[:account_number])
+          expect(subject[:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
+          expect(subject[:kind]).to eq(financial_account_attributes[:kind])
+          expect(subject[:external_id]).to eq(financial_account_attributes[:external_id])
+          expect(subject).not_to be_created
+          expect(subject).to be_valid
+        end
       end
     end
   end
