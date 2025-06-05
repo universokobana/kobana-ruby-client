@@ -21,7 +21,7 @@ module Kobana
 
         def find_by(params = {}, options = {})
           result = all(params)
-          return nil if result.size > 1 && options[:ignore_multiple]
+          return nil if result.empty? || (result.size > 1 && options[:ignore_multiple])
 
           match = params.all? do |key, value|
             result.first[key] == value
