@@ -28,6 +28,8 @@ RSpec.describe Kobana::Resources::Admin::Subaccount do
         expect(subject[:business_legal_name]).to eq(admin_subaccount_attributes[:business_legal_name])
         expect(subject[:business_cnpj]).to eq(admin_subaccount_attributes[:business_cnpj])
         expect(subject[:nickname]).to eq(admin_subaccount_attributes[:nickname])
+        expect(subject).to be_created
+        expect(subject).to be_valid
       end
     end
   end

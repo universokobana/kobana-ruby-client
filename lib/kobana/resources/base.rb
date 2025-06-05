@@ -45,7 +45,7 @@ module Kobana
         end
       end
 
-      attr_accessor :attributes
+      attr_accessor :attributes, :errors
 
       def initialize(attributes = {})
         @attributes = attributes.deep_symbolize_keys

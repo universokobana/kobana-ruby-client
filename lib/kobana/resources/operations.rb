@@ -38,7 +38,9 @@ module Kobana
             new(response[:data].merge(created: true))
           else
             handle_error_response(response)
-            new(attributes.merge(errors: errors, created: false))
+            resource = new(attributes.merge(created: false))
+            resource.errors = @errors
+            resource
           end
         end
 
@@ -61,8 +63,8 @@ module Kobana
         def handle_error_response(response)
           return unless response[:data].is_a?(Hash)
 
-          self.errors = response[:data][:errors] if response[:data].key?(:errors)
-          self.errors = [title: response[:data][:error]] if response[:data].key?(:error)
+          @errors = response[:data][:errors] if response[:data].key?(:errors)
+          @errors = [title: response[:data][:error]] if response[:data].key?(:error)
         end
       end
 
@@ -76,7 +78,9 @@ module Kobana
           new(response[:data].merge(updated: true))
         else
           handle_error_response(response)
-          new(attributes.merge(errors: errors, updated: false))
+          resource = new(attributes.merge(updated: false))
+          resource.errors = @errors
+          resource
         end
       end
 
@@ -121,7 +125,7 @@ module Kobana
 
       def handle_error_response(response)
         self.class.handle_error_response(response)
-        self.errors = self.class.errors
+        @errors = self.class.errors
       end
     end
   end

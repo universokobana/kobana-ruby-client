@@ -22,7 +22,8 @@ RSpec.describe Kobana::Resources::Financial::Account do
         expect(subject[:account_number]).to eq(financial_account_attributes[:account_number])
         expect(subject[:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
         expect(subject[:kind]).to eq(financial_account_attributes[:kind])
-        expect(subject[:created]).to be_truthy
+        expect(subject).to be_created
+        expect(subject).to be_valid
       end
     end
 
@@ -34,7 +35,8 @@ RSpec.describe Kobana::Resources::Financial::Account do
         expect(subject[:account_number]).to eq(financial_account_attributes[:account_number])
         expect(subject[:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
         expect(subject[:kind]).to eq(financial_account_attributes[:kind])
-        expect(subject[:created]).to be_truthy
+        expect(subject).to be_created
+        expect(subject).to be_valid
       end
     end
   end
@@ -57,6 +59,7 @@ RSpec.describe Kobana::Resources::Financial::Account do
         expect(subject[:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
         expect(subject[:kind]).to eq(financial_account_attributes[:kind])
         expect(subject).not_to be_created
+        expect(subject).not_to be_valid
         expect(subject.errors).to eq([{ code: "validation_error",
                                         detail: "Número da Conta já está em uso",
                                         param: "account_number" }])

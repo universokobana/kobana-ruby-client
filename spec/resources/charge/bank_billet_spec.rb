@@ -30,6 +30,8 @@ RSpec.describe Kobana::Resources::Charge::BankBillet do
         expect(subject[:customer_person_name]).to eq(bank_billet_attributes[:customer_person_name])
         expect(subject[:customer_phone_number]).to eq(bank_billet_attributes[:customer_phone_number])
         expect(subject[:customer_state]).to eq(bank_billet_attributes[:customer_state])
+        expect(subject).to be_created
+        expect(subject).to be_valid
       end
     end
   end
