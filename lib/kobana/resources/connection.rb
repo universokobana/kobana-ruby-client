@@ -21,15 +21,14 @@ module Kobana
       end
 
       module ClassMethods
-        def default_headers
+        def headers
           {
             "Authorization" => "Bearer #{Kobana.configuration.api_token}",
             "Content-Type" => "application/json"
-          }
+          }.merge(Kobana.configuration.custom_headers)
         end
 
         def connection
-          headers = default_headers.merge(Kobana.configuration.custom_headers)
           Faraday.new(url: base_url) do |faraday|
             faraday.request :url_encoded
             faraday.adapter Faraday.default_adapter

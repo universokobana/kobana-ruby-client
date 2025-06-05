@@ -79,6 +79,10 @@ module Kobana
         self.class.request(*)
       end
 
+      def valid?
+        errors.empty?
+      end
+
       def created?
         attributes[:created] || false
       end

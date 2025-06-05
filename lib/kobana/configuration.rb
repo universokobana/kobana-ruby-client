@@ -6,7 +6,7 @@ module Kobana
 
     def initialize
       @custom_headers = {}
-      @environment = :development
+      @environment = :sandbox
     end
   end
 end
