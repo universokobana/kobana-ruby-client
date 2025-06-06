@@ -60,6 +60,7 @@ module Kobana
         end
 
         def request(method, url, params_or_body = nil, options = {})
+          self.errors = []
           response = if options[:multipart]
                        multipart_connection.send(method, url, params_or_body)
                      else
