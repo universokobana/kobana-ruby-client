@@ -5,8 +5,8 @@ require_relative "lib/kobana/version"
 Gem::Specification.new do |spec|
   spec.name = "kobana"
   spec.version = Kobana::VERSION
-  spec.authors = ["Kivanio Barbosa"]
-  spec.email   = ["kivanio@gmail.com"]
+  spec.authors = ["Kivanio Barbosa", "Rafael Lima"]
+  spec.email   = ["kivanio@gmail.com", "rafael.lima@kobana.com.br"]
   spec.summary = "Kobana API Client"
   spec.description = "Kobana API Client"
   spec.homepage = "https://www.kobana.com.br/"
