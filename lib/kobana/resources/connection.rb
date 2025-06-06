@@ -31,8 +31,21 @@ module Kobana
         def connection
           Faraday.new(url: base_url) do |faraday|
             faraday.request :url_encoded
+            faraday.request :json
             faraday.adapter Faraday.default_adapter
             faraday.headers = headers
+            faraday.response :logger, logger if Kobana.configuration.debug
+          end
+        end
+
+        def multipart_connection
+          Faraday.new(url: base_url) do |faraday|
+            faraday.request :multipart
+            faraday.request :url_encoded
+            faraday.adapter :net_http
+            faraday.headers = headers.merge(
+              "Content-Type" => "multipart/form-data"
+            )
             faraday.response :logger, logger if Kobana.configuration.debug
           end
         end
@@ -46,8 +59,12 @@ module Kobana
           logger
         end
 
-        def request(method, url, params_or_body = nil)
-          response = connection.send(method, url, params_or_body)
+        def request(method, url, params_or_body = nil, options = {})
+          response = if options[:multipart]
+                       multipart_connection.send(method, url, params_or_body)
+                     else
+                       connection.send(method, url, params_or_body)
+                     end
           parse_response(response)
         end
 

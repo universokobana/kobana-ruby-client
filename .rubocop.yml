@@ -1,9 +1,9 @@
 plugins:
   - rubocop-performance
+  - rubocop-packaging
 
 require:
   - 'test_prof/rubocop'
-  - rubocop-packaging
 
 AllCops:
   TargetRubyVersion: 3.2

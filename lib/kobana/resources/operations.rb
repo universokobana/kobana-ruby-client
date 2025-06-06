@@ -9,7 +9,7 @@ module Kobana
 
       module ClassMethods
         def all(params = {})
-          response = request(:get, uri, params)
+          response = request(:get, uri(params), params)
           case response[:status]
           when 200
             response[:data].map { |data| new(data) }
@@ -31,8 +31,8 @@ module Kobana
           result.first
         end
 
-        def create(attributes = {})
-          response = request(:post, uri, attributes.to_json)
+        def create(attributes = {}, options = {})
+          response = request(:post, uri(attributes), attributes, options)
           case response[:status]
           when 201
             new(response[:data].merge(created: true))
@@ -45,7 +45,7 @@ module Kobana
         end
 
         def find(resource_id, params = {})
-          response = request(:get, "#{uri}/#{resource_id}", params)
+          response = request(:get, "#{uri(params)}/#{resource_id}", params)
           case response[:status]
           when 200
             new(response[:data])

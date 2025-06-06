@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+require "bundler"
+Bundler.setup(:development)
+
+require "dotenv/load"
+
 require "bundler/gem_tasks"
 require "rspec/core/rake_task"
 
