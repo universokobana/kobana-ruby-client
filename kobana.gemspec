@@ -11,6 +11,8 @@ Gem::Specification.new do |spec|
   spec.description = "Kobana API Client"
   spec.homepage = "https://www.kobana.com.br/"
   spec.required_ruby_version = ">= 3.2.6"
+  spec.platform = Gem::Platform::RUBY
+  spec.license = "MIT"
 
   spec.files = Dir["Rakefile", "{lib}/**/*", "README*", "LICENSE*", "CHANGELOG*"]
 
