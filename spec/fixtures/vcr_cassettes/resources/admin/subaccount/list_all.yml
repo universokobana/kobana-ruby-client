@@ -27,9 +27,9 @@ http_interactions:
       server:
       - Cowboy
       report-to:
-      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1748461185&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=ROqwVDFPmVvWFkYatcBMY7hXvwwOBqOROevidym9R3w%3D"}]}'
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1749004907&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=6RFZnLk0guHn%2BZk6V4Oz%2FRKKmSXDgLxk5VCdz1jPBNU%3D"}]}'
       reporting-endpoints:
-      - heroku-nel=https://nel.heroku.com/reports?ts=1748461185&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=ROqwVDFPmVvWFkYatcBMY7hXvwwOBqOROevidym9R3w%3D
+      - heroku-nel=https://nel.heroku.com/reports?ts=1749004907&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=6RFZnLk0guHn%2BZk6V4Oz%2FRKKmSXDgLxk5VCdz1jPBNU%3D
       nel:
       - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
       x-frame-options:
@@ -53,15 +53,15 @@ http_interactions:
       cross-origin-opener-policy:
       - unsafe-none
       x-ratelimit-limit:
-      - '60'
+      - '10000'
       x-ratelimit-remaining:
-      - '44'
+      - '9969'
       ratelimit-limit:
-      - '60'
+      - '10000'
       ratelimit-remaining:
-      - '44'
+      - '9969'
       etag:
-      - W/"c5866466e6530ab9ee44c2f9cb900e70"
+      - W/"ad60ac6d6656a3615405305f27b7aec4"
       feature-policy:
       - camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; payment 'none';
         fullscreen 'self'; geolocation 'self'
@@ -80,7 +80,7 @@ http_interactions:
         https://d3caatrp30sdc5.cloudfront.net; object-src ''none''; script-src ''self''
         ''unsafe-inline'' ''strict-dynamic'' https://app-sandbox.kobana.com.br https://cdn.zapier.com
         https://albato.com https://widget.pluga.co https://*.datadoghq-browser-agent.com
-        ''nonce-R9kC1ejLnzXDgHHjiKIAuQ==''; style-src ''self'' ''unsafe-inline'' https://app-sandbox.kobana.com.br
+        ''nonce-rSr23b7q8IS0lTMUiISM4w==''; style-src ''self'' ''unsafe-inline'' https://app-sandbox.kobana.com.br
         https://fonts.googleapis.com https://tagmanager.google.com https://cdn.zapier.com
         https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
         https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css;
@@ -97,11 +97,11 @@ http_interactions:
         https://browser-intake-datadoghq.com https://*.datadoghq.com https://recaptchaenterprise.googleapis.com
         https://www.recaptcha.net'
       x-request-id:
-      - 34891bb8-c8cb-4d4d-a9ae-e93c94d75b85
+      - 2bd772a6-365a-43b2-aaa7-59140ac31c01
       x-runtime:
-      - '0.147039'
+      - '0.119774'
       date:
-      - Wed, 28 May 2025 19:39:45 GMT
+      - Wed, 04 Jun 2025 02:41:47 GMT
       cache-control:
       - must-revalidate, private, max-age=0
       x-rack-cache:
@@ -113,7 +113,7 @@ http_interactions:
       content-encoding:
       - gzip
       via:
-      - 1.1 vegur, 1.1 fae059afbeac18143c8bf2780b8d7052.cloudfront.net (CloudFront)
+      - 1.1 vegur, 1.1 ae1829b60febaec799bcb0313d9bcacc.cloudfront.net (CloudFront)
       vary:
       - Accept-Encoding
       x-cache:
@@ -121,10 +121,13 @@ http_interactions:
       x-amz-cf-pop:
       - MIA3-C1
       x-amz-cf-id:
-      - eD166FNlqr-9PqAYRLYb4_klkWMa7RtDZsrzuegdA4_vLk3rIHQuCQ==
+      - 7U_NsCxj2FzEJQc_43teLlEsO9R2gK9I23M1ka8yJ4I6oWuiP_fGtQ==
     body:
       encoding: UTF-8
-      string: '{"status":200,"data":[{"id":4477,"email":"usuario@example.com","account_type":"juridical","gender":null,"cpf":null,"address_street_name":null,"address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":null,"address_complement":null,"phone_number":null,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":null,"business_legal_name":"Empresa
-        LTDA","business_type":null,"business_cnpj":"12.345.678/0001-95","address_city_name":null,"full_name":null,"mother_name":null,"father_name":null,"configuration":null,"simple_opting":false,"parent_id":4001,"created_via_api":true,"api_access_token":"sfSE2qwvbIlmuiwWdmn-GI96dHyf1NeHs8ZoT3E8l7Y","nickname":"Empresa","created_at":"2025-05-28T16:39:43-03:00","updated_at":"2025-05-28T16:39:43-03:00","external_id":null,"custom_data":null,"tags":[],"tag_list":null},{"id":4289,"email":null,"account_type":"juridical","gender":null,"cpf":null,"address_street_name":null,"address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":null,"address_complement":null,"phone_number":null,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":null,"business_legal_name":"","business_type":null,"business_cnpj":null,"address_city_name":null,"full_name":null,"mother_name":null,"father_name":null,"configuration":null,"simple_opting":false,"parent_id":4001,"created_via_api":false,"api_access_token":"J2v_FTUEi4CJUr0_TDjlsYXbiPRMahJpLeEbx3m_5xM","nickname":"teste","created_at":"2025-01-29T14:46:38-03:00","updated_at":"2025-01-29T14:46:54-03:00","external_id":null,"custom_data":null,"tags":[],"tag_list":null},{"id":4007,"email":null,"account_type":"juridical","gender":null,"cpf":null,"address_street_name":null,"address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":null,"address_complement":null,"phone_number":null,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":null,"business_legal_name":"","business_type":null,"business_cnpj":null,"address_city_name":null,"full_name":null,"mother_name":null,"father_name":null,"configuration":null,"simple_opting":false,"parent_id":4001,"created_via_api":false,"api_access_token":"80SDGaI561l1V8BRBcA2dC2vc152U1b8n8pyna1wdW8","nickname":"Gerente","created_at":"2024-08-13T17:33:34-03:00","updated_at":"2024-08-13T17:33:34-03:00","external_id":null,"custom_data":null,"tags":[],"tag_list":null}],"pagination":{"prev_url":"/api/v2/admin/subaccounts?page=\u0026per_page=50","next_url":"/api/v2/admin/subaccounts?page=\u0026per_page=50","page":1}}'
-  recorded_at: Wed, 28 May 2025 19:39:45 GMT
+      string: '{"status":200,"data":[{"id":4483,"email":"usuario1717@kobana.com.br","account_type":"juridical","gender":null,"cpf":null,"address_street_name":null,"address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":null,"address_complement":null,"phone_number":null,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":null,"business_legal_name":"Empresa
+        LTDA","business_type":null,"business_cnpj":"92.051.295/0001-43","address_city_name":null,"full_name":null,"mother_name":null,"father_name":null,"configuration":null,"simple_opting":false,"parent_id":10,"created_via_api":true,"api_access_token":"60h9zqBBe6congOAfpRRP_9HwIWNhbts8Pmy70AE2gs","nickname":"Empresa","created_at":"2025-06-03T23:41:46-03:00","updated_at":"2025-06-03T23:41:46-03:00","external_id":null,"custom_data":null,"tags":[],"tag_list":null},{"id":4482,"email":"usuario3314@kobana.com.br","account_type":"juridical","gender":null,"cpf":null,"address_street_name":null,"address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":null,"address_complement":null,"phone_number":null,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":null,"business_legal_name":"Empresa
+        LTDA","business_type":null,"business_cnpj":null,"address_city_name":null,"full_name":null,"mother_name":null,"father_name":null,"configuration":null,"simple_opting":false,"parent_id":10,"created_via_api":true,"api_access_token":"JQi1O8X-08J7dBjA9CyQrpEfW2HVT8-d0OQoF2rvVsw","nickname":"Empresa","created_at":"2025-06-03T23:35:31-03:00","updated_at":"2025-06-03T23:35:31-03:00","external_id":null,"custom_data":null,"tags":[],"tag_list":null},{"id":4032,"email":null,"account_type":"juridical","gender":null,"cpf":null,"address_street_name":null,"address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":null,"address_complement":null,"phone_number":null,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":null,"business_legal_name":"","business_type":null,"business_cnpj":null,"address_city_name":null,"full_name":null,"mother_name":null,"father_name":null,"configuration":null,"simple_opting":false,"parent_id":10,"created_via_api":false,"api_access_token":"VvBiL5zLprSx5bYjXM6FeRO53jW-20jXm7b85oS9Ea8","nickname":"BTG
+        Empresas","created_at":"2024-09-10T10:45:41-03:00","updated_at":"2024-09-10T10:52:34-03:00","external_id":null,"custom_data":null,"tags":[],"tag_list":null},{"id":4012,"email":null,"account_type":"juridical","gender":null,"cpf":null,"address_street_name":null,"address_state":null,"address_neighborhood":null,"address_postal_code":null,"address_number":null,"address_complement":null,"phone_number":null,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null,"business_category":null,"business_subcategory":null,"business_website":null,"business_name":null,"business_legal_name":"","business_type":null,"business_cnpj":null,"address_city_name":null,"full_name":null,"mother_name":null,"father_name":null,"configuration":null,"simple_opting":false,"parent_id":10,"created_via_api":false,"api_access_token":"KrTQPbmzm-Q7l8FVBkA0HYWWSipM-qmMsBnv-4eDuyI","nickname":"Banco
+        do Brasil","created_at":"2024-08-20T16:11:29-03:00","updated_at":"2024-09-13T10:41:32-03:00","external_id":null,"custom_data":null,"tags":[],"tag_list":null}],"pagination":{"prev_url":"/api/v2/admin/subaccounts?page=\u0026per_page=50","next_url":"/api/v2/admin/subaccounts?page=\u0026per_page=50","page":1}}'
+  recorded_at: Wed, 04 Jun 2025 02:41:47 GMT
 recorded_with: VCR 6.3.1

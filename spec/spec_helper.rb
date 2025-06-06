@@ -2,19 +2,12 @@
 
 require "kobana"
 require "vcr"
+require "cpf_cnpj"
 require "factory_bot"
+require "dotenv/load"
+require "pry"
 
-VCR.configure do |config|
-  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
-  config.hook_into :faraday
-  config.configure_rspec_metadata!
-
-  config.before_record do |interaction|
-    interaction.response.body.force_encoding("UTF-8")
-  end
-
-  config.filter_sensitive_data("<KOBANA_API_TOKEN>") { ENV.fetch("KOBANA_API_TOKEN", nil) }
-end
+Dir[File.join(__dir__, "support", "**", "*.rb")].each { |f| require f }
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods

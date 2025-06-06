@@ -4,19 +4,21 @@ module Kobana
   module Resources
     module Charge
       class BankBillet < Base
-        include ResourceOperations
+        self.primary_key = :id
+        self.api_version = :v1
+        self.resource_endpoint = "bank_billets"
 
-        @resource_endpoint = "bank_billets"
-
-        class << self
-          attr_reader :resource_endpoint
+        # rubocop:disable Naming/PredicateMethod
+        def cancel
+          response = request(:put, "#{uri}/cancel")
+          case response[:status]
+          when 204
+            true
+          else
+            false
+          end
         end
-
-        def cancel(resource_id)
-          url = "#{base_url}/#{endpoint}/#{resource_id}/cancel"
-          response = connection.put(url)
-          { status: response.status, data: {} }
-        end
+        # rubocop:enable Naming/PredicateMethod
       end
     end
   end

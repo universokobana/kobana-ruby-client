@@ -1,7 +1,9 @@
-require:
+plugins:
   - rubocop-performance
-  - 'test_prof/rubocop'
   - rubocop-packaging
+
+require:
+  - 'test_prof/rubocop'
 
 AllCops:
   TargetRubyVersion: 3.2
@@ -19,10 +21,16 @@ Style/StringLiteralsInInterpolation:
 Layout/LineLength:
   Max: 120
 
+Metrics/AbcSize:
+  Enabled: false
+
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
     - '*.gemspec'
+
+Metrics/MethodLength:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false

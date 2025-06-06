@@ -1,0 +1,508 @@
+[
+  {
+    "transactionId": "3469c3e748689dc994fcf73cb176157d1f460d8c3ebcb6b85007ced34408bd64",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PIX RECEBIDO   37120745816",
+    "type": "PIX",
+    "transactionAmount": {
+      "amount": "400.0000",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-10T16:31:09.672Z",
+    "partieCnpjCpf": "37120745816",
+    "partiePersonType": "PESSOA_NATURAL",
+    "partieCompeCode": "336",
+    "partieBranchCode": "0001",
+    "partieNumber": "00000000000030714318",
+    "partieCheckDigit": "0"
+  },
+  {
+    "transactionId": "cd932a859b7a560ee1666a812c7c3c29ff6591b3d35e0230e2b3bc359fc7a7b6",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PIX RECEBIDO   23931437000144",
+    "type": "PIX",
+    "transactionAmount": {
+      "amount": "391.0000",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-10T15:25:20.647Z",
+    "partieCnpjCpf": "23931437000144",
+    "partiePersonType": "PESSOA_JURIDICA",
+    "partieBranchCode": "1761",
+    "partieNumber": "00000000000000043867",
+    "partieCheckDigit": "7"
+  },
+  {
+    "transactionId": "4d9017921b832f0594a6234f521d5720e8d203a13ee3d7e8ecde3f2357fa9648",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PIX RECEBIDO   82863482815",
+    "type": "PIX",
+    "transactionAmount": {
+      "amount": "750.3700",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-10T15:21:34.846Z",
+    "partieCnpjCpf": "82863482815",
+    "partiePersonType": "PESSOA_NATURAL",
+    "partieCompeCode": "104",
+    "partieBranchCode": "0284",
+    "partieNumber": "00000000000771552076",
+    "partieCheckDigit": "5"
+  },
+  {
+    "transactionId": "80bd1d78a5e7e5e1b090118d6a0226d56afdc712f4561fd118d9e17a0ee2f665",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PIX RECEBIDO   33912044864",
+    "type": "PIX",
+    "transactionAmount": {
+      "amount": "123.6000",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-10T14:11:35.911Z",
+    "partieCnpjCpf": "33912044864",
+    "partiePersonType": "PESSOA_NATURAL",
+    "partieCompeCode": "104",
+    "partieBranchCode": "3880",
+    "partieNumber": "00000000000846611861",
+    "partieCheckDigit": "4"
+  },
+  {
+    "transactionId": "68503affc83907373a68b2b9c10b71c98442c51c3af5022286f8f36fbaebd419",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PIX RECEBIDO   28992021895",
+    "type": "PIX",
+    "transactionAmount": {
+      "amount": "123.0600",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-10T11:20:44.064Z",
+    "partieCnpjCpf": "28992021895",
+    "partiePersonType": "PESSOA_NATURAL",
+    "partieCompeCode": "323",
+    "partieBranchCode": "0001",
+    "partieNumber": "00000000004247229234",
+    "partieCheckDigit": "7"
+  },
+  {
+    "transactionId": "683fbff982bfb194b4013d81edc3728a0d0e1e1081dbaad5dc141e8b71a77e94",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PAGAMENTO CARTAO DE CREDITO   GETNET-MASTER",
+    "type": "OUTROS",
+    "transactionAmount": {
+      "amount": "1499.6900",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-10T11:20:03.023Z"
+  },
+  {
+    "transactionId": "87f8480f888cf93fca5bb54a154544c36a40b69d6633b5e51fd91149aa99e6ad",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PAGAMENTO CARTAO DE CREDITO   GETNET-VISA",
+    "type": "OUTROS",
+    "transactionAmount": {
+      "amount": "582.5700",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-10T11:20:00.850Z"
+  },
+  {
+    "transactionId": "4781058ad6baabe2c1f820743cd47af2181de8bade80ff4d0164d59cae6a7bb5",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PIX RECEBIDO   29863987824",
+    "type": "PIX",
+    "transactionAmount": {
+      "amount": "316.4000",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-10T09:39:15.306Z",
+    "partieCnpjCpf": "29863987824",
+    "partiePersonType": "PESSOA_NATURAL",
+    "partieCompeCode": "260",
+    "partieBranchCode": "0001",
+    "partieNumber": "00000000000019880154",
+    "partieCheckDigit": "2"
+  },
+  {
+    "transactionId": "5c592e281fe46ea6ebc133ad7aa2bd770d5d03229e7a51cabbe23163c9ac8d4d",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "RESGATE CONTAMAX AUTOMATICO   ",
+    "type": "RESGATE_APLIC_FINANCEIRA",
+    "transactionAmount": {
+      "amount": "80593.7900",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-08T06:42:52.628Z"
+  },
+  {
+    "transactionId": "a8fe92dcf915a5223f82cc87686ba0033e87a94ed61dfbf39dad7ac6d7c6f143",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "CR COB BLOQUEADO DINHEIRO   0505/006657575",
+    "type": "OPERACAO_CREDITO",
+    "transactionAmount": {
+      "amount": "222.7600",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-08T06:19:49.007Z"
+  },
+  {
+    "transactionId": "c6cd270da21b427e1294e2e7afeed9a48e153b30591f1fff53ea9218e4a5f20f",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "DEBITO",
+    "transactionName": "TAR LIQ COB CORBAN DIGITAL CMP   ",
+    "type": "OUTROS",
+    "transactionAmount": {
+      "amount": "2.6000",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-08T04:26:59.432Z"
+  },
+  {
+    "transactionId": "08a1699a31e9fd3d5c0235c75b23e3db59e543c53d8caaa7477393a45993be41",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PIX RECEBIDO   29863987824",
+    "type": "PIX",
+    "transactionAmount": {
+      "amount": "450.0000",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-07T20:25:14.182Z",
+    "partieCnpjCpf": "29863987824",
+    "partiePersonType": "PESSOA_NATURAL",
+    "partieCompeCode": "260",
+    "partieBranchCode": "0001",
+    "partieNumber": "00000000000019880154",
+    "partieCheckDigit": "2"
+  },
+  {
+    "transactionId": "5b1378e5637770650a910c56ca9239fe5409b12d0de9247eefdce477bd7d551f",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "DEBITO",
+    "transactionName": "PAGAMENTO DE BOLETO OUTROS BANCOS   ITAU UNIBANCO HOLDING S.A",
+    "type": "BOLETO",
+    "transactionAmount": {
+      "amount": "1649.1600",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-07T19:39:56.555Z",
+    "partieCnpjCpf": "60872504000123",
+    "partiePersonType": "PESSOA_JURIDICA",
+    "partieCompeCode": "341"
+  },
+  {
+    "transactionId": "c266d9671d44faaf98dbcd79d1bb007708f9efdb8eb4f9ad36a51fbeb6252a0c",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PIX RECEBIDO   36515631898",
+    "type": "PIX",
+    "transactionAmount": {
+      "amount": "539.6900",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-07T15:16:03.662Z",
+    "partieCnpjCpf": "36515631898",
+    "partiePersonType": "PESSOA_NATURAL",
+    "partieCompeCode": "033",
+    "partieBranchCode": "0092",
+    "partieNumber": "00000000000001071163",
+    "partieCheckDigit": "2"
+  },
+  {
+    "transactionId": "44a54edaa0ebf41decf2b860886b4d682a0235bfa6a3a969a41fb4184090fbc6",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PIX RECEBIDO   08500427981",
+    "type": "PIX",
+    "transactionAmount": {
+      "amount": "662.1000",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-07T12:52:05.279Z",
+    "partieCnpjCpf": "08500427981",
+    "partiePersonType": "PESSOA_NATURAL",
+    "partieCompeCode": "290",
+    "partieBranchCode": "0001",
+    "partieNumber": "00000000000043400533",
+    "partieCheckDigit": "6"
+  },
+  {
+    "transactionId": "92be82a1cf8ee67f54226282b7c15defc1974c468d69c8986c4af6b7c805093b",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "DEBITO",
+    "transactionName": "PIX ENVIADO   TARRAF ELMAZ",
+    "type": "PIX",
+    "transactionAmount": {
+      "amount": "82200.0000",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-07T12:33:05.124Z",
+    "partieCnpjCpf": "60001815000117",
+    "partiePersonType": "PESSOA_JURIDICA",
+    "partieCompeCode": "341",
+    "partieBranchCode": "0045",
+    "partieNumber": "00000000000000015689",
+    "partieCheckDigit": "0"
+  },
+  {
+    "transactionId": "c43f2cae51f41acf579098a00949a0cdb28026e05ff0f9d5c73106da416c0be1",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PIX RECEBIDO   26420917832",
+    "type": "PIX",
+    "transactionAmount": {
+      "amount": "492.0000",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-07T12:19:15.404Z",
+    "partieCnpjCpf": "26420917832",
+    "partiePersonType": "PESSOA_NATURAL",
+    "partieCompeCode": "237",
+    "partieBranchCode": "2026",
+    "partieNumber": "00000000000000012724",
+    "partieCheckDigit": "8"
+  },
+  {
+    "transactionId": "f72b6eba2b4c27627726d0212e58fe81e14ddb85fe473b327865a1a1da991dc3",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PAGAMENTO CARTAO DE CREDITO   GETNET-MASTER",
+    "type": "OUTROS",
+    "transactionAmount": {
+      "amount": "487.8300",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-07T11:20:23.429Z"
+  },
+  {
+    "transactionId": "0c0e66bd4d73f4fd41150d7bd1f4872d492edb2486f99951c59cd424baddc365",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PAGAMENTO CARTAO DE CREDITO   GETNET-VISA",
+    "type": "OUTROS",
+    "transactionAmount": {
+      "amount": "334.2200",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-07T11:20:20.650Z"
+  },
+  {
+    "transactionId": "e85e62b6294258d2deddbd80296c885a5a11bcc927b5ff6da15deac678de22a0",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "CR COB BLOQUEADO COMPENSACAO   0505/006657575",
+    "type": "OPERACAO_CREDITO",
+    "transactionAmount": {
+      "amount": "292.1300",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-07T06:37:15.618Z"
+  },
+  {
+    "transactionId": "2b0f4a769f5ab8caa684e66cfd08c63da8ab6d5132af4dd3531677f2c2c54c59",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "DEBITO",
+    "transactionName": "APLICACAO CONTAMAX   ",
+    "type": "OUTROS",
+    "transactionAmount": {
+      "amount": "10764.7800",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-07T06:18:32.005Z"
+  },
+  {
+    "transactionId": "9b314e058866d5b46e46466568ccb6af88d105f1d558bb180f3590cb01021468",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "DEBITO",
+    "transactionName": "TAR LIQ COB CORBAN DIGITAL CMP   ",
+    "type": "OUTROS",
+    "transactionAmount": {
+      "amount": "7.8000",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-07T04:28:46.373Z"
+  },
+  {
+    "transactionId": "a4f754c5a6c9a1cba3505eb1dc2f55769c8cc8a7168379fb0d61aaeeef23f060",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "DEBITO",
+    "transactionName": "TARIFA MANUTENCAO TIT VENCIDO   ",
+    "type": "TARIFA_SERVICOS_AVULSOS",
+    "transactionAmount": {
+      "amount": "9.2400",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-07T04:28:46.369Z"
+  },
+  {
+    "transactionId": "5c29c1e7150d1382023e130b256a463bd825e441d4d2d7e96fa1d3b874d61d2f",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PIX RECEBIDO   85764051991",
+    "type": "PIX",
+    "transactionAmount": {
+      "amount": "169.9000",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-06T19:00:20.281Z",
+    "partieCnpjCpf": "85764051991",
+    "partiePersonType": "PESSOA_NATURAL",
+    "partieCompeCode": "237",
+    "partieBranchCode": "0044",
+    "partieNumber": "00000000000001003194",
+    "partieCheckDigit": "0"
+  },
+  {
+    "transactionId": "a61504ee2df572391cd2f6335061a6f4e6494500d9155499af05934776da0934",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PIX RECEBIDO   33601766850",
+    "type": "PIX",
+    "transactionAmount": {
+      "amount": "264.5000",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-06T13:09:46.102Z",
+    "partieCnpjCpf": "33601766850",
+    "partiePersonType": "PESSOA_NATURAL",
+    "partieCompeCode": "001",
+    "partieBranchCode": "0133",
+    "partieNumber": "00000000000000027019",
+    "partieCheckDigit": "9"
+  },
+  {
+    "transactionId": "09ae736804af7008321bc9c86e39a9c8ec5b3b435817014a0d2545d97ddb84b3",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PIX RECEBIDO   22547752000100",
+    "type": "PIX",
+    "transactionAmount": {
+      "amount": "450.0000",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-06T12:29:49.501Z",
+    "partieCnpjCpf": "22547752000100",
+    "partiePersonType": "PESSOA_JURIDICA",
+    "partieCompeCode": "290",
+    "partieBranchCode": "0001",
+    "partieNumber": "00000000000075058636",
+    "partieCheckDigit": "4"
+  },
+  {
+    "transactionId": "4e050881a5291618058f044048cbae4d6f1fb44d94086bc226ef5a81256476aa",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PAGAMENTO CARTAO DE CREDITO   GETNET-ELO",
+    "type": "OUTROS",
+    "transactionAmount": {
+      "amount": "124.6800",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-06T11:25:51.934Z"
+  },
+  {
+    "transactionId": "d84cfb1e01a5121c35a1fb9e3ca5a6f3a6abfebd3c33b5f147ed89d2be9fdea5",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PAGAMENTO CARTAO DE CREDITO   GETNET-MASTER",
+    "type": "OUTROS",
+    "transactionAmount": {
+      "amount": "2395.6700",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-06T11:25:48.683Z"
+  },
+  {
+    "transactionId": "5fefdbbd7f350756ab33a0bacd58045630f3940aa37a1017d72b7ef33e9208f9",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PAGAMENTO CARTAO DE CREDITO   GETNET-VISA",
+    "type": "OUTROS",
+    "transactionAmount": {
+      "amount": "363.6800",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-06T11:25:43.520Z"
+  },
+  {
+    "transactionId": "a672e6cd8a03155b85dbb18685c30851b83b8b32db818a5c0b3a863b2bc297b2",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PIX RECEBIDO   01512610836",
+    "type": "PIX",
+    "transactionAmount": {
+      "amount": "100.0000",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-06T11:20:10.893Z",
+    "partieCnpjCpf": "01512610836",
+    "partiePersonType": "PESSOA_NATURAL",
+    "partieCompeCode": "104",
+    "partieBranchCode": "4113",
+    "partieNumber": "00000000000764683634",
+    "partieCheckDigit": "7"
+  },
+  {
+    "transactionId": "4a54569442618ed0f968df73cad23c5f78e4e6af56cdbb1f76cb46aac79f4b2e",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "PIX RECEBIDO   39484835821",
+    "type": "PIX",
+    "transactionAmount": {
+      "amount": "4000.0000",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-06T08:36:11.101Z",
+    "partieCnpjCpf": "39484835821",
+    "partiePersonType": "PESSOA_NATURAL",
+    "partieCompeCode": "260",
+    "partieBranchCode": "0001",
+    "partieNumber": "00000000000046726835",
+    "partieCheckDigit": "9"
+  },
+  {
+    "transactionId": "82b083c90d3f95b4edcf79eeb2a28d72d9b5fc4b4a77560d92e5320f74a58a91",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "CREDITO",
+    "transactionName": "CR COB BLOQUEADO COMPENSACAO   0505/006657575",
+    "type": "OPERACAO_CREDITO",
+    "transactionAmount": {
+      "amount": "2913.3900",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-06T06:56:14.254Z"
+  },
+  {
+    "transactionId": "1b17353020ddeb54a358d4839763caf38e7003439a772a54872543bd9da9c481",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "DEBITO",
+    "transactionName": "APLICACAO CONTAMAX   ",
+    "type": "OUTROS",
+    "transactionAmount": {
+      "amount": "18474.3800",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-06T06:37:44.020Z"
+  },
+  {
+    "transactionId": "e459a6d235d3f0ee17557875e460817340d9e850ef27c059edc2fc3a689ad190",
+    "completedAuthorisedPaymentType": "TRANSACAO_EFETIVADA",
+    "creditDebitType": "DEBITO",
+    "transactionName": "TARIFA MANUTENCAO TIT VENCIDO   ",
+    "type": "TARIFA_SERVICOS_AVULSOS",
+    "transactionAmount": {
+      "amount": "1.3200",
+      "currency": "BRL"
+    },
+    "transactionDateTime": "2025-03-06T04:41:24.111Z"
+  }
+]

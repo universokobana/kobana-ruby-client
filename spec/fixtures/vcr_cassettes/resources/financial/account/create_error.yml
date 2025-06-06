@@ -2,18 +2,19 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api-sandbox.kobana.com.br/v2/admin/subaccounts
+    uri: https://api-sandbox.kobana.com.br/v2/financial/accounts
     body:
       encoding: UTF-8
-      string: '{"email":"usuario@example.com","account_type":"juridical","business_legal_name":"Empresa
-        LTDA","business_cnpj":"12.345.678/0001-95","nickname":"Empresa","users":[{"email":"empresa@example.com"}]}'
+      string: '{"uid":"0196f5e5-dd65-7322-9f36-c3979af436b7","account_number":"00000000000000024618560","account_digit":"3","agency_number":"79731","agency_digit":"3","financial_provider_slug":"sicoob","kind":"checking","person_info":{"name":"Margret
+        Santos Filgueiras","document_number":"864.668.358-39"},"bank_id":"206","custom_name":"Bancoob/Sicoob
+        CC: 81519387-3","external_id":"external9999"}'
     headers:
       Authorization:
       - Bearer <KOBANA_API_TOKEN>
       Content-Type:
       - application/json
       User-Agent:
-      - Faraday v2.12.2
+      - Faraday v2.13.1
   response:
     status:
       code: 422
@@ -28,9 +29,9 @@ http_interactions:
       server:
       - Cowboy
       report-to:
-      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1748462300&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=KnSsQjYYuWzGasBqJo2k1TbCpCKvW%2BE5plx%2FlseEjmk%3D"}]}'
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1749053023&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=RcUSVvOko%2F0YndOE9UphZMQaCLHdyauVu%2BudSo3OyeY%3D"}]}'
       reporting-endpoints:
-      - heroku-nel=https://nel.heroku.com/reports?ts=1748462300&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=KnSsQjYYuWzGasBqJo2k1TbCpCKvW%2BE5plx%2FlseEjmk%3D
+      - heroku-nel=https://nel.heroku.com/reports?ts=1749053023&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=RcUSVvOko%2F0YndOE9UphZMQaCLHdyauVu%2BudSo3OyeY%3D
       nel:
       - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
       x-frame-options:
@@ -54,13 +55,13 @@ http_interactions:
       cross-origin-opener-policy:
       - unsafe-none
       x-ratelimit-limit:
-      - '1000'
+      - '10000'
       x-ratelimit-remaining:
-      - '967'
+      - '9999'
       ratelimit-limit:
-      - '1000'
+      - '10000'
       ratelimit-remaining:
-      - '967'
+      - '9999'
       cache-control:
       - no-cache
       feature-policy:
@@ -81,7 +82,7 @@ http_interactions:
         https://d3caatrp30sdc5.cloudfront.net; object-src ''none''; script-src ''self''
         ''unsafe-inline'' ''strict-dynamic'' https://app-sandbox.kobana.com.br https://cdn.zapier.com
         https://albato.com https://widget.pluga.co https://*.datadoghq-browser-agent.com
-        ''nonce-HFai01YrWjZ7QKRLN56qXA==''; style-src ''self'' ''unsafe-inline'' https://app-sandbox.kobana.com.br
+        ''nonce-uMOIbR6D5L1oFaSJL5qwMg==''; style-src ''self'' ''unsafe-inline'' https://app-sandbox.kobana.com.br
         https://fonts.googleapis.com https://tagmanager.google.com https://cdn.zapier.com
         https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
         https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css;
@@ -98,11 +99,11 @@ http_interactions:
         https://browser-intake-datadoghq.com https://*.datadoghq.com https://recaptchaenterprise.googleapis.com
         https://www.recaptcha.net'
       x-request-id:
-      - 167bc086-8d4c-44bb-9540-890cc5c33ac6
+      - 7450b100-0b7f-415e-ac1e-b46b2cb7b9fd
       x-runtime:
-      - '0.124292'
+      - '0.366149'
       date:
-      - Wed, 28 May 2025 19:58:20 GMT
+      - Wed, 04 Jun 2025 16:03:44 GMT
       x-rack-cache:
       - invalidate, pass
       strict-transport-security:
@@ -114,18 +115,16 @@ http_interactions:
       content-encoding:
       - gzip
       via:
-      - 1.1 vegur, 1.1 429fb4e05d6db25afd75d7eb9f5fa85c.cloudfront.net (CloudFront)
+      - 1.1 vegur, 1.1 f0d2db130f25377126d8fc517e82fa4c.cloudfront.net (CloudFront)
       x-cache:
       - Error from cloudfront
       x-amz-cf-pop:
       - MIA3-C1
       x-amz-cf-id:
-      - qvSeLQuhJnmLQMPt0KMuHXZDLJ0LjlHFvnF5xqc9rvbJRBT8X0_W5g==
+      - CmvgX3kCk_42G9m3shF7my7knFSbLTNXqZj8QIdRU_qbWT2qkfvKqw==
     body:
       encoding: UTF-8
-      string: '{"status":422,"errors":[{"code":"validation_error","param":"business_cnpj","detail":"CNPJ
-        da Empresa não é válido"},{"code":"validation_error","param":"email","detail":"E-mail
-        não é válido"},{"code":"validation_error","param":"users","detail":"Users
-        não é válido"}]}'
-  recorded_at: Wed, 28 May 2025 19:58:20 GMT
+      string: '{"status":422,"errors":[{"code":"validation_error","param":"account_number","detail":"Número
+        da Conta já está em uso"}]}'
+  recorded_at: Wed, 04 Jun 2025 16:03:44 GMT
 recorded_with: VCR 6.3.1
