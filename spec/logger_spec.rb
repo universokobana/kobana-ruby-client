@@ -15,7 +15,7 @@ ensure
 end
 
 RSpec.describe "Logger" do
-  let!(:api_token) { ENV.fetch("KOBANA_API_TOKEN", nil) }
+  let!(:api_token) { ENV.fetch("KOBANA_API_TOKEN", "ANYTOKEN") }
 
   before do
     Kobana.configure do |config|
