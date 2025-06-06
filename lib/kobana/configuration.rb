@@ -2,11 +2,11 @@
 
 module Kobana
   class Configuration
-    attr_accessor :api_token, :environment, :custom_headers, :api_version, :debug
+    attr_accessor :api_token, :environment, :custom_headers, :debug
 
     def initialize
       @custom_headers = {}
-      @environment = :development
+      @environment = :sandbox
     end
   end
 end

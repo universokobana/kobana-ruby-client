@@ -12,6 +12,7 @@ FactoryBot.define do
     person_info { { name: "Margret Santos Filgueiras", document_number: "864.668.358-39" } }
     bank_id { "206" }
     custom_name { "Bancoob/Sicoob CC: 81519387-3" }
+    external_id { "external9999" }
 
     initialize_with { attributes }
   end

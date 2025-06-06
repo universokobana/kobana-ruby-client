@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
+$LOAD_PATH.unshift(File.expand_path(".", __dir__))
+
 require "faraday"
 require "json"
+require "support/string"
+require "support/hash"
 require "kobana/configuration"
 
 module Kobana
@@ -17,11 +21,12 @@ module Kobana
     end
   end
 
-  autoload :Base, "kobana/base"
   autoload :Version, "kobana/version"
 
   module Resources
-    autoload :ResourceOperations, "kobana/resources/resource_operations"
+    autoload :Base, "kobana/resources/base"
+    autoload :Connection, "kobana/resources/connection"
+    autoload :Operations, "kobana/resources/operations"
     module Charge
       autoload :Pix, "kobana/resources/charge/pix"
       autoload :BankBillet, "kobana/resources/charge/bank_billet"
@@ -29,6 +34,8 @@ module Kobana
 
     module Financial
       autoload :Account, "kobana/resources/financial/account"
+      autoload :AccountBalance, "kobana/resources/financial/account_balance"
+      autoload :StatementTransactionsImport, "kobana/resources/financial/statement_transactions_import"
     end
 
     module Admin

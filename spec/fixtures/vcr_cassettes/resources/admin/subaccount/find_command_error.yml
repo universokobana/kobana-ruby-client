@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api-sandbox.kobana.com.br/v2/admin/subaccounts//commands/fake-command-id
+    uri: https://api-sandbox.kobana.com.br/v2/admin/subaccounts/4483/commands/fake-command-id
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - Faraday v2.12.2
+      - Faraday v2.13.1
   response:
     status:
       code: 404
@@ -27,9 +27,9 @@ http_interactions:
       server:
       - Cowboy
       report-to:
-      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1748463003&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=bQ2NEj6RwMjxuYle0eQOEqtsSAfwM3bkXwFPXJ0bnwc%3D"}]}'
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1749057682&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=SkORUbjb%2BhZeJ62ENecIbQSgYIJbXmNYv4fyajE46TM%3D"}]}'
       reporting-endpoints:
-      - heroku-nel=https://nel.heroku.com/reports?ts=1748463003&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=bQ2NEj6RwMjxuYle0eQOEqtsSAfwM3bkXwFPXJ0bnwc%3D
+      - heroku-nel=https://nel.heroku.com/reports?ts=1749057682&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=SkORUbjb%2BhZeJ62ENecIbQSgYIJbXmNYv4fyajE46TM%3D
       nel:
       - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
       x-frame-options:
@@ -56,13 +56,13 @@ http_interactions:
       - camera=(), gyroscope=(), microphone=(), usb=(), payment=(), fullscreen=(self),
         geolocation=(self)
       x-ratelimit-limit:
-      - '60'
+      - '10000'
       x-ratelimit-remaining:
-      - '57'
+      - '9997'
       ratelimit-limit:
-      - '60'
+      - '10000'
       ratelimit-remaining:
-      - '57'
+      - '9997'
       feature-policy:
       - camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; payment 'none';
         fullscreen 'self'; geolocation 'self'
@@ -81,7 +81,7 @@ http_interactions:
         https://d3caatrp30sdc5.cloudfront.net; object-src ''none''; script-src ''self''
         ''unsafe-inline'' ''strict-dynamic'' https://app-sandbox.kobana.com.br https://cdn.zapier.com
         https://albato.com https://widget.pluga.co https://*.datadoghq-browser-agent.com
-        ''nonce-677ed2186abd17a541f428d26a7a4a51''; style-src ''self'' ''unsafe-inline''
+        ''nonce-a07c19222055f7c0f08fb85e1f2fb700''; style-src ''self'' ''unsafe-inline''
         https://app-sandbox.kobana.com.br https://fonts.googleapis.com https://tagmanager.google.com
         https://cdn.zapier.com https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
         https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css;
@@ -98,14 +98,14 @@ http_interactions:
         https://browser-intake-datadoghq.com https://*.datadoghq.com https://recaptchaenterprise.googleapis.com
         https://www.recaptcha.net'
       set-cookie:
-      - _kobana_session=xL0QL2Z9HHlLur1UFZh%2FQDVFS977Pa8GTzQnRbKJ%2B5f%2BBZcxJ7W7oW5cMGDRkC%2BzPv8nWwmJtbegM86DlxGlmDAEUeh5%2F%2FJaI98rNPYQpKxdm%2BrOjRZ8bQSFCD2pSy07BMHtj8%2BM3naYozdqftiAb6H%2FNE3awPfFFSOpKndBR6ob%2Foee9CXNyxANJKe3VQpjX40d%2B6KsbQ%3D%3D--FUVxbjwpTGMechlP--nXV3AtxjGcxQC56QrI9oHQ%3D%3D;
+      - _kobana_session=6KJLpzgdjlyEUAZ3r%2Fo51zaZrLlWHskCLR54ZfAjZ%2F3sJn0trzkCyzgcs6zd6hqI1I%2BlAOha0d8Ti0k059mYJVVJGSLpcXI8RWDOSlR9AR2zUAkk0%2FE2c6mKpr82bB39uCOKbG%2BM0i9hHptwcUwuYb0K9TALye%2Foqm5%2FiHk5IR%2BZwIrvJNKbDYZf8OLlK0x9pfIDw6mcwQ%3D%3D--pFcn%2B7s%2FiWAAnbTt--Oc94C0pVx%2FCR7REEshitpg%3D%3D;
         path=/; secure; HttpOnly; SameSite=Lax
       x-request-id:
-      - ebd77b9e-1c07-442f-9b66-0a6d37439c1b
+      - 02f7107d-27c3-4bfc-b66e-6587e0ca2d66
       x-runtime:
-      - '0.641652'
+      - '0.097887'
       date:
-      - Wed, 28 May 2025 20:10:04 GMT
+      - Wed, 04 Jun 2025 17:21:23 GMT
       cache-control:
       - no-cache, private
       x-rack-cache:
@@ -117,7 +117,7 @@ http_interactions:
       content-encoding:
       - gzip
       via:
-      - 1.1 vegur, 1.1 b3ca1a7752327aa687a6611c7f28951e.cloudfront.net (CloudFront)
+      - 1.1 vegur, 1.1 982dd7ed309ab3025635ef6f0ff61e82.cloudfront.net (CloudFront)
       vary:
       - Accept-Encoding
       x-cache:
@@ -125,9 +125,9 @@ http_interactions:
       x-amz-cf-pop:
       - MIA3-C1
       x-amz-cf-id:
-      - v5KbbaTYzrMZ0rYkN-wU4hb_whYWhHiHkQEcRVh296jEvM_GClxbsA==
+      - IGuYzi82_fnPivnceKhMe2xlu7F42Tj5ZbwxjUVuYQco3h_SI_YeCA==
     body:
       encoding: UTF-8
       string: '{"error":"Not found"}'
-  recorded_at: Wed, 28 May 2025 20:10:04 GMT
+  recorded_at: Wed, 04 Jun 2025 17:21:23 GMT
 recorded_with: VCR 6.3.1

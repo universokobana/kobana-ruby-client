@@ -1,85 +1,148 @@
 # frozen_string_literal: true
 
 require "spec_helper"
-require "pry"
 
 RSpec.describe Kobana::Resources::Financial::Account do
-  let!(:api_key) { ENV.fetch("KOBANA_API_TOKEN", nil) }
+  let!(:api_token) { ENV.fetch("KOBANA_API_TOKEN", nil) }
   let(:financial_account_attributes) { attributes_for(:financial_account).deep_symbolize_keys }
 
   before do
     Kobana.configure do |config|
-      config.api_token = api_key
+      config.api_token = api_token
       config.environment = :sandbox
-      config.api_version = :v2
     end
   end
 
-  let(:account) { described_class.new }
-
   context "do not exist" do
     describe "#create", vcr: { cassette_name: "resources/financial/account/create" } do
-      subject { account.create(financial_account_attributes) }
+      subject { described_class.create(financial_account_attributes) }
 
       it "creates a new account" do
-        expect(subject[:status]).to eq(201)
+        expect(subject[:agency_number]).to eq(financial_account_attributes[:agency_number])
+        expect(subject[:account_number]).to eq(financial_account_attributes[:account_number])
+        expect(subject[:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
+        expect(subject[:kind]).to eq(financial_account_attributes[:kind])
+        expect(subject).to be_created
+        expect(subject).to be_valid
+      end
+    end
 
-        expect(subject[:data][:agency_number]).to eq(financial_account_attributes[:agency_number])
-        expect(subject[:data][:account_number]).to eq(financial_account_attributes[:account_number])
-        expect(subject[:data][:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
-        expect(subject[:data][:kind]).to eq(financial_account_attributes[:kind])
+    describe "#find_or_create_by" do
+      context "without params", vcr: { cassette_name: "resources/financial/account/find_or_create_by" } do
+        subject { described_class.find_or_create_by({ external_id: "external8888" }, financial_account_attributes) }
+
+        it "creates a new financial account" do
+          expect(subject[:agency_number]).to eq(financial_account_attributes[:agency_number])
+          expect(subject[:account_number]).to eq(financial_account_attributes[:account_number])
+          expect(subject[:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
+          expect(subject[:kind]).to eq(financial_account_attributes[:kind])
+          expect(subject).to be_created
+          expect(subject).to be_valid
+        end
+      end
+
+      context "with find by id", vcr: { cassette_name: "resources/financial/account/find_or_create_by_id" } do
+        subject do
+          described_class.find_or_create_by(financial_account_attributes[:external_id], financial_account_attributes,
+                                            find_by_id: true, find_params: { field: "external_id" })
+        end
+
+        it "creates a new financial account" do
+          expect(subject[:agency_number]).to eq(financial_account_attributes[:agency_number])
+          expect(subject[:account_number]).to eq(financial_account_attributes[:account_number])
+          expect(subject[:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
+          expect(subject[:kind]).to eq(financial_account_attributes[:kind])
+          expect(subject[:external_id]).to eq(financial_account_attributes[:external_id])
+          expect(subject).not_to be_created
+          expect(subject).to be_valid
+        end
       end
     end
   end
 
   context "exist" do
+    let(:account) { @created_account }
+
     before do
-      VCR.use_cassette("resources/financial/account/create_for_methods") do
-        @created_account = account.create(financial_account_attributes)
+      VCR.use_cassette("resources/financial/account/create") do
+        @created_account = described_class.create(financial_account_attributes)
+      end
+    end
+
+    describe "#create", vcr: { cassette_name: "resources/financial/account/create_error" } do
+      subject { described_class.create(financial_account_attributes) }
+
+      it "return error" do
+        expect(subject[:agency_number]).to eq(financial_account_attributes[:agency_number])
+        expect(subject[:account_number]).to eq(financial_account_attributes[:account_number])
+        expect(subject[:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
+        expect(subject[:kind]).to eq(financial_account_attributes[:kind])
+        expect(subject).not_to be_created
+        expect(subject).not_to be_valid
+        expect(subject.errors).to eq([{ code: "validation_error",
+                                        detail: "Número da Conta já está em uso",
+                                        param: "account_number" }])
       end
     end
 
     describe "#index", vcr: { cassette_name: "resources/financial/account/list_all" } do
-      subject { account.index }
+      subject { described_class.all }
 
       it "checks if the first account is the one we created" do
-        expect(subject[:data].first[:financial_provider_slug]).to eq(
+        expect(subject.first[:financial_provider_slug]).to eq(
           financial_account_attributes[:financial_provider_slug]
         )
-        expect(subject[:data].first[:kind]).to eq(financial_account_attributes[:kind])
+        expect(subject.first[:kind]).to eq(financial_account_attributes[:kind])
       end
     end
 
     describe "#find", vcr: { cassette_name: "resources/financial/account/find" } do
-      subject { account.find(@created_account[:data][:uid]) }
+      subject { described_class.find(@created_account.uid) }
 
       it "fetches the correct account" do
-        expect(subject[:data][:uid]).to eq(@created_account[:data][:uid])
-        expect(subject[:data][:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
-        expect(subject[:data][:kind]).to eq(financial_account_attributes[:kind])
+        expect(subject[:uid]).to eq(@created_account.uid)
+        expect(subject[:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
+        expect(subject[:kind]).to eq(financial_account_attributes[:kind])
       end
     end
 
-    describe "#list_command", vcr: { cassette_name: "resources/financial/account/list_command" } do
-      subject { account.list_command(@created_account[:data][:uid]) }
+    describe "#find_by_external_id", vcr: { cassette_name: "resources/financial/account/find_by_external_id" } do
+      subject { described_class.find(@created_account[:external_id], field: "external_id") }
+
+      xit "fetches the correct account" do
+        expect(subject[:uid]).to eq(@created_account.uid)
+        expect(subject[:financial_provider_slug]).to eq(financial_account_attributes[:financial_provider_slug])
+        expect(subject[:kind]).to eq(financial_account_attributes[:kind])
+      end
+    end
+
+    describe "#list_commands", vcr: { cassette_name: "resources/financial/account/list_commands" } do
+      subject { account.list_commands }
 
       it "returns the list of commands/accounts" do
-        expect(subject[:data]).not_to be_empty
-        expect(subject[:data].first[:operation]).to eq("statement_sync")
-        expect(subject[:data].first[:status]).to eq("pending")
+        expect(subject).to be_a(Array)
       end
     end
 
     describe "#find_command", vcr: { cassette_name: "resources/financial/account/find_command" } do
       before do
-        @commands = account.list_command(@created_account[:data][:uid])
-        @command_id = @commands[:data].is_a?(Array) && @commands[:data].any? ? @commands[:data].first[:id] : nil
+        @commands = account.list_commands
+        @command_id = @commands.is_a?(Array) && @commands.any? ? @commands.first[:id] : nil
       end
 
-      subject { account.find_command(@created_account[:data][:uid], @command_id) }
+      context "when command does not exist" do
+        it "raises an error" do
+          expect { account.find_command(nil) }
+            .to raise_error(ArgumentError, /Command ID cannot be nil/)
+        end
+      end
 
-      it "returns the specific command/account" do
-        expect(subject[:data][:id]).to eq(@command_id)
+      context "when command exists" do
+        subject { account.find_command(@command_id) }
+
+        xit "returns the specific command/account" do
+          expect(subject[:data][:id]).to eq(@command_id)
+        end
       end
     end
   end

@@ -1,86 +1,89 @@
 # frozen_string_literal: true
 
 require "spec_helper"
-require "pry"
 
 RSpec.describe Kobana::Resources::Admin::Subaccount do
-  let!(:api_key) { ENV.fetch("KOBANA_API_TOKEN", nil) }
+  let!(:api_token) { ENV.fetch("KOBANA_API_TOKEN", nil) }
   let(:admin_subaccount_attributes) { attributes_for(:admin_subaccount).deep_symbolize_keys }
 
   before do
     Kobana.configure do |config|
-      config.api_token = api_key
+      config.api_token = api_token
       config.environment = :sandbox
-      config.api_version = :v2
     end
   end
 
-  let(:subaccount) { described_class.new }
+  describe "api_version" do
+    # it { expect(Kobana::Resources::Base.api_version).to eq(:v2) }
+    it { expect(described_class.api_version).to eq(:v2) }
+  end
 
   context "do not exist" do
     describe "#create", vcr: { cassette_name: "resources/admin/subaccount/create" } do
-      subject { subaccount.create(admin_subaccount_attributes) }
+      subject { described_class.create(admin_subaccount_attributes) }
 
       it "creates a new subaccount with the correct attributes" do
-        expect(subject[:status]).to eq(201)
-        expect(subject[:data][:email]).to eq(admin_subaccount_attributes[:email])
-        expect(subject[:data][:account_type]).to eq(admin_subaccount_attributes[:account_type])
-        expect(subject[:data][:business_legal_name]).to eq(admin_subaccount_attributes[:business_legal_name])
-        expect(subject[:data][:business_cnpj]).to eq(admin_subaccount_attributes[:business_cnpj])
-        expect(subject[:data][:nickname]).to eq(admin_subaccount_attributes[:nickname])
+        expect(subject[:email]).to include("@kobana.com.br")
+        expect(subject[:account_type]).to eq(admin_subaccount_attributes[:account_type])
+        expect(subject[:business_legal_name]).to eq(admin_subaccount_attributes[:business_legal_name])
+        expect(subject[:business_cnpj]).to eq(admin_subaccount_attributes[:business_cnpj])
+        expect(subject[:nickname]).to eq(admin_subaccount_attributes[:nickname])
+        expect(subject).to be_created
+        expect(subject).to be_valid
       end
     end
   end
 
   context "exist" do
+    let(:subaccount) { @created_subaccount }
+
     before do
-      VCR.use_cassette("resources/admin/subaccount/create_for_test") do
-        @created_subaccount = subaccount.create(admin_subaccount_attributes)[:data]
+      VCR.use_cassette("resources/admin/subaccount/create") do
+        @created_subaccount = described_class.create(admin_subaccount_attributes)
       end
     end
 
     describe "#index", vcr: { cassette_name: "resources/admin/subaccount/list_all" } do
-      subject { subaccount.index }
+      subject { described_class.all }
 
       it "returns an array of subaccounts" do
-        expect(subject[:data]).to be_an_instance_of(Array)
-      end
-
-      it "checks if the list contains the subaccount we created" do
-        expect(subject[:data])
+        expect(subject).to be_an_instance_of(Array)
+        expect(subject)
           .to(be_any do |item|
-            item[:email] == admin_subaccount_attributes[:email]
+            item[:email].include?("@kobana.com.br")
           end)
       end
     end
 
     describe "#find", vcr: { cassette_name: "resources/admin/subaccount/find" } do
       before do
-        @subaccounts = subaccount.index
-        data = @subaccounts[:data]
+        @subaccounts = described_class.all
+        data = @subaccounts
         @subaccount_id = data.is_a?(Array) && data.any? ? data.first[:id] : nil
       end
-      subject { subaccount.find(@subaccount_id) }
+      subject { described_class.find(@subaccount_id) }
 
       it "fetches the correct subaccount" do
-        expect(subject[:data][:id]).to eq(@subaccount_id)
-        expect(subject[:data][:email]).to eq(admin_subaccount_attributes[:email])
+        expect(subject.id).to eq(@subaccount_id)
+        expect(subject[:email]).to include("@kobana.com.br")
       end
     end
 
-    describe "#list_command", vcr: { cassette_name: "resources/admin/subaccount/list_command_error" } do
-      subject { subaccount.list_command(@created_subaccount[:id]) }
+    describe "#list_commands", vcr: { cassette_name: "resources/admin/subaccount/list_commands_error" } do
+      subject { subaccount.list_commands }
 
-      it "fails with 403, 404 or 422 because command endpoint is not available for admin_subaccount" do
-        expect([403, 404, 422]).to include(subject[:status])
+      it do
+        expect(subject).to be_empty
+        expect(described_class.errors).to eq([{ title: "Not found" }])
       end
     end
 
     describe "#find_command", vcr: { cassette_name: "resources/admin/subaccount/find_command_error" } do
-      subject { subaccount.find_command(@created_subaccount[:id], "fake-command-id") }
+      subject { subaccount.find_command("fake-command-id") }
 
-      it "fails with 403, 404 or 422 because command endpoint is not available for admin_subaccount" do
-        expect([403, 404, 422]).to include(subject[:status])
+      it do
+        expect(subject).to be_nil
+        expect(described_class.errors).to eq([{ title: "Not found" }])
       end
     end
   end

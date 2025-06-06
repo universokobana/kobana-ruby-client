@@ -1,0 +1,348 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api-sandbox.kobana.com.br/v2/financial/accounts/808/statement_transactions/imports
+    body:
+      encoding: UTF-8
+      string: "-------------RubyMultipartPost-c260188158341f92acb618ec76fd8c10\r\nContent-Disposition:
+        form-data; name=\"financial_account_uid\"\r\n\r\n808\r\n-------------RubyMultipartPost-c260188158341f92acb618ec76fd8c10\r\nContent-Disposition:
+        form-data; name=\"source\"; filename=\"specific-name.json\"\r\nContent-Length:
+        17632\r\nContent-Type: application/json\r\nContent-Transfer-Encoding: binary\r\n\r\n[\n
+        \ {\n    \"transactionId\": \"3469c3e748689dc994fcf73cb176157d1f460d8c3ebcb6b85007ced34408bd64\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"PIX RECEBIDO   37120745816\",\n    \"type\":
+        \"PIX\",\n    \"transactionAmount\": {\n      \"amount\": \"400.0000\",\n
+        \     \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\": \"2025-03-10T16:31:09.672Z\",\n
+        \   \"partieCnpjCpf\": \"37120745816\",\n    \"partiePersonType\": \"PESSOA_NATURAL\",\n
+        \   \"partieCompeCode\": \"336\",\n    \"partieBranchCode\": \"0001\",\n    \"partieNumber\":
+        \"00000000000030714318\",\n    \"partieCheckDigit\": \"0\"\n  },\n  {\n    \"transactionId\":
+        \"cd932a859b7a560ee1666a812c7c3c29ff6591b3d35e0230e2b3bc359fc7a7b6\",\n    \"completedAuthorisedPaymentType\":
+        \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\": \"CREDITO\",\n    \"transactionName\":
+        \"PIX RECEBIDO   23931437000144\",\n    \"type\": \"PIX\",\n    \"transactionAmount\":
+        {\n      \"amount\": \"391.0000\",\n      \"currency\": \"BRL\"\n    },\n
+        \   \"transactionDateTime\": \"2025-03-10T15:25:20.647Z\",\n    \"partieCnpjCpf\":
+        \"23931437000144\",\n    \"partiePersonType\": \"PESSOA_JURIDICA\",\n    \"partieBranchCode\":
+        \"1761\",\n    \"partieNumber\": \"00000000000000043867\",\n    \"partieCheckDigit\":
+        \"7\"\n  },\n  {\n    \"transactionId\": \"4d9017921b832f0594a6234f521d5720e8d203a13ee3d7e8ecde3f2357fa9648\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"PIX RECEBIDO   82863482815\",\n    \"type\":
+        \"PIX\",\n    \"transactionAmount\": {\n      \"amount\": \"750.3700\",\n
+        \     \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\": \"2025-03-10T15:21:34.846Z\",\n
+        \   \"partieCnpjCpf\": \"82863482815\",\n    \"partiePersonType\": \"PESSOA_NATURAL\",\n
+        \   \"partieCompeCode\": \"104\",\n    \"partieBranchCode\": \"0284\",\n    \"partieNumber\":
+        \"00000000000771552076\",\n    \"partieCheckDigit\": \"5\"\n  },\n  {\n    \"transactionId\":
+        \"80bd1d78a5e7e5e1b090118d6a0226d56afdc712f4561fd118d9e17a0ee2f665\",\n    \"completedAuthorisedPaymentType\":
+        \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\": \"CREDITO\",\n    \"transactionName\":
+        \"PIX RECEBIDO   33912044864\",\n    \"type\": \"PIX\",\n    \"transactionAmount\":
+        {\n      \"amount\": \"123.6000\",\n      \"currency\": \"BRL\"\n    },\n
+        \   \"transactionDateTime\": \"2025-03-10T14:11:35.911Z\",\n    \"partieCnpjCpf\":
+        \"33912044864\",\n    \"partiePersonType\": \"PESSOA_NATURAL\",\n    \"partieCompeCode\":
+        \"104\",\n    \"partieBranchCode\": \"3880\",\n    \"partieNumber\": \"00000000000846611861\",\n
+        \   \"partieCheckDigit\": \"4\"\n  },\n  {\n    \"transactionId\": \"68503affc83907373a68b2b9c10b71c98442c51c3af5022286f8f36fbaebd419\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"PIX RECEBIDO   28992021895\",\n    \"type\":
+        \"PIX\",\n    \"transactionAmount\": {\n      \"amount\": \"123.0600\",\n
+        \     \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\": \"2025-03-10T11:20:44.064Z\",\n
+        \   \"partieCnpjCpf\": \"28992021895\",\n    \"partiePersonType\": \"PESSOA_NATURAL\",\n
+        \   \"partieCompeCode\": \"323\",\n    \"partieBranchCode\": \"0001\",\n    \"partieNumber\":
+        \"00000000004247229234\",\n    \"partieCheckDigit\": \"7\"\n  },\n  {\n    \"transactionId\":
+        \"683fbff982bfb194b4013d81edc3728a0d0e1e1081dbaad5dc141e8b71a77e94\",\n    \"completedAuthorisedPaymentType\":
+        \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\": \"CREDITO\",\n    \"transactionName\":
+        \"PAGAMENTO CARTAO DE CREDITO   GETNET-MASTER\",\n    \"type\": \"OUTROS\",\n
+        \   \"transactionAmount\": {\n      \"amount\": \"1499.6900\",\n      \"currency\":
+        \"BRL\"\n    },\n    \"transactionDateTime\": \"2025-03-10T11:20:03.023Z\"\n
+        \ },\n  {\n    \"transactionId\": \"87f8480f888cf93fca5bb54a154544c36a40b69d6633b5e51fd91149aa99e6ad\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"PAGAMENTO CARTAO DE CREDITO   GETNET-VISA\",\n
+        \   \"type\": \"OUTROS\",\n    \"transactionAmount\": {\n      \"amount\":
+        \"582.5700\",\n      \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\":
+        \"2025-03-10T11:20:00.850Z\"\n  },\n  {\n    \"transactionId\": \"4781058ad6baabe2c1f820743cd47af2181de8bade80ff4d0164d59cae6a7bb5\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"PIX RECEBIDO   29863987824\",\n    \"type\":
+        \"PIX\",\n    \"transactionAmount\": {\n      \"amount\": \"316.4000\",\n
+        \     \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\": \"2025-03-10T09:39:15.306Z\",\n
+        \   \"partieCnpjCpf\": \"29863987824\",\n    \"partiePersonType\": \"PESSOA_NATURAL\",\n
+        \   \"partieCompeCode\": \"260\",\n    \"partieBranchCode\": \"0001\",\n    \"partieNumber\":
+        \"00000000000019880154\",\n    \"partieCheckDigit\": \"2\"\n  },\n  {\n    \"transactionId\":
+        \"5c592e281fe46ea6ebc133ad7aa2bd770d5d03229e7a51cabbe23163c9ac8d4d\",\n    \"completedAuthorisedPaymentType\":
+        \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\": \"CREDITO\",\n    \"transactionName\":
+        \"RESGATE CONTAMAX AUTOMATICO   \",\n    \"type\": \"RESGATE_APLIC_FINANCEIRA\",\n
+        \   \"transactionAmount\": {\n      \"amount\": \"80593.7900\",\n      \"currency\":
+        \"BRL\"\n    },\n    \"transactionDateTime\": \"2025-03-08T06:42:52.628Z\"\n
+        \ },\n  {\n    \"transactionId\": \"a8fe92dcf915a5223f82cc87686ba0033e87a94ed61dfbf39dad7ac6d7c6f143\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"CR COB BLOQUEADO DINHEIRO   0505/006657575\",\n
+        \   \"type\": \"OPERACAO_CREDITO\",\n    \"transactionAmount\": {\n      \"amount\":
+        \"222.7600\",\n      \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\":
+        \"2025-03-08T06:19:49.007Z\"\n  },\n  {\n    \"transactionId\": \"c6cd270da21b427e1294e2e7afeed9a48e153b30591f1fff53ea9218e4a5f20f\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"DEBITO\",\n    \"transactionName\": \"TAR LIQ COB CORBAN DIGITAL CMP   \",\n
+        \   \"type\": \"OUTROS\",\n    \"transactionAmount\": {\n      \"amount\":
+        \"2.6000\",\n      \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\":
+        \"2025-03-08T04:26:59.432Z\"\n  },\n  {\n    \"transactionId\": \"08a1699a31e9fd3d5c0235c75b23e3db59e543c53d8caaa7477393a45993be41\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"PIX RECEBIDO   29863987824\",\n    \"type\":
+        \"PIX\",\n    \"transactionAmount\": {\n      \"amount\": \"450.0000\",\n
+        \     \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\": \"2025-03-07T20:25:14.182Z\",\n
+        \   \"partieCnpjCpf\": \"29863987824\",\n    \"partiePersonType\": \"PESSOA_NATURAL\",\n
+        \   \"partieCompeCode\": \"260\",\n    \"partieBranchCode\": \"0001\",\n    \"partieNumber\":
+        \"00000000000019880154\",\n    \"partieCheckDigit\": \"2\"\n  },\n  {\n    \"transactionId\":
+        \"5b1378e5637770650a910c56ca9239fe5409b12d0de9247eefdce477bd7d551f\",\n    \"completedAuthorisedPaymentType\":
+        \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\": \"DEBITO\",\n    \"transactionName\":
+        \"PAGAMENTO DE BOLETO OUTROS BANCOS   ITAU UNIBANCO HOLDING S.A\",\n    \"type\":
+        \"BOLETO\",\n    \"transactionAmount\": {\n      \"amount\": \"1649.1600\",\n
+        \     \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\": \"2025-03-07T19:39:56.555Z\",\n
+        \   \"partieCnpjCpf\": \"60872504000123\",\n    \"partiePersonType\": \"PESSOA_JURIDICA\",\n
+        \   \"partieCompeCode\": \"341\"\n  },\n  {\n    \"transactionId\": \"c266d9671d44faaf98dbcd79d1bb007708f9efdb8eb4f9ad36a51fbeb6252a0c\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"PIX RECEBIDO   36515631898\",\n    \"type\":
+        \"PIX\",\n    \"transactionAmount\": {\n      \"amount\": \"539.6900\",\n
+        \     \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\": \"2025-03-07T15:16:03.662Z\",\n
+        \   \"partieCnpjCpf\": \"36515631898\",\n    \"partiePersonType\": \"PESSOA_NATURAL\",\n
+        \   \"partieCompeCode\": \"033\",\n    \"partieBranchCode\": \"0092\",\n    \"partieNumber\":
+        \"00000000000001071163\",\n    \"partieCheckDigit\": \"2\"\n  },\n  {\n    \"transactionId\":
+        \"44a54edaa0ebf41decf2b860886b4d682a0235bfa6a3a969a41fb4184090fbc6\",\n    \"completedAuthorisedPaymentType\":
+        \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\": \"CREDITO\",\n    \"transactionName\":
+        \"PIX RECEBIDO   08500427981\",\n    \"type\": \"PIX\",\n    \"transactionAmount\":
+        {\n      \"amount\": \"662.1000\",\n      \"currency\": \"BRL\"\n    },\n
+        \   \"transactionDateTime\": \"2025-03-07T12:52:05.279Z\",\n    \"partieCnpjCpf\":
+        \"08500427981\",\n    \"partiePersonType\": \"PESSOA_NATURAL\",\n    \"partieCompeCode\":
+        \"290\",\n    \"partieBranchCode\": \"0001\",\n    \"partieNumber\": \"00000000000043400533\",\n
+        \   \"partieCheckDigit\": \"6\"\n  },\n  {\n    \"transactionId\": \"92be82a1cf8ee67f54226282b7c15defc1974c468d69c8986c4af6b7c805093b\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"DEBITO\",\n    \"transactionName\": \"PIX ENVIADO   TARRAF ELMAZ\",\n    \"type\":
+        \"PIX\",\n    \"transactionAmount\": {\n      \"amount\": \"82200.0000\",\n
+        \     \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\": \"2025-03-07T12:33:05.124Z\",\n
+        \   \"partieCnpjCpf\": \"60001815000117\",\n    \"partiePersonType\": \"PESSOA_JURIDICA\",\n
+        \   \"partieCompeCode\": \"341\",\n    \"partieBranchCode\": \"0045\",\n    \"partieNumber\":
+        \"00000000000000015689\",\n    \"partieCheckDigit\": \"0\"\n  },\n  {\n    \"transactionId\":
+        \"c43f2cae51f41acf579098a00949a0cdb28026e05ff0f9d5c73106da416c0be1\",\n    \"completedAuthorisedPaymentType\":
+        \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\": \"CREDITO\",\n    \"transactionName\":
+        \"PIX RECEBIDO   26420917832\",\n    \"type\": \"PIX\",\n    \"transactionAmount\":
+        {\n      \"amount\": \"492.0000\",\n      \"currency\": \"BRL\"\n    },\n
+        \   \"transactionDateTime\": \"2025-03-07T12:19:15.404Z\",\n    \"partieCnpjCpf\":
+        \"26420917832\",\n    \"partiePersonType\": \"PESSOA_NATURAL\",\n    \"partieCompeCode\":
+        \"237\",\n    \"partieBranchCode\": \"2026\",\n    \"partieNumber\": \"00000000000000012724\",\n
+        \   \"partieCheckDigit\": \"8\"\n  },\n  {\n    \"transactionId\": \"f72b6eba2b4c27627726d0212e58fe81e14ddb85fe473b327865a1a1da991dc3\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"PAGAMENTO CARTAO DE CREDITO   GETNET-MASTER\",\n
+        \   \"type\": \"OUTROS\",\n    \"transactionAmount\": {\n      \"amount\":
+        \"487.8300\",\n      \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\":
+        \"2025-03-07T11:20:23.429Z\"\n  },\n  {\n    \"transactionId\": \"0c0e66bd4d73f4fd41150d7bd1f4872d492edb2486f99951c59cd424baddc365\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"PAGAMENTO CARTAO DE CREDITO   GETNET-VISA\",\n
+        \   \"type\": \"OUTROS\",\n    \"transactionAmount\": {\n      \"amount\":
+        \"334.2200\",\n      \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\":
+        \"2025-03-07T11:20:20.650Z\"\n  },\n  {\n    \"transactionId\": \"e85e62b6294258d2deddbd80296c885a5a11bcc927b5ff6da15deac678de22a0\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"CR COB BLOQUEADO COMPENSACAO   0505/006657575\",\n
+        \   \"type\": \"OPERACAO_CREDITO\",\n    \"transactionAmount\": {\n      \"amount\":
+        \"292.1300\",\n      \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\":
+        \"2025-03-07T06:37:15.618Z\"\n  },\n  {\n    \"transactionId\": \"2b0f4a769f5ab8caa684e66cfd08c63da8ab6d5132af4dd3531677f2c2c54c59\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"DEBITO\",\n    \"transactionName\": \"APLICACAO CONTAMAX   \",\n    \"type\":
+        \"OUTROS\",\n    \"transactionAmount\": {\n      \"amount\": \"10764.7800\",\n
+        \     \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\": \"2025-03-07T06:18:32.005Z\"\n
+        \ },\n  {\n    \"transactionId\": \"9b314e058866d5b46e46466568ccb6af88d105f1d558bb180f3590cb01021468\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"DEBITO\",\n    \"transactionName\": \"TAR LIQ COB CORBAN DIGITAL CMP   \",\n
+        \   \"type\": \"OUTROS\",\n    \"transactionAmount\": {\n      \"amount\":
+        \"7.8000\",\n      \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\":
+        \"2025-03-07T04:28:46.373Z\"\n  },\n  {\n    \"transactionId\": \"a4f754c5a6c9a1cba3505eb1dc2f55769c8cc8a7168379fb0d61aaeeef23f060\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"DEBITO\",\n    \"transactionName\": \"TARIFA MANUTENCAO TIT VENCIDO   \",\n
+        \   \"type\": \"TARIFA_SERVICOS_AVULSOS\",\n    \"transactionAmount\": {\n
+        \     \"amount\": \"9.2400\",\n      \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\":
+        \"2025-03-07T04:28:46.369Z\"\n  },\n  {\n    \"transactionId\": \"5c29c1e7150d1382023e130b256a463bd825e441d4d2d7e96fa1d3b874d61d2f\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"PIX RECEBIDO   85764051991\",\n    \"type\":
+        \"PIX\",\n    \"transactionAmount\": {\n      \"amount\": \"169.9000\",\n
+        \     \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\": \"2025-03-06T19:00:20.281Z\",\n
+        \   \"partieCnpjCpf\": \"85764051991\",\n    \"partiePersonType\": \"PESSOA_NATURAL\",\n
+        \   \"partieCompeCode\": \"237\",\n    \"partieBranchCode\": \"0044\",\n    \"partieNumber\":
+        \"00000000000001003194\",\n    \"partieCheckDigit\": \"0\"\n  },\n  {\n    \"transactionId\":
+        \"a61504ee2df572391cd2f6335061a6f4e6494500d9155499af05934776da0934\",\n    \"completedAuthorisedPaymentType\":
+        \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\": \"CREDITO\",\n    \"transactionName\":
+        \"PIX RECEBIDO   33601766850\",\n    \"type\": \"PIX\",\n    \"transactionAmount\":
+        {\n      \"amount\": \"264.5000\",\n      \"currency\": \"BRL\"\n    },\n
+        \   \"transactionDateTime\": \"2025-03-06T13:09:46.102Z\",\n    \"partieCnpjCpf\":
+        \"33601766850\",\n    \"partiePersonType\": \"PESSOA_NATURAL\",\n    \"partieCompeCode\":
+        \"001\",\n    \"partieBranchCode\": \"0133\",\n    \"partieNumber\": \"00000000000000027019\",\n
+        \   \"partieCheckDigit\": \"9\"\n  },\n  {\n    \"transactionId\": \"09ae736804af7008321bc9c86e39a9c8ec5b3b435817014a0d2545d97ddb84b3\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"PIX RECEBIDO   22547752000100\",\n
+        \   \"type\": \"PIX\",\n    \"transactionAmount\": {\n      \"amount\": \"450.0000\",\n
+        \     \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\": \"2025-03-06T12:29:49.501Z\",\n
+        \   \"partieCnpjCpf\": \"22547752000100\",\n    \"partiePersonType\": \"PESSOA_JURIDICA\",\n
+        \   \"partieCompeCode\": \"290\",\n    \"partieBranchCode\": \"0001\",\n    \"partieNumber\":
+        \"00000000000075058636\",\n    \"partieCheckDigit\": \"4\"\n  },\n  {\n    \"transactionId\":
+        \"4e050881a5291618058f044048cbae4d6f1fb44d94086bc226ef5a81256476aa\",\n    \"completedAuthorisedPaymentType\":
+        \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\": \"CREDITO\",\n    \"transactionName\":
+        \"PAGAMENTO CARTAO DE CREDITO   GETNET-ELO\",\n    \"type\": \"OUTROS\",\n
+        \   \"transactionAmount\": {\n      \"amount\": \"124.6800\",\n      \"currency\":
+        \"BRL\"\n    },\n    \"transactionDateTime\": \"2025-03-06T11:25:51.934Z\"\n
+        \ },\n  {\n    \"transactionId\": \"d84cfb1e01a5121c35a1fb9e3ca5a6f3a6abfebd3c33b5f147ed89d2be9fdea5\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"PAGAMENTO CARTAO DE CREDITO   GETNET-MASTER\",\n
+        \   \"type\": \"OUTROS\",\n    \"transactionAmount\": {\n      \"amount\":
+        \"2395.6700\",\n      \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\":
+        \"2025-03-06T11:25:48.683Z\"\n  },\n  {\n    \"transactionId\": \"5fefdbbd7f350756ab33a0bacd58045630f3940aa37a1017d72b7ef33e9208f9\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"PAGAMENTO CARTAO DE CREDITO   GETNET-VISA\",\n
+        \   \"type\": \"OUTROS\",\n    \"transactionAmount\": {\n      \"amount\":
+        \"363.6800\",\n      \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\":
+        \"2025-03-06T11:25:43.520Z\"\n  },\n  {\n    \"transactionId\": \"a672e6cd8a03155b85dbb18685c30851b83b8b32db818a5c0b3a863b2bc297b2\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"PIX RECEBIDO   01512610836\",\n    \"type\":
+        \"PIX\",\n    \"transactionAmount\": {\n      \"amount\": \"100.0000\",\n
+        \     \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\": \"2025-03-06T11:20:10.893Z\",\n
+        \   \"partieCnpjCpf\": \"01512610836\",\n    \"partiePersonType\": \"PESSOA_NATURAL\",\n
+        \   \"partieCompeCode\": \"104\",\n    \"partieBranchCode\": \"4113\",\n    \"partieNumber\":
+        \"00000000000764683634\",\n    \"partieCheckDigit\": \"7\"\n  },\n  {\n    \"transactionId\":
+        \"4a54569442618ed0f968df73cad23c5f78e4e6af56cdbb1f76cb46aac79f4b2e\",\n    \"completedAuthorisedPaymentType\":
+        \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\": \"CREDITO\",\n    \"transactionName\":
+        \"PIX RECEBIDO   39484835821\",\n    \"type\": \"PIX\",\n    \"transactionAmount\":
+        {\n      \"amount\": \"4000.0000\",\n      \"currency\": \"BRL\"\n    },\n
+        \   \"transactionDateTime\": \"2025-03-06T08:36:11.101Z\",\n    \"partieCnpjCpf\":
+        \"39484835821\",\n    \"partiePersonType\": \"PESSOA_NATURAL\",\n    \"partieCompeCode\":
+        \"260\",\n    \"partieBranchCode\": \"0001\",\n    \"partieNumber\": \"00000000000046726835\",\n
+        \   \"partieCheckDigit\": \"9\"\n  },\n  {\n    \"transactionId\": \"82b083c90d3f95b4edcf79eeb2a28d72d9b5fc4b4a77560d92e5320f74a58a91\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"CREDITO\",\n    \"transactionName\": \"CR COB BLOQUEADO COMPENSACAO   0505/006657575\",\n
+        \   \"type\": \"OPERACAO_CREDITO\",\n    \"transactionAmount\": {\n      \"amount\":
+        \"2913.3900\",\n      \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\":
+        \"2025-03-06T06:56:14.254Z\"\n  },\n  {\n    \"transactionId\": \"1b17353020ddeb54a358d4839763caf38e7003439a772a54872543bd9da9c481\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"DEBITO\",\n    \"transactionName\": \"APLICACAO CONTAMAX   \",\n    \"type\":
+        \"OUTROS\",\n    \"transactionAmount\": {\n      \"amount\": \"18474.3800\",\n
+        \     \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\": \"2025-03-06T06:37:44.020Z\"\n
+        \ },\n  {\n    \"transactionId\": \"e459a6d235d3f0ee17557875e460817340d9e850ef27c059edc2fc3a689ad190\",\n
+        \   \"completedAuthorisedPaymentType\": \"TRANSACAO_EFETIVADA\",\n    \"creditDebitType\":
+        \"DEBITO\",\n    \"transactionName\": \"TARIFA MANUTENCAO TIT VENCIDO   \",\n
+        \   \"type\": \"TARIFA_SERVICOS_AVULSOS\",\n    \"transactionAmount\": {\n
+        \     \"amount\": \"1.3200\",\n      \"currency\": \"BRL\"\n    },\n    \"transactionDateTime\":
+        \"2025-03-06T04:41:24.111Z\"\n  }\n]\r\n-------------RubyMultipartPost-c260188158341f92acb618ec76fd8c10--\r\n"
+    headers:
+      Authorization:
+      - Bearer <KOBANA_API_TOKEN>
+      Content-Type:
+      - multipart/form-data; boundary=-----------RubyMultipartPost-c260188158341f92acb618ec76fd8c10
+      User-Agent:
+      - Faraday v2.13.1
+      Content-Length:
+      - '18070'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - Cowboy
+      report-to:
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1749168758&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=eU1gF46hvU%2BnwPWCwzGG9bAGC3phjKF7fN%2FoFL9xdhA%3D"}]}'
+      reporting-endpoints:
+      - heroku-nel=https://nel.heroku.com/reports?ts=1749168758&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=eU1gF46hvU%2BnwPWCwzGG9bAGC3phjKF7fN%2FoFL9xdhA%3D
+      nel:
+      - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
+      x-frame-options:
+      - DENY
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      expect-ct:
+      - max-age=0, report-uri="https://boletosimples.report-uri.com/r/d/ct/reportOnly"
+      cross-origin-resource-policy:
+      - cross-origin
+      cross-origin-embedder-policy:
+      - unsafe-none
+      cross-origin-opener-policy:
+      - unsafe-none
+      x-ratelimit-limit:
+      - '10000'
+      x-ratelimit-remaining:
+      - '9990'
+      ratelimit-limit:
+      - '10000'
+      ratelimit-remaining:
+      - '9990'
+      etag:
+      - W/"dfc360c83fce81ecd422bde75b65047d"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      feature-policy:
+      - camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; payment 'none';
+        fullscreen 'self'; geolocation 'self'
+      content-security-policy-report-only:
+      - 'base-uri ''none''; default-src ''self'' https://app-sandbox.kobana.com.br
+        https://boletosimples.com.br https://*.boletosimples.com.br https://kobana.com.br
+        https://*.kobana.com.br; font-src ''self'' data: https://app-sandbox.kobana.com.br
+        https://fonts.googleapis.com https://fonts.gstatic.com https://themes.googleusercontent.com
+        https://cdnjs.cloudflare.com https://fonts.intercomcdn.com https://cdn.bb.com.br;
+        img-src ''self'' data: https://app-sandbox.kobana.com.br https://maps.googleapis.com
+        https://boleto.test:5001 https://bole.to https://*.google-analytics.com https://*.googletagmanager.com
+        https://ssl.gstatic.com https://www.gstatic.com https://*.g.doubleclick.net
+        https://*.google.com https://*.google.com.br https://googleads.g.doubleclick.net
+        https://www.facebook.com https://secure.gravatar.com https://albato.com https://zapier-images.imgix.net
+        https://boletosimples-sandbox.s3.amazonaws.com https://kobana-sandbox.s3.amazonaws.com
+        https://d3caatrp30sdc5.cloudfront.net; object-src ''none''; script-src ''self''
+        ''unsafe-inline'' ''strict-dynamic'' https://app-sandbox.kobana.com.br https://cdn.zapier.com
+        https://albato.com https://widget.pluga.co https://*.datadoghq-browser-agent.com
+        ''nonce-nfbsCoE6ap1uiF9n6Em+qA==''; style-src ''self'' ''unsafe-inline'' https://app-sandbox.kobana.com.br
+        https://fonts.googleapis.com https://tagmanager.google.com https://cdn.zapier.com
+        https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
+        https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css;
+        child-src ''self'' https://www.googleadservices.com https://docs.google.com
+        https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.br
+        https://app.popupdomination.com https://bid.g.doubleclick.net https://widget.pluga.co
+        https://www.googletagmanager.com https://www.facebook.com https://www.youtube.com
+        https://www.recaptcha.net; connect-src ''self'' https://boletosimples.com.br
+        https://*.boletosimples.com.br https://kobana.com.br https://*.kobana.com.br
+        https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com
+        https://*.g.doubleclick.net https://*.google.com https://*.google.com.br https://*.amplitude.com
+        https://*.mixpanel.com https://*.mxpnl.com https://*.intercom.io wss://*.intercom.io
+        https://albato.com https://zapier.com https://api.zapier.com https://*.lr-ingest.io/
+        https://browser-intake-datadoghq.com https://*.datadoghq.com https://recaptchaenterprise.googleapis.com
+        https://www.recaptcha.net'
+      x-request-id:
+      - 1afe1ecb-ae90-448f-b136-4c689d9db345
+      x-runtime:
+      - '0.726044'
+      date:
+      - Fri, 06 Jun 2025 00:12:39 GMT
+      x-rack-cache:
+      - invalidate, pass
+      strict-transport-security:
+      - max-age=31556952; includeSubDomains; preload
+      x-rack-cors:
+      - miss; no-origin
+      vary:
+      - Origin,Accept-Encoding
+      content-encoding:
+      - gzip
+      via:
+      - 1.1 vegur, 1.1 b3ca1a7752327aa687a6611c7f28951e.cloudfront.net (CloudFront)
+      x-cache:
+      - Miss from cloudfront
+      x-amz-cf-pop:
+      - MIA3-C1
+      x-amz-cf-id:
+      - zM7yQNfA-K_OKPbohj1iofD2k0-CFZhjK9ViEorkx4Ji0iuddu4RXw==
+    body:
+      encoding: UTF-8
+      string: '{"status":201,"data":{"id":2440,"uid":"01974295-212e-7814-9f51-17f26639a738","created_rows":0,"enqueued_at":null,"started_at":null,"finished_at":null,"processed_at":null,"failed_to_create_rows":0,"failed_to_update_rows":0,"import_errors":null,"processed_rows":0,"total_rows":null,"updated_rows":0,"source_file_name":"specific-name.json","source_file_size":17632,"status":"pending","created_via_api":true,"external_id":null,"custom_data":null,"tags":[],"created_at":"2025-06-05T21:12:39-03:00","updated_at":"2025-06-05T21:12:39-03:00"}}'
+  recorded_at: Fri, 06 Jun 2025 00:12:39 GMT
+recorded_with: VCR 6.3.1
