@@ -8,5 +8,10 @@ module Kobana
       @custom_headers = {}
       @environment = :sandbox
     end
+
+    def inspect
+      default_inspect = super
+      default_inspect.gsub(/api_token="(.*)"/, "api_token=\"[REDACTED]\"")
+    end
   end
 end
