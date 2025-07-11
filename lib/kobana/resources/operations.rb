@@ -82,7 +82,7 @@ module Kobana
           new(response[:data].merge(updated: true))
         else
           handle_error_response(response)
-          resource = new(attributes.merge(updated: false))
+          resource = self.class.new(attributes.merge(updated: false))
           resource.errors = @errors
           resource
         end
