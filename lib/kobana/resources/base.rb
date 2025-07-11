@@ -38,8 +38,13 @@ module Kobana
             key = Regexp.last_match(1)
             begin
               if key.include?(".")
-                keys = key.split(".").map(&:to_sym)
-                keys.reduce(attributes) { |acc, k| acc[k] }
+                value = attributes[key.tr(".", "_").to_sym].to_s
+                if value.empty?
+                  keys = key.split(".").map(&:to_sym)
+                  keys.reduce(attributes) { |acc, k| acc[k] }
+                else
+                  value
+                end
               else
                 attributes[key.to_sym].to_s
               end

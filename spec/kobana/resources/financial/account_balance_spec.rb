@@ -21,13 +21,23 @@ RSpec.describe Kobana::Resources::Financial::AccountBalance do
 
   describe "uri" do
     it do
+      described_class.default_attributes = {}
       expect(described_class.uri).to eq("https://api-sandbox.kobana.com.br/v2/financial/accounts//balances")
       described_class.default_attributes[:financial_account] = { uid: "019738cc-759d-76c7-8dfd-3434397207ac" }
+      expect(described_class.uri).to eq("https://api-sandbox.kobana.com.br/v2/financial/accounts/019738cc-759d-76c7-8dfd-3434397207ac/balances")
+    end
+    it do
+      described_class.default_attributes = {}
+      expect(described_class.uri).to eq("https://api-sandbox.kobana.com.br/v2/financial/accounts//balances")
+      described_class.default_attributes[:financial_account_uid] = "019738cc-759d-76c7-8dfd-3434397207ac"
       expect(described_class.uri).to eq("https://api-sandbox.kobana.com.br/v2/financial/accounts/019738cc-759d-76c7-8dfd-3434397207ac/balances")
     end
     specify(:aggregate_failures) do
       expect(described_class.new(financial_account: { uid: "019738cc-759d-76c7-8dfd-3434397207ac" }).uri).to eq("https://api-sandbox.kobana.com.br/v2/financial/accounts/019738cc-759d-76c7-8dfd-3434397207ac/balances/")
       expect(described_class.new(financial_account: { uid: "019738cc-759d-76c7-8dfd-3434397207ac" },
+                                 uid: "f47ac10b-58cc-4372-a567-0e02b2c3d479").uri).to eq("https://api-sandbox.kobana.com.br/v2/financial/accounts/019738cc-759d-76c7-8dfd-3434397207ac/balances/f47ac10b-58cc-4372-a567-0e02b2c3d479")
+      expect(described_class.new(financial_account_uid: "019738cc-759d-76c7-8dfd-3434397207ac").uri).to eq("https://api-sandbox.kobana.com.br/v2/financial/accounts/019738cc-759d-76c7-8dfd-3434397207ac/balances/")
+      expect(described_class.new(financial_account_uid: "019738cc-759d-76c7-8dfd-3434397207ac",
                                  uid: "f47ac10b-58cc-4372-a567-0e02b2c3d479").uri).to eq("https://api-sandbox.kobana.com.br/v2/financial/accounts/019738cc-759d-76c7-8dfd-3434397207ac/balances/f47ac10b-58cc-4372-a567-0e02b2c3d479")
     end
   end
