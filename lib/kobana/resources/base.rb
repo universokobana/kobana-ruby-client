@@ -37,9 +37,14 @@ module Kobana
           template.gsub(/\{([^\}]+)\}/) do
             key = Regexp.last_match(1)
             begin
-              attributes[key.to_sym].to_s
+              if key.include?(".")
+                keys = key.split(".").map(&:to_sym)
+                keys.reduce(attributes) { |acc, k| acc[k] }
+              else
+                attributes[key.to_sym].to_s
+              end
             rescue NameError
-              "{#{key}}" # Keep original if variable is undefined
+              ""
             end
           end
         end
