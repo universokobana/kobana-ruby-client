@@ -14,18 +14,28 @@ RSpec.describe Kobana::Resources::Financial::StatementTransactionsImport do
 
   describe "resource_endpoint" do
     it {
-      endpoint = "financial/accounts/{financial_account_uid}/statement_transactions/imports"
+      endpoint = "financial/accounts/{financial_account.uid}/statement_transactions/imports"
       expect(described_class.resource_endpoint).to eq(endpoint)
     }
   end
 
   describe "uri" do
     it do
+      described_class.default_attributes = {}
+      expect(described_class.uri).to eq("https://api-sandbox.kobana.com.br/v2/financial/accounts//statement_transactions/imports")
+      described_class.default_attributes[:financial_account] = { uid: "019738cc-759d-76c7-8dfd-3434397207ac" }
+      expect(described_class.uri).to eq("https://api-sandbox.kobana.com.br/v2/financial/accounts/019738cc-759d-76c7-8dfd-3434397207ac/statement_transactions/imports")
+    end
+    it do
+      described_class.default_attributes = {}
       expect(described_class.uri).to eq("https://api-sandbox.kobana.com.br/v2/financial/accounts//statement_transactions/imports")
       described_class.default_attributes[:financial_account_uid] = "019738cc-759d-76c7-8dfd-3434397207ac"
       expect(described_class.uri).to eq("https://api-sandbox.kobana.com.br/v2/financial/accounts/019738cc-759d-76c7-8dfd-3434397207ac/statement_transactions/imports")
     end
     specify(:aggregate_failures) do
+      expect(described_class.new(financial_account: { uid: "019738cc-759d-76c7-8dfd-3434397207ac" }).uri).to eq("https://api-sandbox.kobana.com.br/v2/financial/accounts/019738cc-759d-76c7-8dfd-3434397207ac/statement_transactions/imports/")
+      expect(described_class.new(financial_account: { uid: "019738cc-759d-76c7-8dfd-3434397207ac" },
+                                 uid: "f47ac10b-58cc-4372-a567-0e02b2c3d479").uri).to eq("https://api-sandbox.kobana.com.br/v2/financial/accounts/019738cc-759d-76c7-8dfd-3434397207ac/statement_transactions/imports/f47ac10b-58cc-4372-a567-0e02b2c3d479")
       expect(described_class.new(financial_account_uid: "019738cc-759d-76c7-8dfd-3434397207ac").uri).to eq("https://api-sandbox.kobana.com.br/v2/financial/accounts/019738cc-759d-76c7-8dfd-3434397207ac/statement_transactions/imports/")
       expect(described_class.new(financial_account_uid: "019738cc-759d-76c7-8dfd-3434397207ac",
                                  uid: "f47ac10b-58cc-4372-a567-0e02b2c3d479").uri).to eq("https://api-sandbox.kobana.com.br/v2/financial/accounts/019738cc-759d-76c7-8dfd-3434397207ac/statement_transactions/imports/f47ac10b-58cc-4372-a567-0e02b2c3d479")
