@@ -110,7 +110,7 @@ puts result
 ```ruby
 attributes = { ... }
 
-bank_billet = Kobana::Resources::BankBillet::BankBillet.create(attributes)
+bank_billet = Kobana::Resources::Charge::BankBillet.create(attributes)
 puts bank_billet
 ```
 
@@ -118,13 +118,13 @@ puts bank_billet
 
 ```ruby
 bank_billet_id = 1  # Replace with your charge ID
-bank_billet = Kobana::Resources::BankBillet::BankBillet.find(bank_billet_id)
+bank_billet = Kobana::Resources::Charge::BankBillet.find(bank_billet_id)
 puts bank_billet
 ```
 
 ##### Listing All Bank Billets
 
 ```ruby
-bank_billets = Kobana::Resources::BankBillet::BankBillet.all
+bank_billets = Kobana::Resources::Charge::BankBillet.all
 puts bank_billets
 ```
