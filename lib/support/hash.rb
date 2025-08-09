@@ -1,21 +1,35 @@
 # frozen_string_literal: true
 
-class Hash
-  def deep_symbolize_keys
-    result = {}
-    each do |key, value|
-      sym_key = key.respond_to?(:to_sym) ? key.to_sym : key
-      result[sym_key] =
+unless defined?(ActiveSupport)
+  class Hash
+    unless method_defined?(:deep_symbolize_keys)
+      def deep_symbolize_keys
+        result = {}
+        each do |key, value|
+          sym_key = key.respond_to?(:to_sym) ? key.to_sym : key
+          result[sym_key] = deep_symbolize_value(value)
+        end
+        result
+      end
+
+      private
+
+      def deep_symbolize_value(value)
         case value
         when Hash
           value.deep_symbolize_keys
         when Array
-          value.map { |v| v.is_a?(Hash) ? v.deep_symbolize_keys : v }
+          deep_symbolize_array(value)
         else
           value
         end
+      end
+
+      def deep_symbolize_array(array)
+        array.map do |element|
+          element.is_a?(Hash) ? element.deep_symbolize_keys : element
+        end
+      end
     end
-    result
   end
-  # rubocop:enable Metrics/MethodLength
 end
