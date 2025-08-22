@@ -23,9 +23,11 @@ module Kobana
 
         def inherited(subclass)
           super
+          # Set defaults only if not already set by parent classes
           subclass.resource_endpoint ||= infer_resource_endpoint(subclass)
           subclass.primary_key ||= :uid
-          subclass.api_version ||= :v2
+          # Don't override api_version if it's already been set
+          subclass.api_version = :v2 unless subclass.instance_variable_defined?(:@api_version)
           subclass.errors ||= []
           subclass.default_attributes ||= {}
         end
