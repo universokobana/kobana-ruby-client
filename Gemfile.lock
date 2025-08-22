@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    kobana (0.3.0)
+    kobana (0.3.1)
       faraday (>= 1.4, < 3.0)
       faraday-multipart
       json
