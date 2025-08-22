@@ -106,7 +106,9 @@ module Kobana
 
         def base_url
           config = client&.configuration || Kobana.configuration
-          BASE_URI[api_version&.to_sym][config.environment&.to_sym]
+          # Prioritize client configuration api_version over class api_version
+          version = config.api_version&.to_sym || api_version&.to_sym
+          BASE_URI[version][config.environment&.to_sym]
         end
       end
     end
