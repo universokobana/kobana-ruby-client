@@ -13,6 +13,10 @@ RSpec.describe Kobana::Resources::Charge::BankBillet do
     end
   end
 
+  describe "api_version" do
+    it { expect(described_class.api_version).to eq(:v1) }
+  end
+
   context "do not exist" do
     describe "#create", vcr: { cassette_name: "resources/charge/bank_billet/create" } do
       subject { described_class.create(bank_billet_attributes) }
