@@ -60,7 +60,7 @@ module Kobana
           if options[:find_by_id]
             find(params, options[:find_params]) || create(attributes)
           else
-            find_by(params, options) || create(attributes.merge(params.deep_symbolize_keys))
+            find_by(params, options) || create(attributes.merge(params.deep_symbolize_keys), options)
           end
         end
 
@@ -72,6 +72,22 @@ module Kobana
         end
       end
 
+      def save
+        if new_record?
+          response = self.class.create(attributes)
+          if response.created?
+            @attributes = response.attributes
+            @errors = []
+            true
+          else
+            @errors = response.errors
+            false
+          end
+        else
+          update({})
+        end
+      end
+
       def update(new_attributes = {})
         return if new_attributes.empty?
 
@@ -79,7 +95,7 @@ module Kobana
         response = request(:put, uri, data.to_json)
         case response[:status]
         when 200..204
-          new(response[:data].merge(updated: true))
+          self.class.new(response[:data].merge(updated: true))
         else
           handle_error_response(response)
           resource = self.class.new(attributes.merge(updated: false))

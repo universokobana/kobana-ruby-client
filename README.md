@@ -36,6 +36,8 @@ $ gem install kobana
 
 ### Configuration
 
+#### Global Configuration (Single API Token)
+
 Configure your API key by creating an initializer in your Rails project:
 
 `config/initializers/kobana.rb`
@@ -49,12 +51,52 @@ end
 
 Replace `'YOUR_API_TOKEN'` with your actual API key from the corresponding environment.
 
+#### Multi-Client Configuration (Multiple API Tokens)
+
+For applications that need to work with multiple Kobana accounts simultaneously (e.g., multi-tenant applications), you can create multiple client instances:
+
+```ruby
+# Create separate clients for different accounts
+client1 = Kobana::Client.new(
+  api_token: 'CLIENT1_API_TOKEN',
+  environment: :production
+)
+
+client2 = Kobana::Client.new(
+  api_token: 'CLIENT2_API_TOKEN',
+  environment: :sandbox
+)
+
+# Use client-specific resources
+pix1 = client1.charge.pix.create(attributes)
+pix2 = client2.charge.pix.create(attributes)
+
+# Each client maintains its own configuration
+account1 = client1.financial.account.find(account_id)
+account2 = client2.financial.account.find(account_id)
+```
+
+You can also configure clients after initialization:
+
+```ruby
+client = Kobana::Client.new
+client.configure do |config|
+  config.api_token = 'YOUR_API_TOKEN'
+  config.environment = :production
+  config.custom_headers = { 'X-Custom-Header' => 'Value' }
+  config.debug = true
+end
+```
+
 ### Usage
+
+The gem supports both global configuration (backward compatible) and multi-client usage patterns.
 
 #### **Charges**
 
 ##### Creating a Charge
 
+Using global configuration:
 ```ruby
 attributes = {
   'amount' => 100.50,
@@ -71,7 +113,15 @@ attributes = {
   'custom_data' => '{"order_id": "12345"}'
 }
 
+# Global configuration approach (backward compatible)
 pix = Kobana::Resources::Charge::Pix.create(attributes)
+```
+
+Using client-specific configuration:
+```ruby
+# Client-specific approach
+client = Kobana::Client.new(api_token: 'YOUR_TOKEN')
+pix = client.charge.pix.create(attributes)
 pix.id # 1
 pix.new_record? false
 pix.created? # true

@@ -22,23 +22,44 @@ module Kobana
 
       module ClassMethods
         def headers
+          config = client&.configuration || Kobana.configuration
           {
-            "Authorization" => "Bearer #{Kobana.configuration.api_token}",
+            "Authorization" => "Bearer #{config.api_token}",
             "Content-Type" => "application/json"
-          }.merge(Kobana.configuration.custom_headers)
+          }.merge(config.custom_headers)
         end
 
         def connection
+          config = client&.configuration || Kobana.configuration
+          # Don't cache connection when debugging to ensure logger works
+          return build_connection(config) if config.debug
+
+          @connection ||= build_connection(config)
+        end
+
+        private
+
+        def build_connection(config)
           Faraday.new(url: base_url) do |faraday|
             faraday.request :url_encoded
             faraday.request :json
             faraday.adapter Faraday.default_adapter
             faraday.headers = headers
-            faraday.response :logger, logger if Kobana.configuration.debug
+            faraday.response :logger, logger if config.debug
           end
         end
 
+        public
+
         def multipart_connection
+          config = client&.configuration || Kobana.configuration
+          # Don't cache connection when debugging
+          return build_multipart_connection(config) if config.debug
+
+          @multipart_connection ||= build_multipart_connection(config)
+        end
+
+        def build_multipart_connection(config)
           Faraday.new(url: base_url) do |faraday|
             faraday.request :multipart
             faraday.request :url_encoded
@@ -46,14 +67,14 @@ module Kobana
             faraday.headers = headers.merge(
               "Content-Type" => "multipart/form-data"
             )
-            faraday.response :logger, logger if Kobana.configuration.debug
+            faraday.response :logger, logger if config.debug
           end
         end
 
         def logger
           logger = Logger.new($stdout)
           logger.formatter = proc do |severity, datetime, _progname, msg|
-            redacted_msg = msg.gsub(/(Bearer|Token)\s+[A-Za-z0-9\-_\.]+/, '\1 [REDACTED]')
+            redacted_msg = msg.gsub(/(Bearer|Token)\s+[A-Za-z0-9\-_.]+/, '\1 [REDACTED]')
             "#{severity} #{datetime}: #{redacted_msg}\n"
           end
           logger
@@ -84,7 +105,8 @@ module Kobana
         end
 
         def base_url
-          @base_url ||= BASE_URI[api_version&.to_sym][Kobana.configuration.environment&.to_sym]
+          config = client&.configuration || Kobana.configuration
+          BASE_URI[api_version&.to_sym][config.environment&.to_sym]
         end
       end
     end
