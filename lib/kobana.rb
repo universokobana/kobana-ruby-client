@@ -7,6 +7,7 @@ require "json"
 require "support/string"
 require "support/hash"
 require "kobana/configuration"
+require "kobana/errors"
 
 module Kobana
   class << self
@@ -22,6 +23,7 @@ module Kobana
   end
 
   autoload :Version, "kobana/version"
+  autoload :Client, "kobana/client"
 
   module Resources
     autoload :Base, "kobana/resources/base"

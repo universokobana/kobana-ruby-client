@@ -10,7 +10,16 @@ module Kobana
       include Operations
 
       class << self
-        attr_accessor :primary_key, :api_version, :resource_endpoint, :errors, :default_attributes
+        attr_accessor :primary_key, :api_version, :resource_endpoint, :errors, :default_attributes, :client
+
+        def with_client(client)
+          @client_classes ||= {}.compare_by_identity
+          @client_classes[client] ||= begin
+            klass = Class.new(self)
+            klass.client = client
+            klass
+          end
+        end
 
         def inherited(subclass)
           super
@@ -34,7 +43,7 @@ module Kobana
         end
 
         def interpolate(template, attributes)
-          template.gsub(/\{([^\}]+)\}/) do
+          template.gsub(/\{([^}]+)\}/) do
             key = Regexp.last_match(1)
             begin
               if key.include?(".")
@@ -60,6 +69,11 @@ module Kobana
       def initialize(attributes = {})
         @attributes = attributes.deep_symbolize_keys
         @errors = []
+      end
+
+      # Access to client configuration through class
+      def client
+        self.class.client
       end
 
       def [](key)
