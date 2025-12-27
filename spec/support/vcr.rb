@@ -8,6 +8,9 @@ VCR.configure do |c|
 
   c.before_record do |interaction|
     interaction.response.body.force_encoding("UTF-8")
+
+    # Filtra api_access_token das respostas da API
+    interaction.response.body.gsub!(/"api_access_token":\s*"[^"]+"/, '"api_access_token":"<FILTERED_API_ACCESS_TOKEN>"')
   end
 
   c.ignore_request do |request|
