@@ -45,8 +45,16 @@ module Kobana
             faraday.request :json
             faraday.adapter Faraday.default_adapter
             faraday.headers = headers
+            apply_timeouts(faraday, config)
             faraday.response :logger, logger if config.debug
           end
+        end
+
+        # Applies Faraday connect/read timeouts from the configuration when set.
+        # No-op when unset, so the default behavior (no timeout) is preserved.
+        def apply_timeouts(faraday, config)
+          faraday.options.open_timeout = config.open_timeout if config.open_timeout
+          faraday.options.timeout = config.timeout if config.timeout
         end
 
         public
@@ -67,6 +75,7 @@ module Kobana
             faraday.headers = headers.merge(
               "Content-Type" => "multipart/form-data"
             )
+            apply_timeouts(faraday, config)
             faraday.response :logger, logger if config.debug
           end
         end
