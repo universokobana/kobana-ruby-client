@@ -88,6 +88,24 @@ client.configure do |config|
 end
 ```
 
+#### HTTP timeouts
+
+By default the client has **no** HTTP timeout, so a slow or hanging API call
+blocks the caller until the underlying socket gives up. Set `open_timeout`
+(connection establishment) and/or `timeout` (response read), in seconds, to fail
+fast instead — both are passed straight to Faraday:
+
+```ruby
+Kobana.configure do |config|
+  config.api_token = 'YOUR_API_TOKEN'
+  config.open_timeout = 2 # seconds to establish the TCP connection
+  config.timeout = 8      # seconds to read the response
+end
+```
+
+When unset (`nil`), behavior is unchanged. Tune `timeout` above the longest
+expected operation (e.g. large multipart uploads / batch exports).
+
 ### Usage
 
 The gem supports both global configuration (backward compatible) and multi-client usage patterns.

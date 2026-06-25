@@ -34,4 +34,22 @@ RSpec.describe Kobana::Configuration do
       expect(Kobana.configuration.custom_headers).to eq({ "X-Custom-Header" => "CustomValue" })
     end
   end
+
+  describe "HTTP timeouts" do
+    it "default to nil" do
+      config = described_class.new
+
+      expect(config.open_timeout).to be_nil
+      expect(config.timeout).to be_nil
+    end
+
+    it "are assignable" do
+      config = described_class.new
+      config.open_timeout = 2
+      config.timeout = 8
+
+      expect(config.open_timeout).to eq(2)
+      expect(config.timeout).to eq(8)
+    end
+  end
 end

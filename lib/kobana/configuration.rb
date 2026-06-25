@@ -2,7 +2,11 @@
 
 module Kobana
   class Configuration
-    attr_accessor :api_token, :environment, :custom_headers, :debug, :api_version
+    # `open_timeout` and `timeout` are passed straight to Faraday (in seconds).
+    # Both default to nil (no timeout) to preserve historical behavior; set them
+    # to fail fast instead of blocking the caller when the API is slow/hanging.
+    attr_accessor :api_token, :environment, :custom_headers, :debug, :api_version,
+                  :open_timeout, :timeout
 
     def initialize
       @custom_headers = {}
