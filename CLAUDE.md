@@ -39,6 +39,16 @@ bundle install
 rake
 ```
 
+### Git Workflow
+
+- **NEVER** force push (`git push --force` / `--force-with-lease`). It can destroy teammates' commits.
+- **ALWAYS** run `git pull --rebase` before pushing, to integrate remote changes on top of your local commits.
+
+```bash
+git pull --rebase origin main
+git push origin main
+```
+
 ## High-Level Architecture
 
 This is a Ruby gem that serves as an API client for the Kobana platform, providing a clean interface for financial operations.

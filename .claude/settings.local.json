@@ -9,7 +9,14 @@
       "Bash(gh run *)",
       "Bash(git add *)",
       "Bash(git commit -m 'ci: add Ruby 4.0.5 to CI matrix *)",
-      "Bash(git commit -m 'chore: bump to Ruby 4.0.5 and update dependencies *)"
+      "Bash(git commit -m 'chore: bump to Ruby 4.0.5 and update dependencies *)",
+      "Bash(cd *)",
+      "Bash(git fetch *)",
+      "Bash(git rebase *)",
+      "Bash(echo \"===EXIT $?===\")",
+      "Bash(git stash *)",
+      "Bash(git push *)",
+      "Bash(git commit -m 'docs: add Git workflow rules \\(no force push, rebase before push\\) *)"
     ],
     "deny": []
   }
