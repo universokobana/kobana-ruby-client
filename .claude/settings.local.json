@@ -16,7 +16,9 @@
       "Bash(echo \"===EXIT $?===\")",
       "Bash(git stash *)",
       "Bash(git push *)",
-      "Bash(git commit -m 'docs: add Git workflow rules \\(no force push, rebase before push\\) *)"
+      "Bash(git commit -m 'docs: add Git workflow rules \\(no force push, rebase before push\\) *)",
+      "WebFetch(domain:www.ruby-lang.org)",
+      "Bash(git commit -m 'ci: drop EOL Ruby 3.2 from matrix and bump minimum to 3.3 *)"
     ],
     "deny": []
   }

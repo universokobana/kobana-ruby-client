@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.summary = "Kobana API Client"
   spec.description = "Kobana API Client"
   spec.homepage = "https://www.kobana.com.br/"
-  spec.required_ruby_version = ">= 3.2.6"
+  spec.required_ruby_version = ">= 3.3"
   spec.platform = Gem::Platform::RUBY
   spec.license = "MIT"
 

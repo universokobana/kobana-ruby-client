@@ -99,4 +99,4 @@ This is a Ruby gem that serves as an API client for the Kobana platform, providi
 - The gem is currently in BETA (v0.2.0) - expect breaking changes
 - API tokens are redacted in `inspect` output for security
 - Pre-commit hooks run RuboCop automatically via Lefthook
-- CI runs tests across Ruby 3.2.6, 3.3.6, and 3.4.1
+- CI runs tests across Ruby 3.3.6, 3.4.5, and 4.0.5 (Ruby 3.2 dropped — EOL 2026-04-01)
