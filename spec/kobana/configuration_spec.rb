@@ -19,17 +19,17 @@ RSpec.describe Kobana::Configuration do
     }
   end
 
-  describe 'custom_headers' do
-    it 'initializes with an empty hash' do
+  describe "custom_headers" do
+    it "initializes with an empty hash" do
       expect(Kobana.configuration.custom_headers).to eq({})
     end
 
-    it 'allows setting custom headers' do
+    it "allows setting custom headers" do
       Kobana.configuration.custom_headers = { "X-Custom-Header" => "CustomValue" }
       expect(Kobana.configuration.custom_headers).to eq({ "X-Custom-Header" => "CustomValue" })
     end
 
-    it 'allows setting custom headers' do
+    it "allows setting custom headers" do
       Kobana.configuration.custom_headers["X-Custom-Header"] = "CustomValue"
       expect(Kobana.configuration.custom_headers).to eq({ "X-Custom-Header" => "CustomValue" })
     end

@@ -68,7 +68,7 @@ module Kobana
           return unless response[:data].is_a?(Hash)
 
           @errors = response[:data][:errors] if response[:data].key?(:errors)
-          @errors = [title: response[:data][:error]] if response[:data].key?(:error)
+          @errors = [{ title: response[:data][:error] }] if response[:data].key?(:error)
         end
       end
 

@@ -7,7 +7,9 @@ module Kobana
     def initialize
       @custom_headers = {}
       @environment = :sandbox
-      @api_version = :v2
+      # nil means "no global override" — each resource uses its own declared
+      # api_version (see Resources::Base). Set this to force a version globally.
+      @api_version = nil
     end
 
     def inspect
