@@ -4,7 +4,12 @@
       "Bash(ls:*)",
       "Bash(grep:*)",
       "Bash(bundle exec rake:*)",
-      "Bash(bundle exec:*)"
+      "Bash(bundle exec:*)",
+      "Bash(gh pr *)",
+      "Bash(gh run *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'ci: add Ruby 4.0.5 to CI matrix *)",
+      "Bash(git commit -m 'chore: bump to Ruby 4.0.5 and update dependencies *)"
     ],
     "deny": []
   }
